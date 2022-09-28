@@ -46,7 +46,7 @@ return packer.startup(function(use)
   use 'wbthomason/packer.nvim' -- packer can manage itself
 
   -- File explorer
-  use 'kyazdani42/nvim-tree.lua'
+  -- use 'kyazdani42/nvim-tree.lua'
 
   -- Indent line
   use 'lukas-reineke/indent-blankline.nvim'
@@ -56,6 +56,16 @@ return packer.startup(function(use)
     'windwp/nvim-autopairs',
     config = function()
       require('nvim-autopairs').setup{}
+    end
+  }
+
+  -- Autotag
+  use {
+    'windwp/nvim-ts-autotag',
+    config = function()
+      require('nvim-ts-autotag').setup({
+        disable_filetype = {"TelescopPrompt", "vim"}
+      })
     end
   }
 
@@ -91,12 +101,6 @@ return packer.startup(function(use)
     },
   }
 
-  -- Statusline
-  -- use {
-  --   'feline-nvim/feline.nvim',
-  --   requires = { 'kyazdani42/nvim-web-devicons' },
-  -- }
-
   -- git labels
   use {
     'lewis6991/gitsigns.nvim',
@@ -106,15 +110,25 @@ return packer.startup(function(use)
     end
   }
 
-  -- Dashboard (start screen)
-  use {
-    'goolord/alpha-nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
-  }
-
-  -- Custom
   -- Statusline
   use { 'nvim-lualine/lualine.nvim' }
+
+  -- File browsers
+
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'kyazdani42/nvim-web-devicons'
+    }
+  }
+  use { "nvim-telescope/telescope-file-browser.nvim" }
+
+  -- Formatters
+
+  use { 'jose-elias-alvarez/null-ls.nvim' }
+  use { 'MunifTanjim/prettier.nvim' }
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
