@@ -87,7 +87,11 @@ return packer.startup(function(use)
   use { 'rose-pine/neovim', as = 'rose-pine' }
 
   -- LSP
-  use 'neovim/nvim-lspconfig'
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
 
   -- Autocomplete
   use {
@@ -128,7 +132,6 @@ return packer.startup(function(use)
 
   use { 'jose-elias-alvarez/null-ls.nvim' }
   use { 'MunifTanjim/prettier.nvim' }
-
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
