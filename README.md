@@ -11,7 +11,7 @@ Install `fd` and `ripgrep` package:
 
 Debian:
 ```
-sudo apt install -y fd ripgrep python3-proselint
+sudo apt install -y fd-find ripgrep python3-proselint
 ```
 
 Mac OS:
