@@ -37,9 +37,9 @@ NOTE: When installing solargraph, make sure default ruby version and your projec
 Install npm modules:
 ```
 npm i -g \
-    eslint \                                # for typescript/javascript, add .eslintrc.json to your project
-    stylelint stylelint-config-standard \   # for css/scss, make sure to add .stylelintrc.json to your project
-    vscode-langservers-extracted \          # for html
+    eslint                              \
+    stylelint stylelint-config-standard \
+    vscode-langservers-extracted        \ 
     @prantlf/jsonlint
 ```
 
