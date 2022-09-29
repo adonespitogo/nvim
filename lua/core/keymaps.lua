@@ -11,7 +11,7 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- Change leader to a comma
-vim.g.mapleader = ','
+vim.g.mapleader = ';'
 
 -----------------------------------------------------------
 -- Neovim shortcuts
@@ -51,3 +51,8 @@ map('n', '<C-t>', ':Term<CR>', { noremap = true })  -- open
 -- Tagbar
 map('n', '<leader>z', ':TagbarToggle<CR>')          -- open/close
 
+-- Bufferline
+map('n', ';;t', ':BufferLineCycleNext<CR>', { noremap = true })
+map('n', ';;p', ':BufferLineCyclePrev<CR>', { noremap = true })
+map('n', ';;d', ':bd<CR>', { noremap = true }) -- delete current buffer
+map('n', ';;x', ':w<CR> | :bd<CR>', { noremap = true }) -- delete current buffer

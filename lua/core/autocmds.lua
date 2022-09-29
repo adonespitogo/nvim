@@ -43,7 +43,7 @@ augroup('setIndent', { clear = true })
 autocmd('Filetype', {
   group = 'setIndent',
   pattern = { 'xml', 'html', 'xhtml', 'css', 'scss', 'javascript', 'typescript',
-    'yaml', 'lua'
+    'yaml', 'lua', 'ruby'
   },
   command = 'setlocal shiftwidth=2 tabstop=2'
 })
@@ -51,7 +51,7 @@ autocmd('Filetype', {
 -- Terminal settings:
 -- Open a Terminal on the right tab
 autocmd('CmdlineEnter', {
-  command = 'command! Term :botright vsplit term://$SHELL'
+  command = 'command! Term :botright split term://$SHELL'
 })
 
 -- Enter insert mode when switching to terminal
@@ -69,3 +69,4 @@ autocmd('BufLeave', {
   pattern = 'term://*',
   command = 'stopinsert'
 })
+
