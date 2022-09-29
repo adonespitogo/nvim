@@ -4,10 +4,23 @@ if not status then
 end
 
 local formatting = null_ls.builtins.formatting
+local diagnostics = null_ls.builtins.diagnostics
+
+diagnostics.proselint.filetypes = { "markdown", "text" }
 
 local sources = {
+	-- linters
+	diagnostics.eslint,
+	diagnostics.haml_lint,
+	diagnostics.erb_lint,
+	diagnostics.jsonlint,
+	diagnostics.proselint,
+	-- formatters
+	formatting.haml_lint,
+	formatting.erb_lint,
 	formatting.autopep8,
-	formatting.stylua
+	formatting.stylelint,
+	formatting.stylua,
 }
 
 local opts = { noremap = true, silent = true }

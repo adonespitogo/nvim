@@ -118,14 +118,6 @@ Language servers setup:
 For language servers list see:
 https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 
-Language server installed:
-
-Bash          -> bashls
-Python        -> pyright
-C-C++         -> clangd
-HTML/CSS/JSON -> vscode-html-languageserver
-JavaScript/TypeScript -> tsserver
-
 --]]
 
 -- Define `root_dir` when needed
@@ -139,13 +131,12 @@ end
 -- map buffer local keybindings when the language server attaches.
 -- Add your language server below:
 local servers = {
-  "bashls",
-  "pyright",
-  "clangd",
-  "html",
-  "cssls",
-  "tsserver",
-  "solargraph"
+	"bashls",
+	"pyright",
+	"clangd",
+	"cssls",
+	"tsserver",
+	"solargraph",
 }
 
 -- Call setup
@@ -160,3 +151,11 @@ for _, lsp in ipairs(servers) do
 		},
 	})
 end
+
+--Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+lspconfig.html.setup({
+	capabilities = capabilities,
+})
