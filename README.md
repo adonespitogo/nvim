@@ -25,7 +25,7 @@ Install ruby gems:
 ```
 gem install solargraph
 ```
-Run in project root:
+Run in ruby project root:
 ```
 solargraph bundle
 ```
