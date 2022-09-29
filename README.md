@@ -41,7 +41,8 @@ npm i -g \
     @johnnymorganz/stylua-bin           \
     stylelint stylelint-config-standard \
     vscode-langservers-extracted        \
-    @prantlf/jsonlint
+    @prantlf/jsonlint                   \
+    prettier
 ```
 
 
