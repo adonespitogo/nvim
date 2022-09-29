@@ -28,7 +28,7 @@ gem install \
     erb_lint    \
     haml_lint
 ```
-Run in project root:
+Run in ruby project root:
 ```
 solargraph bundle
 ```
