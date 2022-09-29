@@ -23,9 +23,9 @@ brew install fd ripgrep
 
 Install ruby gems:
 ```
-gem install                             \
-    solargraph      # ruby lsp server   \
-    erb_lint                            \
+gem install     \
+    solargraph  \
+    erb_lint    \
     haml_lint
 ```
 Run in ruby project root:
