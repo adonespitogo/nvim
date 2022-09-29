@@ -14,15 +14,15 @@ local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
 if fn.empty(fn.glob(install_path)) > 0 then
-	packer_bootstrap = fn.system({
-		"git",
-		"clone",
-		"--depth",
-		"1",
-		"https://github.com/wbthomason/packer.nvim",
-		install_path,
-	})
-	vim.o.runtimepath = vim.fn.stdpath("data") .. "/site/pack/*/start/*," .. vim.o.runtimepath
+  packer_bootstrap = fn.system({
+    "git",
+    "clone",
+    "--depth",
+    "1",
+    "https://github.com/wbthomason/packer.nvim",
+    install_path,
+  })
+  vim.o.runtimepath = vim.fn.stdpath("data") .. "/site/pack/*/start/*," .. vim.o.runtimepath
 end
 
 -- Autocommand that reloads neovim whenever you save the packer_init.lua file
@@ -36,107 +36,108 @@ vim.cmd([[
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
-	return
+  return
 end
 
 -- Install plugins
 return packer.startup(function(use)
-	-- Add you plugins here:
-	use("wbthomason/packer.nvim") -- packer can manage itself
+  -- Add you plugins here:
+  use("wbthomason/packer.nvim") -- packer can manage itself
 
-	-- File explorer
-	-- use 'kyazdani42/nvim-tree.lua'
+  -- File explorer
+  -- use 'kyazdani42/nvim-tree.lua'
 
-	-- Indent line
-	use("lukas-reineke/indent-blankline.nvim")
+  -- Indent line
+  use("lukas-reineke/indent-blankline.nvim")
 
-	-- Autopair
-	use({
-		"windwp/nvim-autopairs",
-		config = function()
-			require("nvim-autopairs").setup({})
-		end,
-	})
+  -- Autopair
+  use({
+    "windwp/nvim-autopairs",
+    config = function()
+      require("nvim-autopairs").setup({})
+    end,
+  })
 
-	-- Autotag
-	use({
-		"windwp/nvim-ts-autotag",
-		config = function()
-			require("nvim-ts-autotag").setup({
-				disable_filetype = { "TelescopPrompt", "vim" },
-			})
-		end,
-	})
+  -- Autotag
+  use({
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup({
+        disable_filetype = { "TelescopPrompt", "vim" },
+      })
+    end,
+  })
 
-	-- Icons
-	use("kyazdani42/nvim-web-devicons")
+  -- Icons
+  use("kyazdani42/nvim-web-devicons")
 
-	-- Tag viewer
-	use("preservim/tagbar")
+  -- Tag viewer
+  use("preservim/tagbar")
 
-	-- Treesitter interface
-	use({
-		"nvim-treesitter/nvim-treesitter",
-		run = function()
-			require("nvim-treesitter.install").update({ with_sync = true })
-		end,
-	})
+  -- Treesitter interface
+  use({
+    "nvim-treesitter/nvim-treesitter",
+    run = function()
+      require("nvim-treesitter.install").update({ with_sync = true })
+    end,
+  })
 
-	-- Color schemes
+  -- Color schemes
   use 'folke/tokyonight.nvim'
 
-	-- LSP
-	use({
-		"neovim/nvim-lspconfig",
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-	})
+  -- LSP
+  use({
+    "neovim/nvim-lspconfig",
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+  })
 
-	-- Autocomplete
-	use({
-		"hrsh7th/nvim-cmp",
-		requires = {
-			"L3MON4D3/LuaSnip",
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-path",
-			"hrsh7th/cmp-buffer",
-			"saadparwaiz1/cmp_luasnip",
-		}
-	})
+  -- Autocomplete
+  use({
+    "hrsh7th/nvim-cmp",
+    requires = {
+      "L3MON4D3/LuaSnip",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-buffer",
+      "saadparwaiz1/cmp_luasnip",
+    }
+  })
 
-	-- git labels
-	use({
-		"lewis6991/gitsigns.nvim",
-		requires = { "nvim-lua/plenary.nvim" },
-		config = function()
-			require("gitsigns").setup({})
-		end,
-	})
+  -- git labels
+  use({
+    "lewis6991/gitsigns.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("gitsigns").setup({})
+    end,
+  })
 
-	-- Statusline
-	use({ "nvim-lualine/lualine.nvim" })
-	use({
+  -- Statusline
+  use({ "nvim-lualine/lualine.nvim" })
+  use({
     "akinsho/bufferline.nvim",
     tag = "v2.*",
     requires = "kyazdani42/nvim-web-devicons"
   })
 
-	-- File browsers
-	use({
-		"nvim-telescope/telescope.nvim",
-		requires = {
-			"nvim-lua/plenary.nvim",
-			"kyazdani42/nvim-web-devicons",
-		},
-	})
-	use({ "nvim-telescope/telescope-file-browser.nvim" })
+  -- File browsers
+  use({
+    "nvim-telescope/telescope.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "kyazdani42/nvim-web-devicons",
+    },
+  })
+  use({ "nvim-telescope/telescope-file-browser.nvim" })
 
-	-- Formatters
-	use({ "jose-elias-alvarez/null-ls.nvim" })
+  -- Formatters
+  use({ "jose-elias-alvarez/null-ls.nvim" })
+  use('MunifTanjim/prettier.nvim')
 
-	-- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
-	if packer_bootstrap then
-		require("packer").sync()
-	end
+  -- Automatically set up your configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  if packer_bootstrap then
+    require("packer").sync()
+  end
 end)

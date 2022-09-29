@@ -1,6 +1,6 @@
 local status, null_ls = pcall(require, "null-ls")
 if not status then
-	return
+  return
 end
 
 local formatting = null_ls.builtins.formatting
@@ -9,28 +9,28 @@ local diagnostics = null_ls.builtins.diagnostics
 diagnostics.proselint.filetypes = { "markdown", "text" }
 
 local sources = {
-	-- linters
-	diagnostics.eslint,
-	diagnostics.haml_lint,
-	diagnostics.erb_lint,
-	diagnostics.jsonlint,
-	diagnostics.proselint,
-	-- formatters
-	formatting.haml_lint,
-	formatting.erb_lint,
-	formatting.autopep8,
-	formatting.stylelint,
-	formatting.stylua,
+  -- linters
+  diagnostics.eslint,
+  diagnostics.haml_lint,
+  diagnostics.erb_lint,
+  diagnostics.jsonlint,
+  diagnostics.proselint,
+  -- formatters
+  formatting.haml_lint,
+  formatting.erb_lint,
+  formatting.autopep8,
+  formatting.stylelint,
+  formatting.stylua,
 }
 
 local opts = { noremap = true, silent = true }
 
 local on_attach = function(client, bufnr)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<F3>", ":Format<CR>", opts)
-	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<F3>", ":Format<CR>", opts)
+  vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 end
 
 null_ls.setup({
-	sources = sources,
-	on_attach = on_attach,
+  sources = sources,
+  on_attach = on_attach,
 })

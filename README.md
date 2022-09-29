@@ -38,8 +38,9 @@ Install npm modules:
 ```
 npm i -g \
     eslint                              \
+    @johnnymorganz/stylua-bin           \
     stylelint stylelint-config-standard \
-    vscode-langservers-extracted        \ 
+    vscode-langservers-extracted        \
     @prantlf/jsonlint
 ```
 

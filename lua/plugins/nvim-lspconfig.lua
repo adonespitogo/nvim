@@ -136,6 +136,7 @@ local servers = {
 	"clangd",
 	"cssls",
 	"tsserver",
+  "sumneko_lua",
 	"solargraph",
 }
 
