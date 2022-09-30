@@ -85,7 +85,7 @@ local on_attach = function(client, bufnr)
   end
 
   -- Enable completion triggered by <c-x><c-o>
-  -- buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
+  buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 
   -- Mappings.
   local opts = { noremap = true, silent = true }
@@ -142,10 +142,12 @@ local servers = {
   "bashls",
   "pyright",
   "clangd",
-  "cssls",
   "tsserver",
   "sumneko_lua",
   "solargraph",
+  "tailwindcss",
+  "jsonls",
+  "html"
 }
 
 -- Call setup
@@ -156,19 +158,3 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   })
 end
-
---Enable (broadcasting) snippet capability for completion
-capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-lspconfig.html.setup({
-  on_attach = on_attach,
-  root_dir = root_dir,
-  capabilities = capabilities,
-})
-
-lspconfig.cssls.setup {
-  on_attach = on_attach,
-  root_dir = root_dir,
-  capabilities = capabilities,
-}

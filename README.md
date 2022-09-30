@@ -42,7 +42,8 @@ npm i -g \
     stylelint stylelint-config-standard \
     vscode-langservers-extracted        \
     @prantlf/jsonlint                   \
-    prettier
+    @fsouza/prettierd                   \
+    @tailwindcss/language-server
 ```
 
 

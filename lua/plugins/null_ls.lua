@@ -3,12 +3,6 @@ if not status then
   return
 end
 
-local status, prettier = pcall(require, "prettier")
-if not status then
-  return
-end
-
-
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
@@ -17,34 +11,18 @@ diagnostics.proselint.filetypes = { "markdown", "text" }
 local sources = {
   -- linters
   diagnostics.eslint,
-  diagnostics.haml_lint,
+  --diagnostics.haml_lint,
   diagnostics.erb_lint,
   diagnostics.jsonlint,
   diagnostics.proselint,
+
   -- formatters
-  formatting.haml_lint,
+  -- formatting.haml_lint,
+  formatting.prettierd,
   formatting.erb_lint,
   formatting.autopep8,
   formatting.stylelint,
   formatting.stylua,
-  prettier.setup({
-    bin = 'prettier',
-    filetypes = {
-      "css",
-      "html",
-      "graphql",
-      "html",
-      "javascript",
-      "javascriptreact",
-      "json",
-      "less",
-      "markdown",
-      "scss",
-      "typescript",
-      "typescriptreact",
-      "yaml",
-    }
-  })
 }
 
 local opts = { noremap = true, silent = true }
