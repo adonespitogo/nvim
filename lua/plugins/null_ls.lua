@@ -11,12 +11,14 @@ diagnostics.proselint.filetypes = { "markdown", "text" }
 local sources = {
   -- linters
   diagnostics.eslint,
-  diagnostics.haml_lint,
+  --diagnostics.haml_lint,
   diagnostics.erb_lint,
   diagnostics.jsonlint,
   diagnostics.proselint,
+
   -- formatters
-  formatting.haml_lint,
+  -- formatting.haml_lint,
+  formatting.prettierd,
   formatting.erb_lint,
   formatting.autopep8,
   formatting.stylelint,

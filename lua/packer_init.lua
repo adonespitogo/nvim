@@ -44,30 +44,6 @@ return packer.startup(function(use)
   -- Add you plugins here:
   use("wbthomason/packer.nvim") -- packer can manage itself
 
-  -- File explorer
-  -- use 'kyazdani42/nvim-tree.lua'
-
-  -- Indent line
-  use("lukas-reineke/indent-blankline.nvim")
-
-  -- Autopair
-  use({
-    "windwp/nvim-autopairs",
-    config = function()
-      require("nvim-autopairs").setup({})
-    end,
-  })
-
-  -- Autotag
-  use({
-    "windwp/nvim-ts-autotag",
-    config = function()
-      require("nvim-ts-autotag").setup({
-        disable_filetype = { "TelescopPrompt", "vim" },
-      })
-    end,
-  })
-
   -- Icons
   use("kyazdani42/nvim-web-devicons")
 
@@ -132,6 +108,21 @@ return packer.startup(function(use)
   use({ "nvim-telescope/telescope-file-browser.nvim" })
 
   -- Formatters
+  use("lukas-reineke/indent-blankline.nvim")
+  use({
+    "windwp/nvim-autopairs",
+    config = function()
+      require("nvim-autopairs").setup({})
+    end,
+  })
+  use({
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup({
+        disable_filetype = { "TelescopPrompt", "vim" },
+      })
+    end,
+  })
   use({ "jose-elias-alvarez/null-ls.nvim" })
   use('MunifTanjim/prettier.nvim')
 
