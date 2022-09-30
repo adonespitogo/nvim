@@ -7,7 +7,6 @@ For Mac OS, install `Iterm2` terminal imulator.
 Downloads [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/releases). Double click each font file to install.
 
 ## Packages
-Install `fd` and `ripgrep` package:
 
 Debian:
 ```

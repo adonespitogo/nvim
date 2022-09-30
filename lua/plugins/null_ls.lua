@@ -23,8 +23,8 @@ local sources = {
   diagnostics.eslint,
   diagnostics.erb_lint,
   diagnostics.jsonlint,
-  diagnostics.proselint,
   diagnostics.yamllint,
+  diagnostics.proselint,
   --diagnostics.haml_lint,
 
   -- formatters
