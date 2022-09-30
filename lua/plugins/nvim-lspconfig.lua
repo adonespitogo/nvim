@@ -143,7 +143,6 @@ local servers = {
   "pyright",
   "clangd",
   "tsserver",
-  "sumneko_lua",
   "solargraph",
   "tailwindcss",
   "jsonls",
@@ -158,3 +157,16 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   })
 end
+
+lspconfig.sumneko_lua.setup({
+    on_attach = on_attach,
+    root_dir = root_dir,
+    capabilities = capabilities,
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+  })
