@@ -6,27 +6,34 @@ end
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 local actions = null_ls.builtins.code_actions
+local completion = null_ls.builtins.completion
 
 diagnostics.proselint.filetypes = { "markdown", "text" }
+diagnostics.yamllint.filetypes = { "yaml", "yml" }
 
 local sources = {
   -- actions
   actions.eslint,
 
+  -- completions
+  completion.luasnip,
+
   -- linters
+  diagnostics.luacheck,
   diagnostics.eslint,
-  --diagnostics.haml_lint,
   diagnostics.erb_lint,
   diagnostics.jsonlint,
   diagnostics.proselint,
+  diagnostics.yamllint,
+  --diagnostics.haml_lint,
 
   -- formatters
-  -- formatting.haml_lint,
   formatting.prettierd,
   formatting.erb_lint,
   formatting.autopep8,
   formatting.stylelint,
-  formatting.stylua,
+  formatting.stylua
+  -- formatting.haml_lint,
 }
 
 local opts = { noremap = true, silent = true }

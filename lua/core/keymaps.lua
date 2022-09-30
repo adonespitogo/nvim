@@ -43,16 +43,11 @@ map('n', '<leader>q', ':qa!<CR>')
 -- Terminal mappings
 map('n', '<C-t>', ':Term<CR>', { noremap = true })  -- open
 
--- NvimTree
---map('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
---map('n', '<leader>f', ':NvimTreeRefresh<CR>')       -- refresh
---map('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
-
 -- Tagbar
 map('n', '<leader>z', ':TagbarToggle<CR>')          -- open/close
 
 -- Bufferline
-map('n', ';;t', ':BufferLineCycleNext<CR>', { noremap = true })
-map('n', ';;p', ':BufferLineCyclePrev<CR>', { noremap = true })
-map('n', ';;d', ':bd<CR>', { noremap = true }) -- delete current buffer
-map('n', ';;x', ':w<CR> | :bd<CR>', { noremap = true }) -- delete current buffer
+map('n', ';t', ':BufferLineCycleNext<CR>', { noremap = true })
+map('n', ';p', ':BufferLineCyclePrev<CR>', { noremap = true })
+map('n', ';d', ':bd<CR>', { noremap = true }) -- delete current buffer
+map('n', ';x', ':w<CR> | :bd<CR>', { noremap = true }) -- delete current buffer

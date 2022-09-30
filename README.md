@@ -11,12 +11,13 @@ Install `fd` and `ripgrep` package:
 
 Debian:
 ```
-sudo apt install -y fd-find ripgrep python3-proselint
+sudo apt install -y fd-find ripgrep python3-proselint lua-check
 ```
 
 Mac OS:
 ```
-brew install fd ripgrep
+brew install fd ripgrep luarorocks
+luarorocks install luacheck
 ```
 
 ## LSPs
@@ -46,4 +47,7 @@ npm i -g \
     @tailwindcss/language-server
 ```
 
-
+Install pip modules:
+```
+pip install --user yamllint
+```
