@@ -33,21 +33,18 @@ map('n', '<C-l>', '<C-w>l')
 -- Reload configuration without restart nvim
 map('n', '<leader>r', ':so %<CR>')
 
--- Close all windows and exit from Neovim with <leader> and q
-map('n', '<leader>q', ':qa!<CR>')
-
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
 -----------------------------------------------------------
 
 -- Terminal mappings
-map('n', '<C-t>', ':Term<CR>', { noremap = true })  -- open
+map('n', '<C-t>', ':Term<CR>', { noremap = true }) -- open
 
 -- Tagbar
-map('n', '<leader>z', ':TagbarToggle<CR>')          -- open/close
+map('n', '<leader>z', ':TagbarToggle<CR>') -- open/close
 
 -- Bufferline
-map('n', ';t', ':BufferLineCycleNext<CR>', { noremap = true })
-map('n', ';p', ':BufferLineCyclePrev<CR>', { noremap = true })
-map('n', ';d', ':bd<CR>', { noremap = true }) -- delete current buffer
-map('n', ';x', ':w<CR> | :bd<CR>', { noremap = true }) -- delete current buffer
+map('n', '<leader>t', ':BufferLineCycleNext<CR>', { noremap = true })
+map('n', '<leader>p', ':BufferLineCyclePrev<CR>', { noremap = true })
+map('n', '<leader>d', ':bd<CR>', { noremap = true }) -- delete current buffer
+map('n', '<leader>x', ':w<CR> | :bd<CR>', { noremap = true }) -- delete current buffer

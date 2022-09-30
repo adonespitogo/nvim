@@ -14,7 +14,7 @@ local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({
+  PackerBootstrap = fn.system({
     "git",
     "clone",
     "--depth",
@@ -108,6 +108,12 @@ return packer.startup(function(use)
   use({ "nvim-telescope/telescope-file-browser.nvim" })
 
   -- Formatters
+  use({
+    'terrortylor/nvim-comment',
+    config = function ()
+      require('nvim_comment').setup()
+    end
+  })
   use("lukas-reineke/indent-blankline.nvim")
   use({
     "windwp/nvim-autopairs",
@@ -128,7 +134,7 @@ return packer.startup(function(use)
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
-  if packer_bootstrap then
+  if PackerBootstrap then
     require("packer").sync()
   end
 end)
