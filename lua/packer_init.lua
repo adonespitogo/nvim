@@ -89,13 +89,10 @@ return packer.startup(function(use)
     end,
   })
 
-  -- Statusline
+  -- Buffers/Windows
   use({ "nvim-lualine/lualine.nvim" })
-  use({
-    "akinsho/bufferline.nvim",
-    tag = "v2.*",
-    requires = "kyazdani42/nvim-web-devicons"
-  })
+  use({ "akinsho/bufferline.nvim", tag = "v2.*" })
+  use("moll/vim-bbye")
 
   -- File browsers
   use({
