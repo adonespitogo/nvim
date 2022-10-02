@@ -50,5 +50,5 @@ map('n', '<leader>z', ':TagbarToggle<CR>') -- open/close
 -- Bufferline
 map('n', 'gt', ':BufferLineCycleNext<CR>', { noremap = true })
 map('n', '<leader>p', ':BufferLineCyclePrev<CR>', { noremap = true })
-map('n', '<leader>d', ':bd<CR>', { noremap = true }) -- delete current buffer
-map('n', '<leader>x', ':w<CR> | :bd!<CR>', { noremap = true }) -- delete current buffer
+map('n', '<leader>d', ':bd!<CR>', { noremap = true }) -- delete current buffer
+map('n', '<leader>x', ':w<CR> | :bd<CR>', { noremap = true }) -- delete current buffer
