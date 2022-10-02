@@ -10,7 +10,7 @@ Downloads [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/releases). Double
 
 Debian:
 ```
-sudo apt install -y fd-find ripgrep python3-proselint lua-check
+sudo apt install -y fd-find ripgrep lua-check
 ```
 
 Mac OS:
@@ -48,5 +48,5 @@ npm i -g \
 
 Install pip modules:
 ```
-pip install --user yamllint
+pip install --user yamllint proselint
 ```

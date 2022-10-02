@@ -37,6 +37,9 @@ map('n', '<leader>r', ':so %<CR>')
 -- Applications and Plugins shortcuts
 -----------------------------------------------------------
 
+-- Open file tree (nvim-tree)
+map('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true })
+
 -- Terminal mappings
 map('n', '<C-t>', ':Term<CR>', { noremap = true }) -- open
 
