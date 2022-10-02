@@ -27,7 +27,7 @@ local sources = {
     filetypes = { 'yaml', 'yml' }
   }),
   diagnostics.proselint.with({
-    filetypes = {'text'}
+    filetypes = { 'text' }
   }),
   --diagnostics.haml_lint,
 
