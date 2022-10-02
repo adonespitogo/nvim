@@ -110,7 +110,7 @@ return packer.startup(function(use)
   -- Formatters
   use({
     'terrortylor/nvim-comment',
-    config = function ()
+    config = function()
       require('nvim_comment').setup()
     end
   })
@@ -131,6 +131,14 @@ return packer.startup(function(use)
   })
   use({ "jose-elias-alvarez/null-ls.nvim" })
   use('MunifTanjim/prettier.nvim')
+
+  use {
+    "ThePrimeagen/refactoring.nvim",
+    requires = {
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-treesitter/nvim-treesitter" }
+    }
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

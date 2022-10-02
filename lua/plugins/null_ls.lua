@@ -11,6 +11,7 @@ local completion = null_ls.builtins.completion
 local sources = {
   -- actions
   actions.eslint,
+  actions.refactoring,
 
   -- completions
   completion.luasnip,
@@ -31,7 +32,9 @@ local sources = {
   --diagnostics.haml_lint,
 
   -- formatters
-  formatting.prettierd,
+  formatting.prettierd.with({
+    filetypes = { 'html', 'css', 'scss', 'javascript' }
+  }),
   formatting.erb_lint,
   formatting.autopep8,
   formatting.stylelint,

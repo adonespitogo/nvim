@@ -108,15 +108,11 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
   buf_set_keymap("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
 
-  if client.server_capabilities.documentFormattingProvider then
-    buf_set_keymap("n", "<F3>", ":Format<CR>", opts)
-    vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
-  end
+  -- Trigger refactoring plugin then auto format
+  buf_set_keymap("v", ";a", ":'<,'>lua vim.lsp.buf.range_code_action()<CR><F3><CR>", opts)
 
-  if client.server_capabilities.documentRangeFormattingProvider then
-    buf_set_keymap("n", "<F3>", ":Format<CR>", opts)
-    vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
-  end
+  buf_set_keymap("n", "<F3>", ":Format<CR>", opts)
+  vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 end
 
 --[[
@@ -159,14 +155,14 @@ for _, lsp in ipairs(servers) do
 end
 
 lspconfig.sumneko_lua.setup({
-    on_attach = on_attach,
-    root_dir = root_dir,
-    capabilities = capabilities,
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
+  on_attach = on_attach,
+  root_dir = root_dir,
+  capabilities = capabilities,
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      }
     }
-  })
+  }
+})
