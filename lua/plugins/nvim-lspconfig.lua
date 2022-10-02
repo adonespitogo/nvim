@@ -110,6 +110,13 @@ local on_attach = function(client, bufnr)
 
   -- Trigger refactoring plugin then auto format
   buf_set_keymap("v", ";a", ":'<,'>lua vim.lsp.buf.range_code_action()<CR>", opts)
+  buf_set_keymap("v", "<leader>ev", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]],
+    { noremap = true, silent = true, expr = false })
+  buf_set_keymap("v", "<leader>iv", [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]],
+    { noremap = true, silent = true, expr = false })
+  buf_set_keymap("v", "<leader>ef", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]],
+    { noremap = true, silent = true, expr = false })
+
 
   buf_set_keymap("n", "<F3>", ":Format<CR>", opts)
   vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
