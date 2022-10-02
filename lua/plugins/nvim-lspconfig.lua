@@ -109,7 +109,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
 
   -- Trigger refactoring plugin then auto format
-  buf_set_keymap("v", ";a", ":'<,'>lua vim.lsp.buf.range_code_action()<CR><F3><CR>", opts)
+  buf_set_keymap("v", ";a", ":'<,'>lua vim.lsp.buf.range_code_action()<CR>", opts)
 
   buf_set_keymap("n", "<F3>", ":Format<CR>", opts)
   vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
