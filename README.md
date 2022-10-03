@@ -26,7 +26,12 @@ Install ruby gems:
 gem install     \
     solargraph  \
     erb_lint    \
-    haml_lint
+    haml_lint   \
+    rubocop     \
+    rubocop-minitest    \
+    rubocop-packaging   \
+    rubocop-performance \
+    rubocop-rails
 ```
 Run in ruby project root:
 ```

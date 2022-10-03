@@ -29,7 +29,7 @@ local sources = {
   diagnostics.proselint.with({
     filetypes = { 'text' }
   }),
-  --diagnostics.haml_lint,
+  diagnostics.haml_lint,
 
   -- formatters
   formatting.prettierd.with({
