@@ -1,5 +1,8 @@
 require("nvim-tree").setup({
-  -- sort_by = "case_sensitive",
+  reload_on_bufenter = true,
+  git = {
+    ignore = false
+  },
   view = {
     adaptive_size = true,
     mappings = {
@@ -9,9 +12,6 @@ require("nvim-tree").setup({
       },
     },
   },
-  -- renderer = {
-  --   group_empty = true,
-  -- },
    filters = {
      dotfiles = false,
    },
