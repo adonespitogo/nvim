@@ -10,13 +10,12 @@ Downloads [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/releases). Double
 
 Debian:
 ```
-sudo apt install -y fd-find ripgrep lua-check
+sudo apt install -y fd-find ripgrep luarocks lua-check python3-pip
 ```
 
 Mac OS:
 ```
-brew install fd ripgrep luarorocks
-luarorocks install luacheck
+brew install fd ripgrep luarocks luacheck python3-pip
 ```
 
 ## LSPs
