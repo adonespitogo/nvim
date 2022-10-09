@@ -16,7 +16,7 @@ sudo apt install -y fd-find ripgrep luarocks python3-pip
 
 Mac OS:
 ```
-brew install fd ripgrep luarocks python3-pip
+brew install fd ripgrep luarocks python3
 ```
 
 ## LSPs
