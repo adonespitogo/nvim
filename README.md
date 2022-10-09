@@ -11,15 +11,20 @@ For Linux, copy the font files to `~/.local/share/fonts`.
 
 Debian:
 ```
-sudo apt install -y fd-find ripgrep luarocks lua-check python3-pip
+sudo apt install -y fd-find ripgrep luarocks python3-pip
 ```
 
 Mac OS:
 ```
-brew install fd ripgrep luarocks luacheck python3-pip
+brew install fd ripgrep luarocks python3-pip
 ```
 
 ## LSPs
+
+Install luarocks:
+```
+luarocks install luacheck
+```
 
 Install ruby gems:
 ```
