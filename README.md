@@ -1,10 +1,11 @@
 # Installation:
 
-## Terminal
-For Mac OS, install `Iterm2` terminal imulator.
-
 ## Fonts
-Downloads [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/releases). Double click each font file to install.
+Downloads [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/releases).
+
+For Mac OS, copy the font files to `~/Library/Fonts/`.
+
+For Linux, copy the font files to `~/.local/share/fonts`.
 
 ## Packages
 
