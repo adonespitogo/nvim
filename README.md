@@ -1,21 +1,22 @@
 # Installation:
 
-## Terminal
-For Mac OS, install `Iterm2` terminal imulator.
-
 ## Fonts
-Downloads [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/releases). Double click each font file to install.
+Downloads [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/releases).
+
+For Mac OS, copy the font files to `~/Library/Fonts/`.
+
+For Linux, copy the font files to `~/.local/share/fonts`.
 
 ## Packages
 
 Debian:
 ```
-sudo apt install -y fd-find ripgrep luarocks lua-check python3-pip
+sudo apt install -y fd-find ripgrep luarocks python3-pip
 ```
 
 Mac OS:
 ```
-brew install fd ripgrep luarocks luacheck python3-pip
+brew install fd ripgrep luarocks python3
 ```
 
 ## Legacy Plugin Manager
@@ -28,6 +29,11 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 ```
 
 ## LSPs
+
+Install luarocks:
+```
+luarocks install luacheck
+```
 
 Install ruby gems:
 ```
