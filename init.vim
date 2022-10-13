@@ -7,6 +7,4 @@ Plug 'preservim/nerdcommenter'
 " initialize plugin system
 call plug#end()
 
-lua << EOF
-  require('start')
-EOF
+:lua require('start')
