@@ -120,7 +120,7 @@ local on_attach = function(client, bufnr)
 
 
   buf_set_keymap("n", "<F3>", ":Format<CR>", opts)
-  vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+  vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format { async = true }' ]])
 end
 
 --[[

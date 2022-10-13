@@ -7,7 +7,4 @@ Plug 'preservim/nerdcommenter'
 " initialize plugin system
 call plug#end()
 
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-
 :lua require('init')

@@ -56,6 +56,14 @@ opt.synmaxcol = 240         -- Max column for syntax highlight
 opt.updatetime = 700        -- ms to wait for trigger an event
 
 -----------------------------------------------------------
+-- Nerd Commenter
+-----------------------------------------------------------
+-- Add spaces after comment delimiters by default
+g.NERDSpaceDelims = 1
+-- Enable trimming of trailing whitespace when uncommenting
+g.NERDTrimTrailingWhitespace = 1
+
+-----------------------------------------------------------
 -- Startup
 -----------------------------------------------------------
 -- Disable nvim intro
