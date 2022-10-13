@@ -19,9 +19,9 @@ Mac OS:
 brew install fd ripgrep luarocks python3
 ```
 
-## Legacy Plugin Manager
+## Vim Plugins
 
-Install `vim-plug` to install vim plugins like `vim-surround`.
+Install `vim-plug` to install legacy vim plugins like `vim-surround`.
 
 ```
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
