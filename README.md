@@ -18,6 +18,15 @@ Mac OS:
 brew install fd ripgrep luarocks luacheck python3-pip
 ```
 
+## Legacy Plugin Manager
+
+Install `vim-plug` to install vim plugins like `vim-surround`.
+
+```
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+
 ## LSPs
 
 Install ruby gems:
