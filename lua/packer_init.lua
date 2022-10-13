@@ -110,12 +110,6 @@ return packer.startup(function(use)
   }
 
   -- Formatters
-  use({
-    'terrortylor/nvim-comment',
-    config = function()
-      require('nvim_comment').setup()
-    end
-  })
   use("lukas-reineke/indent-blankline.nvim")
   use({
     "windwp/nvim-autopairs",
