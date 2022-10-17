@@ -39,6 +39,7 @@ map('n', '<leader>r', ':so %<CR>')
 
 -- Open file tree (nvim-tree)
 map('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true })
+map('n', 'fn', ':NvimTreeFindFile<CR>', { noremap = true })
 
 -- Terminal mappings
 map('n', '<C-t>', ':Term<CR>', { noremap = true }) -- open
