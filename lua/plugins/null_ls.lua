@@ -33,13 +33,15 @@ local sources = {
 
   -- formatters
   formatting.prettierd.with({
-    filetypes = { 'html', 'css', 'scss', 'javascript' }
+    filetypes = { 'html', 'css', 'scss' }
   }),
+  formatting.eslint,
   formatting.erb_lint,
   formatting.autopep8,
   formatting.stylelint,
-  formatting.stylua
-  -- formatting.haml_lint,
+  formatting.stylua,
+  formatting.beautysh,
+  formatting.codespell
 }
 
 local opts = { noremap = true, silent = true }

@@ -68,5 +68,5 @@ npm i -g \
 
 Install pip modules:
 ```
-pip install --user yamllint proselint
+pip install --user yamllint proselint codespell
 ```
