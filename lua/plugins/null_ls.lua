@@ -15,6 +15,7 @@ local sources = {
 
   -- completions
   completion.luasnip,
+  completion.spell,
 
   -- linters
   diagnostics.luacheck.with({
