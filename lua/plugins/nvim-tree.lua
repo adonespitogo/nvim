@@ -1,7 +1,7 @@
 require("nvim-tree").setup({
   reload_on_bufenter = true,
   git = {
-    ignore = false
+    ignore = false,
   },
   view = {
     adaptive_size = true,
@@ -12,7 +12,8 @@ require("nvim-tree").setup({
       },
     },
   },
-   filters = {
-     dotfiles = false,
-   },
+  filters = {
+    dotfiles = false,
+    custom = { "^.git$" },
+  },
 })
