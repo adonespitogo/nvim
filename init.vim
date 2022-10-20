@@ -6,12 +6,12 @@ Plug 'preservim/nerdcommenter'
 call plug#end()
 
 " move selected lines up one line
-xnoremap <C-k> :m-2<CR>gv=gv
+xnoremap <C-S-Up> :m-2<CR>gv=gv
 " move selected lines down one line
-xnoremap <C-j> :m'>+<CR>gv=gv
+xnoremap <C-S-Down> :m'>+<CR>gv=gv
 " move current line up one line
-nnoremap <C-k> :<C-u>m-2<CR>==
+nnoremap <C-S-Up> :<C-u>m-2<CR>==
 " move current line down one line
-nnoremap <C-j> :<C-u>m+<CR>==
+nnoremap <C-S-Down> :<C-u>m+<CR>==
 
 :lua require('init')
