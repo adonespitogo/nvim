@@ -6,7 +6,7 @@ Plug 'preservim/nerdcommenter'
 call plug#end()
 
 " move selected lines up one line
-knoremap <C-k>  :m-2<CR>gv=gv
+xnoremap <C-k> :m-2<CR>gv=gv
 " move selected lines down one line
 xnoremap <C-j> :m'>+<CR>gv=gv
 " move current line up one line
