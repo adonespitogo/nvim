@@ -20,15 +20,13 @@ vim.g.mapleader = ';'
 -- Clear search highlighting with <leader> and c
 map('n', '<leader>c', ':nohl<CR>')
 
--- Toggle auto-indenting for code paste
---map('n', '<F2>', ':set invpaste paste?<CR>')
---vim.opt.pastetoggle = '<F2>'
-
--- Move around splits using Ctrl + {h,j,k,l}
--- map('n', '<C-h>', '<C-w>h')
--- map('n', '<C-j>', '<C-w>j')
--- map('n', '<C-k>', '<C-w>k')
--- map('n', '<C-l>', '<C-w>l')
+-----------------------------------------------------------
+-- Moving text lines up/down
+-----------------------------------------------------------
+map('x', "<C-S-Up>", ":m-2<CR>gv=gv")
+map('x', "<C-S-Down>", ":m'>+<CR>gv=gv")
+map('n', "<C-S-Up>", ":<C-u>m-2<CR>==")
+map('n', "<C-S-Down>", ":<C-u>m+<CR>==")
 
 -- Reload configuration without restart nvim
 map('n', '<leader>r', ':so %<CR>')
@@ -46,7 +44,6 @@ map('n', '<C-t>', ':Term<CR>', { noremap = true }) -- open
 
 -- Tagbar
 map('n', '<leader>z', ':TagbarToggle<CR>') -- open/close
-
 
 -- Bufferline
 map('n', 'H', ':BufferLineCycleNext<CR>', { noremap = true })
