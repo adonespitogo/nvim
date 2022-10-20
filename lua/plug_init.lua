@@ -4,7 +4,7 @@ local fn = vim.fn
 local install_path = (vim.env.XDG_DATA_HOME or (vim.env.HOME .. "/.local/share")) .. "/nvim/site/autoload/plug.vim"
 
 if fn.empty(fn.glob(install_path)) > 0 then
-  print("Installing plug...")
+  print("Installing vim-plug...")
   PlugBootstrap = fn.system({
     "curl",
     "-fLo",
