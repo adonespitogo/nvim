@@ -1,4 +1,5 @@
 -- Import Lua modules
+
 require('plug_init')
 require("packer_init")
 require("core/options")
