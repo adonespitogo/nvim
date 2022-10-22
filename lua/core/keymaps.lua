@@ -3,11 +3,11 @@
 -----------------------------------------------------------
 
 local function map(mode, lhs, rhs, opts)
-	local options = { noremap = true, silent = true }
-	if opts then
-		options = vim.tbl_extend("force", options, opts)
-	end
-	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+  local options = { noremap = true, silent = true }
+  if opts then
+    options = vim.tbl_extend("force", options, opts)
+  end
+  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
 -- Change leader to a comma
@@ -35,9 +35,12 @@ map("n", "<leader>wk", ":wincmd k<CR>")
 map("n", "<leader>wl", ":wincmd l<CR>")
 map("n", "<leader>dd", ":bdelete<CR>")
 
+-- Buffer
+map("n", "<leader>b", ":b <C-d>")
+
 for i = 1, 9, 1 do
-	-- Move between windows by leader + window number
-	map("n", "<leader>" .. i, ":" .. i .. "wincmd w<CR>")
+  -- Move between windows by leader + window number
+  map("n", "<leader>" .. i, ":" .. i .. "wincmd w<CR>")
 end
 
 -----------------------------------------------------------
