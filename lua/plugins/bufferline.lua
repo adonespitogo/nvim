@@ -1,7 +1,7 @@
 require("bufferline").setup({
 	options = {
 		diagnostics = "nvim_lsp",
-		numbers = "buffer_id",
+		numbers = "ordinal",
 		offsets = {
 			{
 				filetype = "NvimTree",
