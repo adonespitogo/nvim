@@ -118,7 +118,6 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("v", "<leader>ef", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]],
     { noremap = true, silent = true, expr = false })
 
-
   buf_set_keymap("n", "<F3>", ":Format<CR>", opts)
   vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format { async = true }' ]])
 end
