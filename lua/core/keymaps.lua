@@ -23,6 +23,9 @@ map('n', '<leader>c', ':nohl<CR>')
 -- Reload configuration without restart nvim
 map('n', '<leader>r', ':so %<CR>')
 
+-- Close window and buffer
+map('n', '<leader>d', ':bdelete<CR>')
+
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
 -----------------------------------------------------------
@@ -36,3 +39,4 @@ map('n', '<C-t>', ':Term<CR>', { noremap = true }) -- open
 
 -- Tagbar
 map('n', '<leader>z', ':TagbarToggle<CR>') -- open/close
+

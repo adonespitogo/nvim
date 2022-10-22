@@ -29,7 +29,7 @@ end
 vim.cmd([[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost packer_init.lua source <afile> | PackerSync
+    autocmd BufWritePost packer_init.lua source <afile> | PackerInstall
   augroup end
 ]])
 
@@ -92,7 +92,6 @@ return packer.startup(function(use)
   -- Buffers/Windows
   use({ 'nanozuki/tabby.nvim' })
   use({ "nvim-lualine/lualine.nvim" })
-  use("moll/vim-bbye")
 
   -- File browsers
   use({
