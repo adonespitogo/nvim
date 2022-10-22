@@ -20,14 +20,6 @@ vim.g.mapleader = ';'
 -- Clear search highlighting with <leader> and c
 map('n', '<leader>c', ':nohl<CR>')
 
------------------------------------------------------------
--- Moving text lines up/down
------------------------------------------------------------
-map('x', "<C-S-Up>", ":m-2<CR>gv=gv")
-map('x', "<C-S-Down>", ":m'>+<CR>gv=gv")
-map('n', "<C-S-Up>", ":<C-u>m-2<CR>==")
-map('n', "<C-S-Down>", ":<C-u>m+<CR>==")
-
 -- Reload configuration without restart nvim
 map('n', '<leader>r', ':so %<CR>')
 
