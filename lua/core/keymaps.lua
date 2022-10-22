@@ -23,6 +23,17 @@ map('n', '<leader>c', ':nohl<CR>')
 -- Reload configuration without restart nvim
 map('n', '<leader>r', ':so %<CR>')
 
+-- Tabline
+map('n', '<leader>ta', ':tabnew<CR>')
+map('n', '<leader>tn', ':tabn<CR>')
+map('n', '<leader>tp', ':tabp<CR>')
+
+-- Moving between window splits
+map('n', '<leader>wh', ':wincmd h<CR>')
+map('n', '<leader>wj', ':wincmd j<CR>')
+map('n', '<leader>wk', ':wincmd k<CR>')
+map('n', '<leader>wl', ':wincmd l<CR>')
+
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
 -----------------------------------------------------------

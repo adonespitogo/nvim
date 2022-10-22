@@ -92,6 +92,7 @@ return packer.startup(function(use)
   -- Buffers/Windows
   use({ 'nanozuki/tabby.nvim' })
   use({ "nvim-lualine/lualine.nvim" })
+  use 'feline-nvim/feline.nvim'
 
   -- File browsers
   use({
