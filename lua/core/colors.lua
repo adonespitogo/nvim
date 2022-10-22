@@ -7,7 +7,7 @@ require("tokyonight").setup({
     sidebars = "transparent"
   },
   on_colors = function(colors)
-    colors.border = colors.dark3
+    colors.border = colors.blue
   end,
 })
 
