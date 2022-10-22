@@ -90,8 +90,8 @@ return packer.startup(function(use)
   })
 
   -- Buffers/Windows
+  use({ 'nanozuki/tabby.nvim' })
   use({ "nvim-lualine/lualine.nvim" })
-  use({ "akinsho/bufferline.nvim", tag = "v2.*" })
   use("moll/vim-bbye")
 
   -- File browsers
