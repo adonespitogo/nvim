@@ -14,7 +14,6 @@ local sources = {
   actions.refactoring,
 
   -- completions
-  completion.luasnip,
   completion.spell,
 
   -- linters

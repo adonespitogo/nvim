@@ -33,7 +33,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 Install luarocks:
 ```
-luarocks install luacheck --local
+luarocks install luacheck jsregexp --local
 ```
 
 Install ruby gems:
