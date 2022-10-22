@@ -28,14 +28,16 @@ map("n", "<leader>ta", ":tabnew<CR>")
 map("n", "<leader>tn", ":tabn<CR>")
 map("n", "<leader>tp", ":tabp<CR>")
 
--- Moving between window splits
+-- Window splits
 map("n", "<leader>wh", ":wincmd h<CR>")
 map("n", "<leader>wj", ":wincmd j<CR>")
 map("n", "<leader>wk", ":wincmd k<CR>")
 map("n", "<leader>wl", ":wincmd l<CR>")
+map("n", "<leader>dd", ":bdelete<CR>")
 
 for i = 1, 9, 1 do
-	map("n", "<leader>" .. i, ":" .. i .. "wincmd w<CR>") -- Move between windows by leader + window number
+	-- Move between windows by leader + window number
+	map("n", "<leader>" .. i, ":" .. i .. "wincmd w<CR>")
 end
 
 -----------------------------------------------------------
