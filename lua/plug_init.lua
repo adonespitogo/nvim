@@ -21,6 +21,7 @@ vim.call("plug#begin", "~/.config/nvim/plugged")
 ------------------------------------------
 Plug("tpope/vim-surround")
 Plug("preservim/nerdcommenter")
+Plug("moll/vim-bbye")
 ------------------------------------------
 vim.call("plug#end")
 
