@@ -25,6 +25,9 @@ Plug("tpope/vim-surround")
 Plug("preservim/nerdcommenter")
 Plug("moll/vim-bbye")
 Plug("vim-scripts/argtextobj.vim") -- provides 'a' (argument) text object
+Plug("michaeljsmith/vim-indent-object") -- provides text objects base on indentation level ('ii', 'ai')
+Plug("kana/vim-textobj-user") -- prerequisite for vim-textobj* plugins
+Plug("tek/vim-textobj-ruby") -- provides text objects base on ruby blocks ('vir', 'var')
 ------------------------------------------
 
 vim.call("plug#end")
