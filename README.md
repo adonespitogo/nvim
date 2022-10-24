@@ -11,7 +11,7 @@ For Linux, copy the font files to `~/.local/share/fonts`.
 
 Debian:
 ```
-sudo apt install -y fd-find ripgrep luarocks python3-pip
+sudo apt install -y fd-find ripgrep luarocks python3-pip python3-testresources
 ```
 
 Mac OS:
