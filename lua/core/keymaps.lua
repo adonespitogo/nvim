@@ -24,10 +24,10 @@ map("n", "<leader>c", ":nohl<CR>")
 map("n", "<leader>r", ":so %<CR>")
 
 -- -- Window splits
-map("n", "<leader>h", ":wincmd h<CR>")
-map("n", "<leader>j", ":wincmd j<CR>")
-map("n", "<leader>k", ":wincmd k<CR>")
-map("n", "<leader>l", ":wincmd l<CR>")
+-- map("n", "<leader>h", ":wincmd h<CR>")
+-- map("n", "<leader>j", ":wincmd j<CR>")
+-- map("n", "<leader>k", ":wincmd k<CR>")
+-- map("n", "<leader>l", ":wincmd l<CR>")
 -- for i = 1, 9, 1 do
 -- -- Move between windows by leader + window number
 -- map("n", "<leader>d" .. i, ":" .. i .. "wincmd w<CR>")
@@ -48,6 +48,8 @@ map("n", "<C-t>", ":Term<CR>", { noremap = true }) -- open
 map("n", "<leader>z", ":TagbarToggle<CR>") -- open/close
 
 -- BuffersLine
+map("n", "<leader>h", ":BufferLineCyclePrev<CR>")
+map("n", "<leader>l", ":BufferLineCycleNext<CR>")
 for i = 0, 9, 1 do
 	-- Go to buffer by leader+number
 	map("n", "<leader>" .. i, ":BufferLineGoToBuffer " .. i .. "<CR>")
