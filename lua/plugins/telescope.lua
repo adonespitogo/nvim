@@ -1,6 +1,8 @@
 local status, telescope = pcall(require, "telescope")
-if (not status) then return end
-local actions = require('telescope.actions')
+if not status then
+  return
+end
+local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
 
 --telescope.setup {
@@ -37,32 +39,30 @@ local builtin = require("telescope.builtin")
 --  builtin.diagnostics()
 --end)
 
-telescope.setup {
-  file_ignore_patterns = {
-    "^%.git/",
-    "^node_modules/"
-  },
+telescope.setup({
   defaults = {
+    file_ignore_patterns = {
+      "%.git/",
+      "node%_modules/.*",
+    },
     mappings = {
       n = {
-        ["q"] = actions.close
+        ["q"] = actions.close,
       },
     },
   },
-  extensions = {}
-}
+  extensions = {},
+})
 
-vim.keymap.set('n', 'ff',
-  function()
+vim.keymap.set("n", "ff", function()
   builtin.find_files({
     no_ignore = false,
-    hidden = true
+    hidden = true,
   })
 end)
-vim.keymap.set('n', 'fg',
-  function()
+vim.keymap.set("n", "fg", function()
   builtin.live_grep({
     no_ignore = false,
-    hidden = true
+    hidden = true,
   })
 end)
