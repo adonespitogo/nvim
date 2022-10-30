@@ -1,5 +1,8 @@
 require("nvim-tree").setup({
   reload_on_bufenter = true,
+  diagnostics = {
+    enable = true
+  },
   git = {
     ignore = false,
   },
