@@ -51,7 +51,11 @@ telescope.setup({
       },
     },
   },
-  extensions = {},
+  extensions = {
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown({}),
+    },
+  },
 })
 
 vim.keymap.set("n", "ff", function()
@@ -66,3 +70,5 @@ vim.keymap.set("n", "fg", function()
     hidden = true,
   })
 end)
+
+telescope.load_extension("ui-select")

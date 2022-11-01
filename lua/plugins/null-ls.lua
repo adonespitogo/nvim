@@ -58,7 +58,7 @@ local sources = {
   formatting.tidy, -- fix html tags
 
   -- hover
-  hover.dictionary
+  hover.dictionary,
 }
 
 local opts = { noremap = true, silent = true }
@@ -73,4 +73,15 @@ end
 null_ls.setup({
   sources = sources,
   on_attach = on_attach,
+  diagnostic_config = {
+    -- see :help vim.diagnostic.config()
+    underline = true,
+    virtual_text = false,
+    signs = true,
+    float = {
+      scope = "cursor"
+    },
+    update_in_insert = false,
+    severity_sort = true,
+  },
 })

@@ -18,7 +18,7 @@ vim.g.mapleader = ";"
 -----------------------------------------------------------
 
 -- Clear search highlighting with <leader> and c
-map("n", "<leader><space>", ":nohl<CR>")
+map("n", "<space><space>", ":nohl<CR>")
 
 -- Reload configuration without restart nvim
 map("n", "<leader>r", ":so %<CR>")

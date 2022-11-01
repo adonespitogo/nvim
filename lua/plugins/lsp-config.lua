@@ -116,7 +116,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("n", ";a", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 
   -- Trigger refactoring plugin then auto format
-  buf_set_keymap("v", ";a", ":'<,'>lua vim.lsp.buf.range_code_action()<CR>", opts)
+  buf_set_keymap("v", ";a", ":'<,'>lua vim.lsp.buf.code_action()<CR>", opts)
   buf_set_keymap(
     "v",
     "<leader>ev",
