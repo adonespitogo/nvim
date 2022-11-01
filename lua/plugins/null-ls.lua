@@ -52,6 +52,7 @@ local sources = {
   formatting.stylua,
   formatting.beautysh,
   formatting.fixjson,
+  formatting.mdformat,
 }
 
 local opts = { noremap = true, silent = true }
