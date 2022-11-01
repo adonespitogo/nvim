@@ -16,7 +16,7 @@ local sources = {
   actions.refactoring,
 
   -- completions
-  completion.spell,
+  -- completion.spell,
 
   -- linters
   diagnostics.luacheck.with({
@@ -41,7 +41,7 @@ local sources = {
   formatting.prettierd.with({
     filetypes = { "html", "css", "scss" },
   }),
-  formatting.eslint.with({
+  formatting.eslint_d.with({
     condition = function(utils)
       return utils.root_has_file(eslint_files)
     end,
