@@ -51,7 +51,7 @@ local sources = {
   formatting.stylelint,
   formatting.stylua,
   formatting.beautysh,
-  formatting.codespell,
+  formatting.fixjson,
 }
 
 local opts = { noremap = true, silent = true }
