@@ -73,15 +73,20 @@ end
 null_ls.setup({
   sources = sources,
   on_attach = on_attach,
-  diagnostic_config = {
-    -- see :help vim.diagnostic.config()
-    underline = true,
-    virtual_text = false,
-    signs = true,
-    float = {
-      scope = "cursor"
-    },
-    update_in_insert = false,
-    severity_sort = true,
+})
+
+-- Diagnostic options, see: `:help vim.diagnostic.config`
+vim.diagnostic.config({
+  update_in_insert = true,
+  virtual_text = false,
+  float = {
+    focusable = false,
+    border = "rounded",
+    source = "always",
   },
 })
+
+-- Show line diagnostics automatically in hover window
+-- vim.cmd([[
+-- autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, { focus = false })
+-- ]])

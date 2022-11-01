@@ -20,24 +20,6 @@ if not cmp_status_ok then
   return
 end
 
--- Diagnostic options, see: `:help vim.diagnostic.config`
-vim.diagnostic.config({
-  update_in_insert = true,
-  float = {
-    focusable = false,
-    style = "minimal",
-    border = "rounded",
-    source = "always",
-    header = "",
-    prefix = "",
-  },
-})
-
--- Show line diagnostics automatically in hover window
-vim.cmd([[
-  autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, { focus = false })
-]])
-
 -- Add additional capabilities supported by nvim-cmp
 -- See: https://github.com/neovim/nvim-lspconfig/wiki/Autocompletion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -135,6 +117,10 @@ local on_attach = function(client, bufnr)
     [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]],
     { noremap = true, silent = true, expr = false }
   )
+  -- Show all diagnostics on current line in floating window
+  buf_set_keymap("n", "<Leader>da", ":lua vim.diagnostic.open_float()<CR>", { noremap = true, silent = true })
+  buf_set_keymap("n", "<Leader>dn", ":lua vim.diagnostic.goto_next()<CR>", { noremap = true, silent = true })
+  buf_set_keymap("n", "<Leader>dp", ":lua vim.diagnostic.goto_prev()<CR>", { noremap = true, silent = true })
 
   buf_set_keymap("n", "<F3>", ":Format<CR>", opts)
   vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format { async = true }' ]])
