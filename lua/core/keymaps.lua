@@ -3,11 +3,11 @@
 -----------------------------------------------------------
 
 local function map(mode, lhs, rhs, opts)
-	local options = { noremap = true, silent = true }
-	if opts then
-		options = vim.tbl_extend("force", options, opts)
-	end
-	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+  local options = { noremap = true, silent = true }
+  if opts then
+    options = vim.tbl_extend("force", options, opts)
+  end
+  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
 -- Change leader to a comma
@@ -18,7 +18,7 @@ vim.g.mapleader = ";"
 -----------------------------------------------------------
 
 -- Clear search highlighting with <leader> and c
-map("n", "<leader>c", ":nohl<CR>")
+map("n", "<leader><space>", ":nohl<CR>")
 
 -- Reload configuration without restart nvim
 map("n", "<leader>r", ":so %<CR>")
@@ -52,7 +52,12 @@ map("n", "<leader>z", ":TagbarToggle<CR>") -- open/close
 map("n", "<leader>h", ":BufferLineCyclePrev<CR>")
 map("n", "<leader>l", ":BufferLineCycleNext<CR>")
 for i = 0, 9, 1 do
-	-- Go to buffer by leader+number
-	map("n", "<leader>" .. i, ":BufferLineGoToBuffer " .. i .. "<CR>")
+  -- Go to buffer by leader+number
+  map("n", "<leader>" .. i, ":BufferLineGoToBuffer " .. i .. "<CR>")
 end
 map("n", "<leader>dd", ":Bdelete<CR>")
+
+-- Nerd Commenter
+map('n', "<leader><space><space>", "<Plug>NERDCommenterToggle")
+map('x', "<leader><space><space>", "<Plug>NERDCommenterToggle")
+
