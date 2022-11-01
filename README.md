@@ -59,6 +59,7 @@ Install npm modules:
 ```
 npm i -g \
     eslint                              \
+    eslist_id                           \
     @johnnymorganz/stylua-bin           \
     stylelint stylelint-config-standard \
     vscode-langservers-extracted        \

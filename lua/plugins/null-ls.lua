@@ -22,7 +22,7 @@ local sources = {
   diagnostics.luacheck.with({
     extra_args = "--globals vim",
   }),
-  diagnostics.eslint.with({
+  diagnostics.eslint_d.with({
     condition = function(utils)
       return utils.root_has_file(eslint_files)
     end,
