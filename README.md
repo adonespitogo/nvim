@@ -1,6 +1,7 @@
 # Installation:
 
 ## Fonts
+
 Downloads [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/releases).
 
 For Mac OS, copy the font files to `~/Library/Fonts/`.
@@ -10,11 +11,13 @@ For Linux, copy the font files to `~/.local/share/fonts`.
 ## Packages
 
 Debian:
+
 ```
 sudo apt install -y fd-find ripgrep luarocks python3-pip python3-testresources
 ```
 
 Mac OS:
+
 ```
 brew install fd ripgrep luarocks python3
 ```
@@ -32,12 +35,14 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 ## LSPs
 
 Install luarocks:
+
 ```
 luarocks install luacheck --local
 luarocks install jsregexp --local
 ```
 
 Install ruby gems:
+
 ```
 gem install     \
     solargraph  \
@@ -49,13 +54,17 @@ gem install     \
     rubocop-performance \
     rubocop-rails
 ```
+
 Run in ruby project root:
+
 ```
 solargraph bundle
 ```
+
 NOTE: When installing solargraph, make sure default ruby version and your project's ruby version is the same: `rmv --default use [ruby version]`
 
 Install npm modules:
+
 ```
 npm i -g \
     eslint                              \
@@ -70,6 +79,7 @@ npm i -g \
 ```
 
 Install pip modules:
+
 ```
 pip install --user yamllint proselint codespell mdformat
 ```
