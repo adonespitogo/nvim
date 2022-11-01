@@ -19,7 +19,7 @@ sudo apt install -y fd-find ripgrep luarocks python3-pip python3-testresources
 Mac OS:
 
 ```
-brew install fd ripgrep luarocks python3
+brew install fd ripgrep luarocks python3 tidy-html5
 ```
 
 ## Vim Plugins
@@ -68,8 +68,9 @@ Install npm modules:
 ```
 npm i -g \
     eslint                              \
-    eslist_d                           \
-    fixjson                           \
+    eslist_d                            \
+    fixjson                             \
+    nginxbeautifier                     \
     @johnnymorganz/stylua-bin           \
     stylelint stylelint-config-standard \
     vscode-langservers-extracted        \

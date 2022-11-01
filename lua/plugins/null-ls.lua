@@ -7,6 +7,7 @@ local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 local actions = null_ls.builtins.code_actions
 local completion = null_ls.builtins.completion
+local hover = null_ls.builtins.hover
 
 local eslint_files = { ".eslintrc", ".eslintrc.json", ".eslintrc.js", ".eslintrc.yml" }
 
@@ -53,6 +54,11 @@ local sources = {
   formatting.beautysh,
   formatting.fixjson,
   formatting.mdformat,
+  formatting.nginx_beautifier,
+  formatting.tidy, -- fix html tags
+
+  -- hover
+  hover.dictionary
 }
 
 local opts = { noremap = true, silent = true }
