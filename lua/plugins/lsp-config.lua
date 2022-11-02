@@ -95,10 +95,10 @@ local on_attach = function(client, bufnr)
   -- buf_set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
   buf_set_keymap("n", "<space>fl", "<cmd>lua vim.diagnostic.setqflist()<CR>", opts)
   buf_set_keymap("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
-  buf_set_keymap("n", ";a", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+  buf_set_keymap("n", "<leader><space>a", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 
   -- Trigger refactoring plugin then auto format
-  buf_set_keymap("v", ";a", ":'<,'>lua vim.lsp.buf.code_action()<CR>", opts)
+  buf_set_keymap("v", "<leader><space>a", ":'<,'>lua vim.lsp.buf.code_action()<CR>", opts)
   buf_set_keymap(
     "v",
     "<leader>ev",
