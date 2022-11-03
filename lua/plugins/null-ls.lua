@@ -23,7 +23,7 @@ local sources = {
   diagnostics.luacheck.with({
     extra_args = "--globals vim",
   }),
-  diagnostics.eslint_d.with({
+  diagnostics.eslint.with({
     condition = function(utils)
       return utils.root_has_file(eslint_files)
     end,
@@ -42,7 +42,7 @@ local sources = {
   formatting.prettierd.with({
     filetypes = { "html", "css", "scss" },
   }),
-  formatting.eslint_d.with({
+  formatting.eslint.with({
     condition = function(utils)
       return utils.root_has_file(eslint_files)
     end,
