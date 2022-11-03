@@ -68,7 +68,7 @@ Install npm modules:
 ```
 npm i -g \
     eslint                              \
-    eslist_d                            \
+    eslint_d                            \
     fixjson                             \
     nginxbeautifier                     \
     @johnnymorganz/stylua-bin           \
