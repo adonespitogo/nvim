@@ -39,13 +39,13 @@ local sources = {
   diagnostics.haml_lint,
 
   -- formatters
-  formatting.prettierd.with({
-    filetypes = { "html", "css", "scss" },
-  }),
   formatting.eslint.with({
     condition = function(utils)
       return utils.root_has_file(eslint_files)
     end,
+  }),
+  formatting.prettierd.with({
+    filetypes = { "html", "css", "scss", "javascript" },
   }),
   formatting.erb_lint,
   formatting.autopep8,
