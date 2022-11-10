@@ -149,6 +149,7 @@ local servers = {
   "bashls",
   "pyright",
   "clangd",
+  "rust_analyzer",
   "tsserver",
   "solargraph",
   "tailwindcss",
