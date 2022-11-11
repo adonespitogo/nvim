@@ -28,6 +28,7 @@ Plug("vim-scripts/argtextobj.vim") -- provides 'a' (argument) text object
 Plug("michaeljsmith/vim-indent-object") -- provides text objects base on indentation level ('ii', 'ai')
 Plug("kana/vim-textobj-user") -- prerequisite for vim-textobj* plugins
 Plug("tek/vim-textobj-ruby") -- provides text objects base on ruby blocks ('vir', 'var')
+Plug("alpertuna/vim-header") -- Add author header to file
 ------------------------------------------
 
 vim.call("plug#end")

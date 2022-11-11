@@ -39,11 +39,14 @@ map("n", "<leader>ww", "<C-w>w")
 -----------------------------------------------------------
 
 -- Open file tree (nvim-tree)
-map("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true })
-map("n", "fn", ":NvimTreeFindFile<CR>", { noremap = true })
+map("n", "<C-n>", ":NvimTreeToggle<CR>")
+map("n", "fn", ":NvimTreeFindFile<CR>")
 
 -- Terminal mappings
-map("n", "<C-t>", ":Term<CR>", { noremap = true }) -- open
+map("n", "<C-t>", ":Term<CR>") -- open
+
+-- Author Header
+map("n", "<F4>", ":AddHeader<CR>")
 
 -- Tagbar
 map("n", "<leader>z", ":TagbarToggle<CR>") -- open/close

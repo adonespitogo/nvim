@@ -22,6 +22,20 @@ opt.clipboard = 'unnamedplus'         -- Copy/paste to system clipboard
 opt.swapfile = false                  -- Don't use swapfile
 opt.completeopt = 'menuone,noinsert,noselect'  -- Autocomplete options
 
+
+-----------------------------------------------------------
+-- Author Header
+-----------------------------------------------------------
+g.header_field_author = "Adones Pitogo"
+g.header_field_author_email = "pitogo.adones@gmail.com"
+g.header_field_modified_by = 0
+g.header_field_timestamp_format = '%b %d, %Y'
+
+local start_year = "2021"
+local current_year = os.date("%Y")
+local end_year = current_year == start_year and "" or ("-" .. current_year)
+g.header_field_copyright = "Copyright " .. start_year .. end_year .. " Flarego Corp. <business@flarego.ph>"
+
 -----------------------------------------------------------
 -- Neovim UI
 -----------------------------------------------------------
