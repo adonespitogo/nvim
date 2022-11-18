@@ -1,5 +1,9 @@
 # Installation:
 
+```
+git clone git@github.com:adonespitogo/nvim.git ~/.config/nvim
+```
+
 ## Fonts
 
 Downloads [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/releases).
