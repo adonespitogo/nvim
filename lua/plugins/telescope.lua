@@ -58,13 +58,13 @@ telescope.setup({
   },
 })
 
-vim.keymap.set("n", "ff", function()
+vim.keymap.set("n", "<leader>ff", function()
   builtin.find_files({
     no_ignore = false,
     hidden = true,
   })
 end)
-vim.keymap.set("n", "fg", function()
+vim.keymap.set("n", "<leader>fg", function()
   builtin.live_grep({
     no_ignore = false,
     hidden = true,
