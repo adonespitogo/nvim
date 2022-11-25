@@ -121,3 +121,8 @@ Install pip modules:
 ```
 pip install --user yamllint proselint codespell mdformat
 ```
+
+Add to your `$PATH` env:
+
+```
+export PATH="$HOME/.local/bin:$PATH"
