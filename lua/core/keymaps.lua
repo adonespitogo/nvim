@@ -61,6 +61,8 @@ end
 map("n", "<leader>dd", ":Bdelete<CR>")
 
 -- Nerd Commenter
-map('n', "<leader><space><space>", "<Plug>NERDCommenterToggle")
-map('x', "<leader><space><space>", "<Plug>NERDCommenterToggle")
+map("n", "<leader><space><space>", "<Plug>NERDCommenterToggle")
+map("x", "<leader><space><space>", "<Plug>NERDCommenterToggle")
 
+-- Neogen
+map("n", "<F2>", ":lua require('neogen').generate()<CR>")
