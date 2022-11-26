@@ -1,5 +1,9 @@
 # Installation:
 
+```
+git clone git@github.com:adonespitogo/nvim.git ~/.config/nvim
+```
+
 ## Fonts
 
 Downloads [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/releases).
@@ -117,3 +121,8 @@ Install pip modules:
 ```
 pip install --user yamllint proselint codespell mdformat
 ```
+
+Add to your `$PATH` env:
+
+```
+export PATH="$HOME/.local/bin:$PATH"
