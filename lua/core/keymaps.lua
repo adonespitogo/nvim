@@ -35,9 +35,9 @@ map("n", "<leader>ww", "<C-w>w")
 -- end
 
 -- Tabs
-map('n', '<leader>tt', ":tabnew")
-map('n', '<leader>tn', ":tabn")
-map('n', '<leader>tp', ":tabp")
+map('n', '<leader>tt', ":tabnew<CR>")
+map('n', '<leader>tn', ":tabn<CR>")
+map('n', '<leader>tp', ":tabp<CR>")
 
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
