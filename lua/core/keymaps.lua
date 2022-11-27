@@ -34,6 +34,11 @@ map("n", "<leader>ww", "<C-w>w")
 -- map("n", "<leader>d" .. i, ":" .. i .. "wincmd w<CR>")
 -- end
 
+-- Tabs
+map('n', '<leader>tt', ":tabnew")
+map('n', '<leader>tn', ":tabn")
+map('n', '<leader>tp', ":tabp")
+
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
 -----------------------------------------------------------

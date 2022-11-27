@@ -119,7 +119,7 @@ npm i -g \
 Install pip modules:
 
 ```
-pip install --user yamllint proselint codespell mdformat
+pip install --user yamllint proselint codespell mdformat beautysh
 ```
 
 Add to your `$PATH` env:
