@@ -46,6 +46,7 @@ local sources = {
   }),
   formatting.prettierd.with({
     filetypes = { "html", "css", "scss", "javascript" },
+    extra_args = { "--trailing-comma none" },
   }),
   formatting.erb_lint,
   formatting.autopep8,

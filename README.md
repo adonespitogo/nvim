@@ -106,6 +106,7 @@ Install npm modules:
 npm i -g \
     eslint                              \
     eslint_d                            \
+    eslint-config-es3                   \
     fixjson                             \
     nginxbeautifier                     \
     @johnnymorganz/stylua-bin           \
