@@ -143,6 +143,9 @@ return packer.startup(function(use)
     tag = "*",
   })
 
+  -- A useless plugin
+  use("eandrju/cellular-automaton.nvim")
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PackerBootstrap then

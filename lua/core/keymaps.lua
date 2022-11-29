@@ -71,3 +71,6 @@ map("x", "<leader><space><space>", "<Plug>NERDCommenterToggle")
 
 -- Neogen
 map("n", "<F2>", ":lua require('neogen').generate()<CR>")
+
+-- Automaton
+map('n', '<F12>', "<cmd>CellularAutomaton make_it_rain<CR>")
