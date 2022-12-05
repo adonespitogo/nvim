@@ -56,7 +56,7 @@ local sources = {
   formatting.fixjson,
   formatting.mdformat,
   formatting.nginx_beautifier,
-  formatting.tidy, -- fix html tags
+  -- formatting.tidy, -- fix html tags
 
   -- hover
   hover.dictionary,
