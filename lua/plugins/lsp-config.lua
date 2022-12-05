@@ -14,6 +14,12 @@ if not lsp_status_ok then
   return
 end
 
+local util_status_ok, util = pcall(require, "lspconfig/util")
+if not util_status_ok then
+  print("lspconfig/util is not installed!")
+  return
+end
+
 local cmp_status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_status_ok then
   print("cmp_nvim_lsp is not installed!")
@@ -180,9 +186,9 @@ lspconfig.sumneko_lua.setup({
 })
 
 lspconfig.gopls.setup({
-  cmd = {"gopls", "serve"},
-  filetypes = {"go", "gomod"}
-  on_attach = on_attach
+  cmd = { "gopls", "serve" },
+  filetypes = { "go", "gomod" },
+  on_attach = on_attach,
   root_dir = util.root_pattern("go.work", "go.mod", ".git"),
   capabilities = capabilities,
   settings = {
@@ -191,6 +197,6 @@ lspconfig.gopls.setup({
         unusedparams = true,
       },
       staticcheck = true,
-    }
-  }
+    },
+  },
 })
