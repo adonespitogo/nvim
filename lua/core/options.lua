@@ -27,7 +27,7 @@ opt.completeopt = 'menuone,noinsert,noselect'  -- Autocomplete options
 -- Author Header
 -----------------------------------------------------------
 g.header_field_author = "Adones Pitogo"
-g.header_field_author_email = "pitogo.adones@gmail.com"
+g.header_field_author_email = "adones.pitogo@adopisoft.com"
 g.header_field_modified_by = 0
 g.header_field_timestamp_format = '%b %d, %Y'
 
