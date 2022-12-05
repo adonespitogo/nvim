@@ -178,3 +178,19 @@ lspconfig.sumneko_lua.setup({
     },
   },
 })
+
+lspconfig.gopls.setup({
+  cmd = {"gopls", "serve"},
+  filetypes = {"go", "gomod"}
+  on_attach = on_attach
+  root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+  capabilities = capabilities,
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+    }
+  }
+})
