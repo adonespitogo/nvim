@@ -17,6 +17,9 @@ vim.g.mapleader = ";"
 -- Neovim shortcuts
 -----------------------------------------------------------
 
+-- Map zero to ^
+map("n", "0", "^")
+
 -- Clear search highlighting with <leader> and c
 map("n", "<space><space>", ":nohl<CR>")
 
@@ -35,9 +38,9 @@ map("n", "<leader>ww", "<C-w>w")
 -- end
 
 -- Tabs
-map('n', '<leader>tt', ":tabnew<CR>")
-map('n', '<leader>tn', ":tabn<CR>")
-map('n', '<leader>tp', ":tabp<CR>")
+map("n", "<leader>tt", ":tabnew<CR>")
+map("n", "<leader>tn", ":tabn<CR>")
+map("n", "<leader>tp", ":tabp<CR>")
 
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
@@ -73,4 +76,4 @@ map("x", "<leader><space><space>", "<Plug>NERDCommenterToggle")
 map("n", "<F2>", ":lua require('neogen').generate()<CR>")
 
 -- Automaton
-map('n', '<F12>', "<cmd>CellularAutomaton make_it_rain<CR>")
+map("n", "<F12>", "<cmd>CellularAutomaton make_it_rain<CR>")
