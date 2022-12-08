@@ -189,7 +189,7 @@ lspconfig.gopls.setup({
   cmd = { "gopls", "serve" },
   filetypes = { "go", "gomod" },
   on_attach = on_attach,
-  root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+  root_dir = util.root_pattern("go.mod", ".git", "go.work"),
   capabilities = capabilities,
   settings = {
     gopls = {
