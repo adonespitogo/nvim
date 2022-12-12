@@ -37,6 +37,7 @@ local sources = {
     filetypes = { "text" },
   }),
   diagnostics.haml_lint,
+  diagnostics.buf,
 
   -- formatters
   formatting.eslint.with({
@@ -56,6 +57,7 @@ local sources = {
   formatting.fixjson,
   formatting.mdformat,
   formatting.nginx_beautifier,
+  formatting.buf,
   -- formatting.tidy, -- fix html tags
 
   -- hover

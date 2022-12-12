@@ -23,7 +23,7 @@ sudo apt install -y fd-find ripgrep luarocks python3-pip python3-testresources
 Mac OS:
 
 ```
-brew install fd ripgrep luarocks python3 tidy-html5
+brew install fd ripgrep luarocks python3 tidy-html5 bufbuild/buf/buf
 ```
 
 ## Vim Plugins
