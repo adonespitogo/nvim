@@ -18,12 +18,15 @@ Debian:
 
 ```
 sudo apt install -y fd-find ripgrep luarocks python3-pip python3-testresources
+snap install goimports-reviser
 ```
 
 Mac OS:
 
 ```
 brew install fd ripgrep luarocks python3 tidy-html5 bufbuild/buf/buf
+brew tap incu6us/homebrew-tap
+brew install incu6us/homebrew-tap/goimports-reviser
 ```
 
 ## Vim Plugins
