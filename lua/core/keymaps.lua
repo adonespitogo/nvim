@@ -18,7 +18,7 @@ vim.g.mapleader = ";"
 -----------------------------------------------------------
 
 -- LspRestart
-map("n", "<leader>r", ":LspRestart")
+map("n", "<leader>r", ":LspRestart<CR>")
 
 -- Map zero to ^
 map("n", "0", "^")
