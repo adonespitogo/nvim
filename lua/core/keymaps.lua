@@ -17,6 +17,9 @@ vim.g.mapleader = ";"
 -- Neovim shortcuts
 -----------------------------------------------------------
 
+-- LspRestart
+map("n", "<leader>r", ":LspRestart")
+
 -- Map zero to ^
 map("n", "0", "^")
 
@@ -24,7 +27,7 @@ map("n", "0", "^")
 map("n", "<space><space>", ":nohl<CR>")
 
 -- Reload configuration without restart nvim
-map("n", "<leader>r", ":so %<CR>")
+-- map("n", "<leader>r", ":so %<CR>")
 
 -- -- Window splits
 map("n", "<leader>ww", "<C-w>w")
