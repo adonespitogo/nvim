@@ -8,7 +8,7 @@ require("nvim-tree").setup({
     ignore = false,
   },
   view = {
-    width = 40,
+    width = 30,
     adaptive_size = true,
     mappings = {
       list = {
