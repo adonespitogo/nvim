@@ -80,3 +80,12 @@ map("n", "<F2>", ":lua require('neogen').generate()<CR>")
 
 -- Automaton
 map("n", "<F12>", "<cmd>CellularAutomaton make_it_rain<CR>")
+
+-- Copy+paste from/to system clip board
+map("v", "<leader>y", '"+y')
+map("n", "<leader>y", '"+y')
+map("n", "<leader>Y", '"+yg_')
+map("n", "<leader>p", '"+p')
+map("n", "<leader>P", '"+P')
+map("v", "<leader>p", '"+p')
+map("v", "<leader>P", '"+P')
