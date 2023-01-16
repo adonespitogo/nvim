@@ -117,7 +117,7 @@ npm i -g \
     vscode-langservers-extracted        \
     @prantlf/jsonlint                   \
     @fsouza/prettierd                   \
-    @tailwindcss/language-server
+    @tailwindcss/language-server        \
 ```
 
 Install pip modules:
@@ -130,3 +130,12 @@ Add to your `$PATH` env:
 
 ```
 export PATH="$HOME/.local/bin:$PATH"
+```
+
+Sql LSP:
+
+```
+:LspInstall sqls
+
+ln -s ~/.config/nvim/sql-language-server ~/.config/sql-language-server
+```

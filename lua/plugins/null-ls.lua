@@ -38,6 +38,9 @@ local sources = {
   }),
   diagnostics.haml_lint,
   diagnostics.buf,
+  diagnostics.sqlfluff.with({
+    extra_args = { "--dialect", "postgres" }, -- change to your dialect
+  }),
 
   -- formatters
   formatting.eslint.with({
@@ -59,6 +62,10 @@ local sources = {
   formatting.nginx_beautifier,
   formatting.goimports_reviser,
   formatting.buf,
+  formatting.sqlfluff.with({
+    extra_args = { "--dialect", "postgres" }, -- change to your dialect
+  }),
+
   -- formatting.tidy, -- fix html tags
 
   -- hover
