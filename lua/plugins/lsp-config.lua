@@ -197,10 +197,23 @@ lspconfig["gopls"].setup({
   on_attach = on_attach,
   root_dir = util.root_pattern("go.mod", ".git", "go.work"),
   capabilities = capabilities,
+  settings = {
+    gopls = {
+      env = {
+        GOFLAGS = "-tags=dev",
+      },
+    },
+  },
 })
 
 lspconfig["sqls"].setup({
   on_attach = on_attach,
   root_dir = root_dir,
   capabilities = capabilities,
+})
+
+lspconfig["intelephense"].setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  root_dir = root_dir,
 })
