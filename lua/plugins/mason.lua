@@ -6,7 +6,6 @@ require("mason-lspconfig").setup({
     "rust_analyzer",
     "tsserver",
     "solargraph",
-    "tailwindcss",
     "jsonls",
     "cssls",
     "html",

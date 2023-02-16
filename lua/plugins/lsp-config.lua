@@ -157,7 +157,6 @@ local servers = {
   "rust_analyzer",
   "tsserver",
   "solargraph",
-  "tailwindcss",
   "jsonls",
   "cssls",
   "html",
