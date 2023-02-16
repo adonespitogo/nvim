@@ -60,7 +60,7 @@ local sources = {
   formatting.fixjson,
   formatting.mdformat,
   formatting.nginx_beautifier,
-  formatting.goimports_reviser,
+  -- formatting.goimports_reviser,
   formatting.buf,
   formatting.sqlfluff.with({
     extra_args = { "--dialect", "postgres" }, -- change to your dialect
