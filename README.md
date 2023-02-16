@@ -112,11 +112,11 @@ npm i -g \
     eslint-config-es3                   \
     fixjson                             \
     nginxbeautifier                     \
+    prettier
     @johnnymorganz/stylua-bin           \
     stylelint stylelint-config-standard \
     vscode-langservers-extracted        \
     @prantlf/jsonlint                   \
-    @fsouza/prettierd                   \
     @tailwindcss/language-server        \
 ```
 

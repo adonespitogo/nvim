@@ -38,6 +38,7 @@ local sources = {
   }),
   diagnostics.haml_lint,
   diagnostics.buf,
+  -- diagnostics.stylelint,
   diagnostics.sqlfluff.with({
     extra_args = { "--dialect", "postgres" }, -- change to your dialect
   }),
@@ -48,13 +49,12 @@ local sources = {
       return utils.root_has_file(eslint_files)
     end,
   }),
-  formatting.prettierd.with({
+  formatting.prettier.with({
     filetypes = { "html", "css", "scss", "javascript" },
-    extra_args = { "--trailing-comma none" },
   }),
   formatting.erb_lint,
   formatting.autopep8,
-  formatting.stylelint,
+  -- formatting.stylelint,
   formatting.stylua,
   formatting.beautysh,
   formatting.fixjson,
