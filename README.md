@@ -114,7 +114,6 @@ npm i -g \
     nginxbeautifier                     \
     prettier
     @johnnymorganz/stylua-bin           \
-    stylelint stylelint-config-standard \
     vscode-langservers-extracted        \
     @prantlf/jsonlint                   \
     @tailwindcss/language-server        \

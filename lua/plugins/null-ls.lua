@@ -38,7 +38,6 @@ local sources = {
   }),
   diagnostics.haml_lint,
   diagnostics.buf,
-  -- diagnostics.stylelint,
   diagnostics.sqlfluff.with({
     extra_args = { "--dialect", "postgres" }, -- change to your dialect
   }),
@@ -54,7 +53,6 @@ local sources = {
   }),
   formatting.erb_lint,
   formatting.autopep8,
-  -- formatting.stylelint,
   formatting.stylua,
   formatting.beautysh,
   formatting.fixjson,
