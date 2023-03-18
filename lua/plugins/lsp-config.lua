@@ -191,12 +191,6 @@ lspconfig["sumneko_lua"].setup({
   },
 })
 
-local buildFlags = {}
-local gotags = os.getenv("GOTAGS")
-if gotags ~= nil and gotags ~= "" then
-  buildFlags = { '-tags "' .. gotags .. '"' }
-end
-
 lspconfig["gopls"].setup({
   cmd = { "gopls", "serve" },
   filetypes = { "go", "gomod" },
@@ -205,7 +199,7 @@ lspconfig["gopls"].setup({
   capabilities = capabilities,
   settings = {
     gopls = {
-      buildFlags = buildFlags,
+      -- buildFlags = buildFlags,
     },
   },
 })
