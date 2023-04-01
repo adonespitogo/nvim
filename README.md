@@ -55,6 +55,7 @@ fi
 source "$HOME/.config/rustlang/autocomplete/rustup"
 if ! command -v rust-analyzer &> /dev/null
 then
+  echo "Installing rust-analyzer..."
   brew install rust-analyzer
   # Or sudo pacman -S rust-analyzer
   # Or sudo apt install -y rust-analyzer
