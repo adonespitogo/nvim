@@ -56,6 +56,8 @@ source "$HOME/.config/rustlang/autocomplete/rustup"
 if ! command -v rust-analyzer &> /dev/null
 then
   brew install rust-analyzer
+  # Or sudo pacman -S rust-analyzer
+  # Or sudo apt install -y rust-analyzer
 fi
 if ! cargo audit --version &> /dev/null; then
   cargo install cargo-audit --features=fix
