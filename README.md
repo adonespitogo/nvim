@@ -55,7 +55,10 @@ fi
 source "$HOME/.config/rustlang/autocomplete/rustup"
 if ! command -v rust-analyzer &> /dev/null
 then
+  echo "Installing rust-analyzer..."
   brew install rust-analyzer
+  # Or sudo pacman -S rust-analyzer
+  # Or sudo apt install -y rust-analyzer
 fi
 if ! cargo audit --version &> /dev/null; then
   cargo install cargo-audit --features=fix
@@ -112,11 +115,11 @@ npm i -g \
     eslint-config-es3                   \
     fixjson                             \
     nginxbeautifier                     \
-    prettier
+    prettier                            \
     @johnnymorganz/stylua-bin           \
     vscode-langservers-extracted        \
     @prantlf/jsonlint                   \
-    @tailwindcss/language-server        \
+    @tailwindcss/language-server
 ```
 
 Install pip modules:
