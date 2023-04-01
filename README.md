@@ -115,7 +115,7 @@ npm i -g \
     eslint-config-es3                   \
     fixjson                             \
     nginxbeautifier                     \
-    prettier
+    prettier                            \
     @johnnymorganz/stylua-bin           \
     vscode-langservers-extracted        \
     @prantlf/jsonlint                   \
