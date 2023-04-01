@@ -10,7 +10,7 @@ require("mason-lspconfig").setup({
     "cssls",
     "html",
     "clangd",
-    "sumneko_lua",
+    "lua_ls",
     "gopls",
     "sqls",
     "intelephense",
