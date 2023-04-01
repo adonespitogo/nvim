@@ -131,13 +131,13 @@ pip install --user yamllint proselint codespell mdformat beautysh
 Add to your `$PATH` env:
 
 ```
+# Python paths
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:$HOME/Library/Python/3.10/bin"
 ```
 
 Sql LSP:
 
 ```
-:LspInstall sqls
-
 ln -s ~/.config/nvim/sql-language-server ~/.config/sql-language-server
 ```
