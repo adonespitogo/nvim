@@ -119,7 +119,7 @@ npm i -g \
     @johnnymorganz/stylua-bin           \
     vscode-langservers-extracted        \
     @prantlf/jsonlint                   \
-    @tailwindcss/language-server        \
+    @tailwindcss/language-server
 ```
 
 Install pip modules:
