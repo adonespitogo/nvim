@@ -192,11 +192,11 @@ lspconfig["lua_ls"].setup({
 })
 
 -- Valid "GOTAGS" format:
--- export GOTAGS="-tags=tag1 tag2"
+-- export GOTAGS="tag1 tag2"
 local buildFlags = nil
 local flags = os.getenv("GOTAGS")
 if flags ~= nil and flags ~= "" then
-  buildFlags = { flags }
+  buildFlags = { "-tags=" .. flags }
 end
 
 lspconfig["gopls"].setup({
