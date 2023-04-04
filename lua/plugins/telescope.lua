@@ -2,6 +2,7 @@ local status, telescope = pcall(require, "telescope")
 if not status then
   return
 end
+
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
 
@@ -41,6 +42,10 @@ local builtin = require("telescope.builtin")
 
 telescope.setup({
   defaults = {
+    sorting_strategy = "ascending",
+    layout_config = {
+      prompt_position = "top",
+    },
     file_ignore_patterns = {
       "%.git/",
       "node%_modules/.*",
@@ -64,11 +69,16 @@ vim.keymap.set("n", "<leader>ff", function()
     hidden = true,
   })
 end)
+
 vim.keymap.set("n", "<leader>fg", function()
   builtin.live_grep({
     no_ignore = false,
     hidden = true,
   })
+end)
+
+vim.keymap.set("n", "<leader>fd", function()
+  builtin.diagnostics()
 end)
 
 telescope.load_extension("ui-select")
