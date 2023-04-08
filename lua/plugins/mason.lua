@@ -12,7 +12,7 @@ require("mason-lspconfig").setup({
     "clangd",
     "lua_ls",
     "gopls",
-    "sqls",
+    "sqlls",
     "intelephense",
   },
 })

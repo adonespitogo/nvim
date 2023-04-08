@@ -73,7 +73,7 @@ local on_attach = function(client, bufnr)
   end
 
   -- Disable formatting for some server
-  if client.name == "tsserver" or client.name == "sqls" then
+  if client.name == "tsserver" or client.name == "sqlls" then
     client.server_capabilities.documentFormattingProvider = false -- 0.8 and later
   end
 
@@ -212,7 +212,7 @@ lspconfig["gopls"].setup({
   },
 })
 
-lspconfig["sqls"].setup({
+lspconfig["sqlls"].setup({
   on_attach = on_attach,
   root_dir = root_dir,
   capabilities = capabilities,
