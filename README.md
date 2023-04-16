@@ -29,6 +29,12 @@ brew tap incu6us/homebrew-tap
 brew install incu6us/homebrew-tap/goimports-reviser
 ```
 
+Arch Linux:
+
+```
+sudo pacman -S xclip
+```
+
 ## Vim Plugins
 
 Install `vim-plug` to install legacy vim plugins like `vim-surround`.
