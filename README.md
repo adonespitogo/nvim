@@ -131,7 +131,7 @@ npm i -g \
 Install pip modules:
 
 ```
-pip install --user yamllint proselint codespell mdformat beautysh
+pip install --user yamllint proselint codespell mdformat beautysh  sqlfluff
 ```
 
 Add to your `$PATH` env:

@@ -73,7 +73,7 @@ local on_attach = function(client, bufnr)
   end
 
   -- Disable formatting for some server
-  if client.name == "tsserver" or client.name == "sqlls" then
+  if client.name == "tsserver" then
     client.server_capabilities.documentFormattingProvider = false -- 0.8 and later
   end
 

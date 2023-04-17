@@ -60,9 +60,9 @@ local sources = {
   formatting.nginx_beautifier,
   -- formatting.goimports_reviser,
   formatting.buf,
-  -- formatting.sqlfluff.with({
-    -- extra_args = { "--dialect", "postgres" }, -- change to your dialect
-  -- }),
+  formatting.sqlfluff.with({
+    extra_args = { "--dialect", os.getenv("SQL_DIALECT") or "mysql" }, -- change to your dialect
+  }),
 
   -- formatting.tidy, -- fix html tags
 
