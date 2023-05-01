@@ -32,7 +32,7 @@ brew install incu6us/homebrew-tap/goimports-reviser
 Arch Linux:
 
 ```
-sudo pacman -S luarocks python python-pip
+sudo pacman -S fd ripgrep luarocks python python-pip
 ```
 
 ## Vim Plugins
