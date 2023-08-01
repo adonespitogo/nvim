@@ -81,6 +81,7 @@ return packer.startup(function(use)
   })
   use({ "L3MON4D3/LuaSnip", run = "make install_jsregexp" })
   use({ "rafamadriz/friendly-snippets" })
+  use({ "github/copilot.vim", branch = "release" })
 
   -- git labels
   use({

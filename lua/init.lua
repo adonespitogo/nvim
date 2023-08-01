@@ -1,8 +1,8 @@
 -- Import Lua modules
 
-vim.lsp.set_log_level("debug")
+vim.lsp.set_log_level("off")
 
-require('plug_init')
+require("plug_init")
 require("packer_init")
 require("core/options")
 require("core/autocmds")
