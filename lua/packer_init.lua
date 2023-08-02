@@ -81,7 +81,28 @@ return packer.startup(function(use)
   })
   use({ "L3MON4D3/LuaSnip", run = "make install_jsregexp" })
   use({ "rafamadriz/friendly-snippets" })
-  use({ "github/copilot.vim", branch = "release" })
+  use({
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({
+        panel = {
+          enable = false,
+        },
+        suggestion = {
+          enable = false,
+        },
+      })
+    end,
+  })
+  use({
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    config = function()
+      require("copilot_cmp").setup()
+    end,
+  })
 
   -- git labels
   use({

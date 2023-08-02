@@ -3,5 +3,8 @@
   "Lua.diagnostics.globals": [
     "vim",
     "packer_bootstrap"
-  ]
+  ],
+    "diagnostics.disable": [
+        "deprecated"
+    ]
 }
