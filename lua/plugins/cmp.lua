@@ -15,6 +15,11 @@ if not luasnip_status_ok then
   return
 end
 
+local lspkind_status_ok, lspkind = pcall(require, "lspkind")
+if not lspkind_status_ok then
+  return
+end
+
 local has_words_before = function()
   if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
     return false
@@ -23,12 +28,27 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match("^%s*$") == nil
 end
 
+local borderstyle = {
+  border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+  winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+}
+
 cmp.setup({
+  -- Window styles
+  window = {
+    completion = borderstyle,
+    documentation = borderstyle,
+  },
+
   -- Load snippet support
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
     end,
+  },
+
+  formatting = {
+    format = lspkind.cmp_format(),
   },
 
   -- Completion settings
@@ -85,8 +105,3 @@ cmp.setup({
     { name = "buffer" },
   },
 })
-
-vim.cmd([[
-  set completeopt=menuone,noinsert,noselect
-  highlight! default link CmpItemKind CmpItemMenuDefault
-]])
