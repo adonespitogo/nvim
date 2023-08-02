@@ -87,14 +87,8 @@ return packer.startup(function(use)
     cmd = "Copilot",
     event = "InsertEnter",
     config = function()
-      require("copilot").setup({
-        panel = {
-          enable = false,
-        },
-        suggestion = {
-          enable = false,
-        },
-      })
+      local config = require("plugins/github-copilot")
+      require("copilot").setup(config)
     end,
   })
   use({
