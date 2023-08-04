@@ -69,7 +69,7 @@ for i = 0, 9, 1 do
   -- Go to buffer by leader+number
   map("n", "<leader>" .. i, ":BufferLineGoToBuffer " .. i .. "<CR>")
 end
-map("n", "<leader>dd", ":Bdelete<CR>")
+map("n", "<leader>qq", ":Bdelete<CR>")
 
 -- Nerd Commenter
 map("n", "<leader><space><space>", "<Plug>NERDCommenterToggle")
