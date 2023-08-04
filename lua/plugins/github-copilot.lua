@@ -4,5 +4,6 @@ return {
   },
   suggestion = {
     enable = false,
+    debounce = 250,
   },
 }
