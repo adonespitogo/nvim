@@ -4,13 +4,13 @@
 require("tokyonight").setup({
   style = "night",
   styles = {
-    sidebars = "transparent"
+    sidebars = "transparent",
   },
 
   -- Add border between file tree and document
-  -- on_colors = function(colors)
-    -- colors.border = colors.blue
-  -- end,
+  on_colors = function(colors)
+    colors.border = colors.blue
+  end,
 })
 
 vim.cmd([[ colorscheme tokyonight ]])
