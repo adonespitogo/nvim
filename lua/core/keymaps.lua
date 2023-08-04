@@ -30,11 +30,11 @@ map("n", "<space><space>", ":nohl<CR>")
 -- map("n", "<leader>r", ":so %<CR>")
 
 -- -- Window splits
-map("n", "<leader>ww", "<C-w>w")
--- map("n", "<leader>h", ":wincmd h<CR>")
--- map("n", "<leader>j", ":wincmd j<CR>")
--- map("n", "<leader>k", ":wincmd k<CR>")
--- map("n", "<leader>l", ":wincmd l<CR>")
+-- map("n", "<leader>ww", "<C-w>w")
+map("n", "<leader>wh", ":wincmd h<CR>")
+map("n", "<leader>wj", ":wincmd j<CR>")
+map("n", "<leader>wk", ":wincmd k<CR>")
+map("n", "<leader>wl", ":wincmd l<CR>")
 -- for i = 1, 9, 1 do
 -- -- Move between windows by leader + window number
 -- map("n", "<leader>d" .. i, ":" .. i .. "wincmd w<CR>")
