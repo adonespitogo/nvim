@@ -30,7 +30,7 @@ map("n", "<space><space>", ":nohl<CR>")
 -- map("n", "<leader>r", ":so %<CR>")
 
 -- -- Window splits
--- map("n", "<leader>ww", "<C-w>w")
+map("n", "<leader>ww", "<C-w>w")
 map("n", "<leader>wh", ":wincmd h<CR>")
 map("n", "<leader>wj", ":wincmd j<CR>")
 map("n", "<leader>wk", ":wincmd k<CR>")
