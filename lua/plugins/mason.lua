@@ -14,5 +14,6 @@ require("mason-lspconfig").setup({
     "gopls",
     "sqlls",
     "intelephense",
+    "phpactor",
   },
 })
