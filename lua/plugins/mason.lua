@@ -13,7 +13,6 @@ require("mason-lspconfig").setup({
     "lua_ls",
     "gopls",
     "sqlls",
-    "intelephense",
     "phpactor",
   },
 })

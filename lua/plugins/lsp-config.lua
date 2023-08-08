@@ -67,7 +67,7 @@ local on_attach = function(client, bufnr)
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
         autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
       augroup END
-    ]] ,
+    ]],
       false
     )
   end
@@ -140,7 +140,6 @@ For language servers list see:
 https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 
 --]]
-
 -- Define `root_dir` when needed
 -- See: https://github.com/neovim/nvim-lspconfig/issues/320
 -- This is a workaround, maybe not work with some servers.
@@ -218,7 +217,7 @@ lspconfig["sqlls"].setup({
   capabilities = capabilities,
 })
 
-lspconfig["intelephense"].setup({
+lspconfig["phpactor"].setup({
   on_attach = on_attach,
   capabilities = capabilities,
   root_dir = root_dir,
