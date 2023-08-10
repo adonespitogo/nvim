@@ -162,9 +162,12 @@ local plugins = {
   "vim-scripts/argtextobj.vim",     -- provides 'a' (argument) text object
   "michaeljsmith/vim-indent-object", -- provides text objects base on indentation level ('ii', 'ai')
   "kana/vim-textobj-user",          -- prerequisite for vim-textobj* plugins
-  "tek/vim-textobj-ruby",           -- provides text objects base on ruby blocks ('vir', 'var')
-  "alpertuna/vim-header",           -- Add author header to file
-  "ekalinin/Dockerfile.vim",        -- Dockerfile syntax highlighting
+  {
+    "tek/vim-textobj-ruby",
+    dependencies = { "kana/vim-textobj-user" },
+  },                        -- provides text objects base on ruby blocks ('vir', 'var')
+  "alpertuna/vim-header",   -- Add author header to file
+  "ekalinin/Dockerfile.vim", -- Dockerfile syntax highlighting
 }
 
 local opts = {}
