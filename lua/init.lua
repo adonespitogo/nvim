@@ -2,13 +2,15 @@
 
 vim.lsp.set_log_level("off")
 
-require("plug_init")
-require("packer_init")
+-- require("plug_init")
 require("core/options")
 require("core/autocmds")
 require("core/keymaps")
-require("core/colors")
 require("core/vim-config")
+
+-- plugins
+require("lazy-init")
+require("plugins/tokyo-theme")
 require("plugins/cmp")
 require("plugins/indent-blankline")
 require("plugins/treesitter")
