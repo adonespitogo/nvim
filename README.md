@@ -142,7 +142,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:$HOME/Library/Python/3.10/bin"
 
 # php formatter
-export PATH="$PATH:$HOME/.config/nvim/bin"
+export PATH="$PATH:$HOME/.config/nvim/tools/php-cs-fixer/vendor/bin"
 ```
 
 Sql LSP:
