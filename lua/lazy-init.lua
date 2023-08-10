@@ -16,7 +16,7 @@ local plugins = {
   "preservim/tagbar",
   {
     "nvim-treesitter/nvim-treesitter",
-    run = function()
+    build = function()
       require("nvim-treesitter.install").update({ with_sync = true })
     end,
   },
@@ -34,7 +34,7 @@ local plugins = {
       "saadparwaiz1/cmp_luasnip",
     },
   },
-  { "L3MON4D3/LuaSnip", run = "make install_jsregexp" },
+  { "L3MON4D3/LuaSnip", build = "make install_jsregexp" },
   "rafamadriz/friendly-snippets",
   "onsails/lspkind.nvim",
 
@@ -57,14 +57,16 @@ local plugins = {
         },
       })
     end,
+    dependencies = {
+      {
+        "zbirenbaum/copilot-cmp",
+        config = function()
+          require("copilot_cmp").setup()
+        end,
+      },
+    },
   },
-  {
-    "zbirenbaum/copilot-cmp",
-    after = { "copilot.lua" },
-    config = function()
-      require("copilot_cmp").setup()
-    end,
-  },
+
   {
     "adalessa/laravel.nvim",
     dependencies = {
@@ -74,10 +76,10 @@ local plugins = {
     },
     cmd = { "Sail", "Artisan", "Composer", "Npm", "Yarn", "Laravel" },
     keys = {
-      { "<leader>la", ":Laravel artisan<cr>" },
-      { "<leader>lr", ":Laravel routes<cr>" },
+      { "<leader>ar", ":Laravel artisan<cr>" },
+      { "<leader>rt", ":Laravel routes<cr>" },
       {
-        "<leader>lt",
+        "<leader>tn",
         function()
           require("laravel.tinker").send_to_tinker()
         end,

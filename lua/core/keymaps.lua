@@ -41,9 +41,9 @@ map("n", "<leader>wl", ":wincmd l<CR>")
 -- end
 
 -- Tabs
-map("n", "<leader>tt", ":tabnew<CR>")
-map("n", "<leader>tn", ":tabn<CR>")
-map("n", "<leader>tp", ":tabp<CR>")
+-- map("n", "<leader>tt", ":tabnew<CR>")
+-- map("n", "<leader>tn", ":tabn<CR>")
+-- map("n", "<leader>tp", ":tabp<CR>")
 
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
@@ -54,7 +54,7 @@ map("n", "<C-n>", ":NvimTreeToggle<CR>")
 map("n", "fn", ":NvimTreeFindFile<CR>")
 
 -- Terminal mappings
-map("n", "<C-t>", ":Term<CR>") -- open
+-- map("n", "<C-t>", ":Term<CR>") -- open
 
 -- Author Header
 map("n", "<F4>", ":AddHeader<CR>")
