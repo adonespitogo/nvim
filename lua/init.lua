@@ -2,7 +2,6 @@
 
 vim.lsp.set_log_level("off")
 
--- require("plug_init")
 require("core/options")
 require("core/autocmds")
 require("core/keymaps")
