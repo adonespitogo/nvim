@@ -54,9 +54,9 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, ...)
   end
 
-  local function buf_set_option(...)
-    vim.api.nvim_buf_set_option(bufnr, ...)
-  end
+  -- local function buf_set_option(...)
+  -- vim.api.nvim_buf_set_option(bufnr, ...)
+  -- end
 
   -- Highlighting references
   if client.server_capabilities.document_highlight then
@@ -78,7 +78,7 @@ local on_attach = function(client, bufnr)
   end
 
   -- Enable completion triggered by <c-x><c-o>
-  buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
+  -- buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 
   -- Mappings.
   local opts = { noremap = true, silent = true }
@@ -104,7 +104,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("n", "<leader><space>a", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 
   -- Trigger refactoring plugin then auto format
-  buf_set_keymap("v", "<leader><space>a", ":'<,'>lua vim.lsp.buf.code_action()<CR>", opts)
+  -- buf_set_keymap("v", "<leader><space>a", ":'<,'>lua vim.lsp.buf.code_action()<CR>", opts)
   buf_set_keymap(
     "v",
     "<leader>ev",
