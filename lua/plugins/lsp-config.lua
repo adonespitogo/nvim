@@ -221,4 +221,7 @@ lspconfig["phpactor"].setup({
   on_attach = on_attach,
   capabilities = capabilities,
   root_dir = root_dir,
+  init_options = {
+    -- ["indexer.stub_paths"] = {root_dir() .. "/ide-helper"},
+  },
 })

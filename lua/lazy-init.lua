@@ -168,6 +168,7 @@ local plugins = {
   },                        -- provides text objects base on ruby blocks ('vir', 'var')
   "alpertuna/vim-header",   -- Add author header to file
   "ekalinin/Dockerfile.vim", -- Dockerfile syntax highlighting
+  "jwalton512/vim-blade",
 }
 
 local opts = {}
