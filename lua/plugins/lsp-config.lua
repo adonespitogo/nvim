@@ -217,7 +217,7 @@ lspconfig["sqlls"].setup({
   capabilities = capabilities,
 })
 
-lspconfig["phpactor"].setup({
+lspconfig["intelephense"].setup({
   on_attach = on_attach,
   capabilities = capabilities,
   root_dir = root_dir,
