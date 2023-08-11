@@ -150,3 +150,7 @@ Sql LSP:
 ```
 ln -s ~/.config/nvim/sql-language-server ~/.config/sql-language-server
 ```
+
+Laravel:
+
+Follow the instructions at: https://github.com/barryvdh/laravel-ide-helper
