@@ -60,6 +60,7 @@ local sources = {
     extra_args = { "--dialect", os.getenv("SQL_DIALECT") or "mysql" }, -- change to your dialect
   }),
   formatting.phpcsfixer,
+  formatting.blade_formatter,
 
   -- hover
   hover.dictionary,

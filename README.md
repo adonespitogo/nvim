@@ -125,7 +125,8 @@ npm i -g \
     @johnnymorganz/stylua-bin           \
     vscode-langservers-extracted        \
     @prantlf/jsonlint                   \
-    @tailwindcss/language-server
+    @tailwindcss/language-server        \
+    blade-formatter
 ```
 
 Install pip modules:
