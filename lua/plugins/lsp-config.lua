@@ -158,6 +158,7 @@ local servers = {
   "solargraph",
   "jsonls",
   "cssls",
+  "tailwindcss",
   "html",
 }
 

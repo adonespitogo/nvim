@@ -8,6 +8,7 @@ require("mason-lspconfig").setup({
     "solargraph",
     "jsonls",
     "cssls",
+    "tailwindcss",
     "html",
     "clangd",
     "lua_ls",
