@@ -17,14 +17,14 @@ For Linux, copy the font files to `~/.local/share/fonts`.
 Debian:
 
 ```
-sudo apt install -y fd-find ripgrep luarocks python3-pip python3-testresources
+sudo apt install -y fd-find ripgrep luarocks python3-pip python3-testresources chafa
 snap install goimports-reviser
 ```
 
 Mac OS:
 
 ```
-brew install fd ripgrep luarocks python3 tidy-html5 bufbuild/buf/buf
+brew install fd ripgrep luarocks python3 tidy-html5 bufbuild/buf/buf chafa
 brew tap incu6us/homebrew-tap
 brew install incu6us/homebrew-tap/goimports-reviser
 ```
@@ -32,7 +32,7 @@ brew install incu6us/homebrew-tap/goimports-reviser
 Arch Linux:
 
 ```
-sudo pacman -S fd ripgrep luarocks python python-pip ttf-dejavu
+sudo pacman -S fd ripgrep luarocks python python-pip ttf-dejavu chafa
 ```
 
 ## Vim Plugins

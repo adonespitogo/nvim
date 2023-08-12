@@ -60,6 +60,13 @@ telescope.setup({
     ["ui-select"] = {
       require("telescope.themes").get_dropdown({}),
     },
+    ["media_files"] = {
+      -- filetypes whitelist
+      -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+      -- filetypes = { "png", "webp", "jpg", "jpeg" },
+      -- find command (defaults to `fd`)
+      -- find_cmd = "rg",
+    },
   },
 })
 
@@ -81,4 +88,11 @@ vim.keymap.set("n", "<leader>fd", function()
   builtin.diagnostics()
 end)
 
+
+vim.keymap.set("n", "<leader>fm", function()
+  builtin.diagnostics()
+  telescope.extensions.media_files.media_files()
+end)
+
 telescope.load_extension("ui-select")
+telescope.load_extension("media_files")

@@ -169,6 +169,16 @@ local plugins = {
   "alpertuna/vim-header",   -- Add author header to file
   "ekalinin/Dockerfile.vim", -- Dockerfile syntax highlighting
   "jwalton512/vim-blade",
+
+  -- Image preview
+  {
+    "nvim-telescope/telescope-media-files.nvim",
+    dependencies = {
+      "nvim-lua/popup.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+  },
 }
 
 local opts = {}
