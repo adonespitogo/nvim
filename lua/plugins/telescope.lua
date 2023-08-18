@@ -77,6 +77,10 @@ vim.keymap.set("n", "<leader>ff", function()
   })
 end)
 
+vim.keymap.set("n", "<leader>fb", function()
+  builtin.buffers{ show_all_buffers = true }
+end)
+
 vim.keymap.set("n", "<leader>fg", function()
   builtin.live_grep({
     no_ignore = false,
@@ -87,7 +91,6 @@ end)
 vim.keymap.set("n", "<leader>fd", function()
   builtin.diagnostics()
 end)
-
 
 vim.keymap.set("n", "<leader>fm", function()
   builtin.diagnostics()
