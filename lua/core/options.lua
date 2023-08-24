@@ -14,6 +14,7 @@ local opt = vim.opt   -- Set options (global/buffer/windows-scoped)
 ----------------------------------------------------------
 opt.encoding = 'UTF-8'
 vim.o.cmdheight=0
+vim.o.termguicolors = true
 
 -----------------------------------------------------------
 -- General
