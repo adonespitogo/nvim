@@ -102,8 +102,10 @@ local plugins = {
   },
   {
     "akinsho/bufferline.nvim",
-    tag = "v3.*",
-    dependencies = "kyazdani42/nvim-web-devicons",
+    version = "*",
+    dependencies = {
+      "kyazdani42/nvim-web-devicons",
+    },
   },
   "nvim-lualine/lualine.nvim",
 
@@ -151,9 +153,20 @@ local plugins = {
   {
     "danymat/neogen",
     dependencies = "nvim-treesitter/nvim-treesitter",
-    tag = "*",
+    config = true,
   },
   "eandrju/cellular-automaton.nvim",
+  {
+    "yuchanns/phpfmt.nvim",
+    config = function()
+      require("phpfmt").setup({
+        -- Default configs
+        cmd = "phpcbf",
+        standard = "PSR12",
+        auto_format = false,
+      })
+    end,
+  },
 
   -- Plug
   "tpope/vim-surround",
