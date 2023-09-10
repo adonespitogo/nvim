@@ -27,14 +27,17 @@ local plugins = {
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
-      "L3MON4D3/LuaSnip",
+      {
+        "L3MON4D3/LuaSnip",
+        version = "2.*",
+        build = "make install_jsregexp",
+      },
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-buffer",
       "saadparwaiz1/cmp_luasnip",
     },
   },
-  { "L3MON4D3/LuaSnip", build = "make install_jsregexp" },
   "rafamadriz/friendly-snippets",
   "onsails/lspkind.nvim",
 
@@ -124,6 +127,7 @@ local plugins = {
       "kyazdani42/nvim-web-devicons", -- optional, for file icons
     },
   },
+  { "kevinhwang91/nvim-bqf", ft = "qf" },
 
   -- Formatters
   "lukas-reineke/indent-blankline.nvim",
