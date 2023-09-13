@@ -1,19 +1,6 @@
-require("mason").setup()
-require("mason-lspconfig").setup({
-  ensure_installed = {
-    "bashls",
-    "pyright",
-    "rust_analyzer",
-    "tsserver",
-    "solargraph",
-    "jsonls",
-    "cssls",
-    "tailwindcss",
-    "html",
-    "clangd",
-    "lua_ls",
-    "gopls",
-    "sqlls",
-    "intelephense",
-  },
-})
+return {
+	"williamboman/mason.nvim",
+	config = function()
+		require("mason").setup()
+	end,
+}

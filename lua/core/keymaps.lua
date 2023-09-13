@@ -72,14 +72,11 @@ end
 map("n", "<leader>qq", ":Bdelete<CR>")
 
 -- Nerd Commenter
-map("n", "<leader><space><space>", "<Plug>NERDCommenterToggle")
-map("x", "<leader><space><space>", "<Plug>NERDCommenterToggle")
+map("n", "<leader>cc", "<Plug>NERDCommenterToggle")
+map("x", "<leader>cc", "<Plug>NERDCommenterToggle")
 
 -- Neogen
 map("n", "<F2>", ":lua require('neogen').generate()<CR>")
-
--- Automaton
-map("n", "<F12>", "<cmd>CellularAutomaton make_it_rain<CR>")
 
 -- Copy+paste from/to system clip board
 map("v", "<leader>y", '"+y')
