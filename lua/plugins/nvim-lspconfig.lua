@@ -12,18 +12,11 @@ return {
 	"neovim/nvim-lspconfig",
 	config = function()
 		local lspconfig = require("lspconfig")
+		local util = require("lspconfig/util")
+		local cmp_nvim_lsp = require("cmp_nvim_lsp")
+		local ui_windows = require("lspconfig.ui.windows")
 
-		local util_status_ok, util = pcall(require, "lspconfig/util")
-		if not util_status_ok then
-			print("lspconfig/util is not installed!")
-			return
-		end
-
-		local cmp_status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-		if not cmp_status_ok then
-			print("cmp_nvim_lsp is not installed!")
-			return
-		end
+		ui_windows.default_options.border = "single"
 
 		-- Add additional capabilities supported by nvim-cmp
 		-- See: https://github.com/neovim/nvim-lspconfig/wiki/Autocompletion
@@ -230,6 +223,6 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 			on_attach = on_attach,
 			root_dir = root_dir,
 			capabilities = capabilities,
-    })
+		})
 	end,
 }

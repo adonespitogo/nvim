@@ -1,1 +1,4 @@
-return { "MunifTanjim/prettier.nvim" }
+return {
+	"MunifTanjim/prettier.nvim",
+	config = true,
+}

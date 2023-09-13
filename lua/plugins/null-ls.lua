@@ -32,7 +32,7 @@ return {
 			diagnostics.erb_lint,
 			diagnostics.jsonlint,
 			diagnostics.yamllint.with({
-				filetypes = { "yaml", "yml" },
+				filetypes = { "yaml" },
 			}),
 			diagnostics.proselint.with({
 				filetypes = { "text" },
@@ -47,7 +47,7 @@ return {
 				end,
 			}),
 			formatting.prettier.with({
-				filetypes = { "html", "css", "scss", "javascript", "typescript" },
+				filetypes = { "html", "css", "scss", "javascript", "typescript", "yaml" },
 			}),
 			formatting.erb_lint,
 			formatting.autopep8,

@@ -17,14 +17,14 @@ For Linux, copy the font files to `~/.local/share/fonts`.
 Debian:
 
 ```
-sudo apt install -y fd-find ripgrep luarocks python3-pip python3-testresources chafa
+sudo apt install -y fd-find ripgrep luarocks python3-pip pipx python3-testresources chafa
 snap install goimports-reviser
 ```
 
 Mac OS:
 
 ```
-brew install fd ripgrep luarocks python3 tidy-html5 bufbuild/buf/buf chafa
+brew install fd ripgrep luarocks python3 pipx tidy-html5 bufbuild/buf/buf chafa
 brew tap incu6us/homebrew-tap
 brew install incu6us/homebrew-tap/goimports-reviser
 ```
@@ -32,17 +32,7 @@ brew install incu6us/homebrew-tap/goimports-reviser
 Arch Linux:
 
 ```
-sudo pacman -S fd ripgrep luarocks python python-pip ttf-dejavu chafa
-```
-
-## Vim Plugins
-
-Install `vim-plug` to install legacy vim plugins like `vim-surround`.
-
-```
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' && \
-  nvim +PlugInstall
+sudo pacman -S fd ripgrep luarocks python python-pip python-pipx ttf-dejavu chafa
 ```
 
 ## LSPs
@@ -96,7 +86,7 @@ npm i -g \
 Install pip modules:
 
 ```
-pip install --user yamllint proselint codespell mdformat beautysh
+for pkg in yamllint proselint codespell mdformat beautysh; do pipx install $pkg; done
 ```
 
 Add to your `$PATH` env:
@@ -104,10 +94,6 @@ Add to your `$PATH` env:
 ```
 # Python paths
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$PATH:$HOME/Library/Python/3.10/bin"
-
-# php formatter
-export PATH="$PATH:$HOME/.config/nvim/tools/php-cs-fixer/vendor/bin"
 ```
 
 Laravel:
