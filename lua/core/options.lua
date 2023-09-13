@@ -6,24 +6,24 @@
 -- See: https://neovim.io/doc/user/vim_diff.html
 -- [2] Defaults - *nvim-defaults*
 
-local g = vim.g       -- Global variables
-local opt = vim.opt   -- Set options (global/buffer/windows-scoped)
+local g = vim.g -- Global variables
+local opt = vim.opt -- Set options (global/buffer/windows-scoped)
 
 ----------------------------------------------------------
 -- Custom
 ----------------------------------------------------------
-opt.encoding = 'UTF-8'
+opt.encoding = "UTF-8"
 -- vim.o.cmdheight=0
 vim.o.termguicolors = true
 
 -----------------------------------------------------------
 -- General
 -----------------------------------------------------------
-opt.mouse = 'a'                       -- Enable mouse support
-opt.clipboard = 'unnamedplus'         -- Copy/paste to system clipboard
-opt.swapfile = false                  -- Don't use swapfile
-opt.completeopt = 'menuone,noinsert,noselect'  -- Autocomplete options
-vim.opt.fillchars = {eob = " "} -- Hide tilde symbols
+opt.mouse = "a" -- Enable mouse support
+opt.clipboard = "unnamedplus" -- Copy/paste to system clipboard
+opt.swapfile = false -- Don't use swapfile
+opt.completeopt = "menuone,noinsert,noselect" -- Autocomplete options
+vim.opt.fillchars = { eob = " " } -- Hide tilde symbols
 
 -----------------------------------------------------------
 -- Author Header
@@ -31,7 +31,7 @@ vim.opt.fillchars = {eob = " "} -- Hide tilde symbols
 g.header_field_author = "Adones Pitogo"
 g.header_field_author_email = "adones.pitogo@adopisoft.com"
 g.header_field_modified_by = 0
-g.header_field_timestamp_format = '%b %d, %Y'
+g.header_field_timestamp_format = "%b %d, %Y"
 
 local start_year = "2021"
 local current_year = os.date("%Y")
@@ -41,36 +41,36 @@ g.header_field_copyright = "Copyright " .. start_year .. end_year .. " Flarego T
 -----------------------------------------------------------
 -- Neovim UI
 -----------------------------------------------------------
-opt.number = true           -- Show line number
-opt.relativenumber = true   -- Relative numbering
-opt.showmatch = true        -- Highlight matching parenthesis
-opt.foldmethod = 'marker'   -- Enable folding (default 'foldmarker')
+opt.number = true -- Show line number
+opt.relativenumber = true -- Relative numbering
+opt.showmatch = true -- Highlight matching parenthesis
+opt.foldmethod = "marker" -- Enable folding (default 'foldmarker')
 -- opt.colorcolumn = '80'      -- Line lenght marker at 80 columns
-opt.splitright = true       -- Vertical split to the right
-opt.splitbelow = true       -- Horizontal split to the bottom
-opt.ignorecase = true       -- Ignore case letters when search
-opt.smartcase = true        -- Ignore lowercase for the whole pattern
-opt.linebreak = true        -- Wrap on word boundary
-opt.termguicolors = true    -- Enable 24-bit RGB colors
-opt.laststatus=3            -- Set global statusline
-opt.cursorline = true       -- Highlight current line
+opt.splitright = true -- Vertical split to the right
+opt.splitbelow = true -- Horizontal split to the bottom
+opt.ignorecase = true -- Ignore case letters when search
+opt.smartcase = true -- Ignore lowercase for the whole pattern
+opt.linebreak = true -- Wrap on word boundary
+opt.termguicolors = true -- Enable 24-bit RGB colors
+opt.laststatus = 3 -- Set global statusline
+opt.cursorline = true -- Highlight current line
 
 -----------------------------------------------------------
 -- Tabs, indent
 -----------------------------------------------------------
-opt.expandtab = true        -- Use spaces instead of tabs
-opt.shiftwidth = 2          -- Shift 4 spaces when tab
-opt.tabstop = 2             -- 1 tab == 4 spaces
-opt.smartindent = true      -- Autoindent new lines
+opt.expandtab = true -- Use spaces instead of tabs
+opt.shiftwidth = 4 -- Shift 4 spaces when tab
+opt.tabstop = 4 -- 1 tab == 4 spaces
+opt.smartindent = true -- Autoindent new lines
 
 -----------------------------------------------------------
 -- Memory, CPU
 -----------------------------------------------------------
-opt.hidden = true           -- Enable background buffers
-opt.history = 100           -- Remember N lines in history
-opt.lazyredraw = true       -- Faster scrolling
-opt.synmaxcol = 240         -- Max column for syntax highlight
-opt.updatetime = 700        -- ms to wait for trigger an event
+opt.hidden = true -- Enable background buffers
+opt.history = 100 -- Remember N lines in history
+opt.lazyredraw = true -- Faster scrolling
+opt.synmaxcol = 240 -- Max column for syntax highlight
+opt.updatetime = 700 -- ms to wait for trigger an event
 
 -----------------------------------------------------------
 -- Nerd Commenter
@@ -84,37 +84,37 @@ g.NERDTrimTrailingWhitespace = 1
 -- Startup
 -----------------------------------------------------------
 -- Disable nvim intro
-opt.shortmess:append "sI"
+opt.shortmess:append("sI")
 
 -- -- Disable builtin plugins
 local disabled_built_ins = {
-   "2html_plugin",
-   "getscript",
-   "getscriptPlugin",
-   "gzip",
-   "logipat",
-   "netrw",
-   "netrwPlugin",
-   "netrwSettings",
-   "netrwFileHandlers",
-   "matchit",
-   "tar",
-   "tarPlugin",
-   "rrhelper",
-   "spellfile_plugin",
-   "vimball",
-   "vimballPlugin",
-   "zip",
-   "zipPlugin",
-   "tutor",
-   "rplugin",
-   "synmenu",
-   "optwin",
-   "compiler",
-   "bugreport",
-   "ftplugin",
+	"2html_plugin",
+	"getscript",
+	"getscriptPlugin",
+	"gzip",
+	"logipat",
+	"netrw",
+	"netrwPlugin",
+	"netrwSettings",
+	"netrwFileHandlers",
+	"matchit",
+	"tar",
+	"tarPlugin",
+	"rrhelper",
+	"spellfile_plugin",
+	"vimball",
+	"vimballPlugin",
+	"zip",
+	"zipPlugin",
+	"tutor",
+	"rplugin",
+	"synmenu",
+	"optwin",
+	"compiler",
+	"bugreport",
+	"ftplugin",
 }
 
 for _, plugin in pairs(disabled_built_ins) do
-   g["loaded_" .. plugin] = 1
+	g["loaded_" .. plugin] = 1
 end
