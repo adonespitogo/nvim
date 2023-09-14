@@ -100,5 +100,9 @@ return {
 				custom = { "^.git$", ".DS_Store" },
 			},
 		})
+
+		-- Open file tree (nvim-tree)
+		vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>")
+		vim.keymap.set("n", "fn", ":NvimTreeFindFile<CR>")
 	end,
 }
