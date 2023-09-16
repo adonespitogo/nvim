@@ -44,3 +44,6 @@ map("n", "<leader>p", '"+p')
 map("n", "<leader>P", '"+P')
 map("v", "<leader>p", '"+p')
 map("v", "<leader>P", '"+P')
+
+-- Paste without yanking in visual mode
+map("x", "p", "P")
