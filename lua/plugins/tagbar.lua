@@ -1,5 +1,8 @@
-local map = require("utils.keymap")
+return {
+	"preservim/tagbar",
+	config = function()
+		local map = require("utils.keymap")
 
-map("n", "<leader>z", ":TagbarToggle<CR>") -- open/close
-
-return { "preservim/tagbar" }
+		map("n", "<leader>z", ":TagbarToggle fj<CR>") -- open/close
+	end,
+}
