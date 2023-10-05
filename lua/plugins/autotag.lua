@@ -3,8 +3,11 @@
 return {
 	"windwp/nvim-ts-autotag",
 	config = function()
-		require("nvim-ts-autotag").setup({
-			disable_filetype = { "TelescopPrompt", "vim" },
+		require("nvim-treesitter.configs").setup({
+			autotag = {
+				enable = true,
+				disable_filetype = { "TelescopPrompt", "vim" },
+			},
 		})
 	end,
 }
