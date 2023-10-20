@@ -7,35 +7,10 @@
 
 return {
 	"lukas-reineke/indent-blankline.nvim",
-	config = function()
-		local status_ok, indent_blankline = pcall(require, "indent_blankline")
-		if not status_ok then
-			return
-		end
-
-		indent_blankline.setup({
+	main = "ibl",
+	opts = {
+		indent = {
 			char = "▏",
-			use_treesitter = true,
-			show_first_indent_level = false,
-			filetype_exclude = {
-				"lspinfo",
-				"packer",
-				"checkhealth",
-				"help",
-				"man",
-				"dashboard",
-				"git",
-				"markdown",
-				"text",
-				"terminal",
-				"NvimTree",
-			},
-			buftype_exclude = {
-				"terminal",
-				"nofile",
-				"quickfix",
-				"prompt",
-			},
-		})
-	end,
+		},
+	},
 }
