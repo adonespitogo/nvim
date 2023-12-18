@@ -46,6 +46,7 @@
   "tsc.nvim": { "branch": "main", "commit": "a8f26d3d6a0faf533afb840816a6d9ac6a1fcbea" },
   "vim-bbye": { "branch": "master", "commit": "25ef93ac5a87526111f43e5110675032dbcacf56" },
   "vim-blade": { "branch": "master", "commit": "9534101808cc320eef003129a40cab04b026a20c" },
+  "vim-coffee-script": { "branch": "master", "commit": "28421258a8dde5a50deafbfc19cd9873cacfaa79" },
   "vim-dotenv": { "branch": "master", "commit": "5c51cfcf8d87280d6414e03cd6b253eb70ecb800" },
   "vim-fugitive": { "branch": "master", "commit": "46eaf8918b347906789df296143117774e827616" },
   "vim-header": { "branch": "master", "commit": "4447b601dd2439586a6d3ff4c3fefec86a522294" },
