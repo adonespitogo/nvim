@@ -47,7 +47,7 @@ return {
 				end,
 			}),
 			formatting.prettier.with({
-				filetypes = { "html", "css", "scss", "javascript", "typescript", "yaml" },
+				filetypes = { "html", "css", "scss", "javascript", "typescript", "yaml", "vue" },
 			}),
 			formatting.erb_lint,
 			formatting.autopep8,
