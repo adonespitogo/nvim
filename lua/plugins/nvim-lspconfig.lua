@@ -219,6 +219,12 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 			},
 		})
 
+		lspconfig["volar"].setup({
+			on_attach = on_attach,
+			root_dir = root_dir,
+			capabilities = capabilities,
+		})
+
 		lspconfig["solargraph"].setup({
 			on_attach = on_attach,
 			root_dir = root_dir,
