@@ -80,6 +80,8 @@ npm i -g \
     vscode-langservers-extracted        \
     @prantlf/jsonlint                   \
     @tailwindcss/language-server        \
+    typescript-language-server          \
+    typescript                          \
     blade-formatter
 ```
 
