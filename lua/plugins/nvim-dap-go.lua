@@ -4,7 +4,7 @@ return {
 		"mfussenegger/nvim-dap",
 	},
 	config = function()
-        local gotags = os.getenv("GOTAGS")
+		local gotags = os.getenv("GOTAGS")
 
 		require("dap-go").setup({
 			-- delve configurations
