@@ -101,3 +101,10 @@ export PATH="$HOME/.local/bin:$PATH"
 Laravel:
 
 Follow the instructions at: https://github.com/barryvdh/laravel-ide-helper
+
+GO:
+
+```
+go install github.com/go-delve/delve/cmd/dlv@latest
+echo "0"|sudo tee /proc/sys/kernel/yama/ptrace_scope
+```
