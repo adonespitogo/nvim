@@ -13,7 +13,7 @@ map("n", "<leader>r", ":LspRestart<CR>")
 -- Map zero to ^
 map("n", "0", "^")
 
--- Clear search highlighting with <leader> and c
+-- Clear search highlighting
 map("n", "<space><space>", ":nohl<CR>")
 
 -- Reload configuration without restart nvim
