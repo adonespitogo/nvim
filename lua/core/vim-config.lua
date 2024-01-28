@@ -1,3 +1,11 @@
+vim.lsp.set_log_level("off")
+
+-- Check if the operating system is macOS
+local is_macos = vim.fn.has("mac") == 1
+if is_macos then
+    vim.g.tagbar_ctags_bin = '/opt/homebrew/bin/ctags'
+end
+
 -- Diagnostic options, see: `:help vim.diagnostic.config`
 vim.diagnostic.config({
 	update_in_insert = true,
