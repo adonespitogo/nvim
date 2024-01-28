@@ -106,4 +106,5 @@ GO:
 
 ```
 go install github.com/go-delve/delve/cmd/dlv@latest
+echo "0"|sudo tee /proc/sys/kernel/yama/ptrace_scope
 ```
