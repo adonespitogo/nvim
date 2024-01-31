@@ -4,6 +4,7 @@ return {
 		"kyazdani42/nvim-web-devicons", -- optional, for file icons
 	},
 	config = function()
+		local map = require("utils.keymap")
 		local function on_attach(bufnr)
 			local api = require("nvim-tree.api")
 
@@ -102,7 +103,7 @@ return {
 		})
 
 		-- Open file tree (nvim-tree)
-		vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>")
-		vim.keymap.set("n", "fn", ":NvimTreeFindFile<CR>")
+		map("n", "<C-n>", ":NvimTreeToggle<CR>")
+		map("n", "<leader>fn", ":NvimTreeFindFile<CR>", { desc = "Show file location in nvim-tree" })
 	end,
 }

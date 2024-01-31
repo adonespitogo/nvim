@@ -1,6 +1,6 @@
 -- For code annotations like jsdoc
 
-local map = require("utils/keymap")
+local map = require("utils.keymap")
 
 return {
     "danymat/neogen",
