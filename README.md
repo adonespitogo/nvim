@@ -24,7 +24,7 @@ snap install goimports-reviser
 Mac OS:
 
 ```
-brew install fd ripgrep ranger luarocks python3 pipx tidy-html5 bufbuild/buf/buf chafa gotags
+brew install fd ripgrep ranger luarocks python3 pipx tidy-html5 bufbuild/buf/buf chafa ctags
 brew tap incu6us/homebrew-tap
 brew install incu6us/homebrew-tap/goimports-reviser
 ```
@@ -32,7 +32,7 @@ brew install incu6us/homebrew-tap/goimports-reviser
 Arch Linux:
 
 ```
-yay -S fd ripgrep ranger luarocks python python-pip python-pipx ttf-dejavu chafa gotags
+yay -S fd ripgrep ranger luarocks python python-pip python-pipx ttf-dejavu chafa ctags
 ```
 
 ## LSPs
