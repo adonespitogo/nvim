@@ -47,3 +47,6 @@ map("v", "<leader>P", '"+P')
 
 -- Paste without yanking in visual mode
 map("x", "p", "P")
+
+-- Close all buffers
+map("n", "<leader>bd", ":%bd<CR>", { desc = "Close buffer" })
