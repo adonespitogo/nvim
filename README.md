@@ -17,7 +17,7 @@ For Linux, copy the font files to `~/.local/share/fonts`.
 Debian:
 
 ```
-sudo apt install -y fd-find ripgrep ranger luarocks python3-pip pipx python3-testresources chafa gotags
+sudo apt install -y fd-find ripgrep ranger luarocks python3-pip pipx python3-testresources chafa ctags
 snap install goimports-reviser
 ```
 
