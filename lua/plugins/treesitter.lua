@@ -22,6 +22,7 @@ return {
 				"bash",
 				"c",
 				"cpp",
+				"c_sharp",
 				"css",
 				"html",
 				"javascript",
