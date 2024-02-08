@@ -46,9 +46,9 @@ return {
 					return utils.root_has_file(eslint_files)
 				end,
 			}),
-			-- formatting.prettier.with({
-			-- 	filetypes = { "html", "css", "scss", "javascript", "typescript", "yaml", "vue" },
-			-- }),
+			formatting.prettier.with({
+				filetypes = { "html", "css", "scss", "javascript", "typescript", "yaml", "vue" },
+			}),
 			formatting.erb_lint,
 			formatting.autopep8,
 			formatting.stylua,
