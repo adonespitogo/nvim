@@ -303,7 +303,7 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 			on_attach = on_attach,
 			root_dir = root_dir,
 			capabilities = capabilities,
-            cmd = { "omnisharp", "--languageserver" },
+			cmd = { "omnisharp", "--languageserver" },
 		})
 	end,
 }

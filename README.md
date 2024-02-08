@@ -18,15 +18,12 @@ Debian:
 
 ```
 sudo apt install -y fd-find ripgrep ranger luarocks python3-pip pipx python3-testresources chafa ctags
-snap install goimports-reviser
 ```
 
 Mac OS:
 
 ```
 brew install fd ripgrep ranger luarocks python3 pipx tidy-html5 bufbuild/buf/buf chafa ctags
-brew tap incu6us/homebrew-tap
-brew install incu6us/homebrew-tap/goimports-reviser
 ```
 
 Arch Linux:
