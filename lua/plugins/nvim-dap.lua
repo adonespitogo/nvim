@@ -30,6 +30,13 @@ return {
 				type = "coreclr",
 				name = "launch - netcoredbg",
 				request = "launch",
+				env = "ASPNETCORE_ENVIRONMENT=Development",
+				args = {
+					"/p:EnvironmentName=Development", -- this is a msbuild jk
+					--  this is set via environment variable ASPNETCORE_ENVIRONMENT=Development
+					"--urls=http://localhost:5002",
+					"--environment=Development",
+				},
 				program = function()
 					-- return vim.fn.getcwd() .. "/bin/Debug/net8.0/FlareHotspotServer.dll"
 					local files = ls_dir(get_root_dir() .. "/bin/Debug/")
@@ -45,7 +52,7 @@ return {
 					-- return vim.fn.input("Path to dll", vim.fn.getcwd() .. "/bin/Debug/", "file")
 					return vim.fn.input({
 						prompt = "Path to dll",
-						default = vim.fn.getcwd() .. "/bin/Debug/",
+						default = get_root_dir() .. "/bin/Debug/",
 					})
 				end,
 			},
