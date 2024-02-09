@@ -17,19 +17,19 @@ For Linux, copy the font files to `~/.local/share/fonts`.
 Debian:
 
 ```
-sudo apt install -y fd-find ripgrep ranger luarocks python3-pip pipx python3-testresources chafa ctags netcoredbg
+sudo apt install -y fd-find ripgrep ranger luarocks python3-pip pipx python3-testresources chafa ctags netcoredbg bash-language-server
 ```
 
 Mac OS:
 
 ```
-brew install fd ripgrep ranger luarocks python3 pipx tidy-html5 bufbuild/buf/buf chafa ctags netcoredbg
+brew install fd ripgrep ranger luarocks python3 pipx tidy-html5 bufbuild/buf/buf chafa ctags netcoredbg bash-language-server
 ```
 
 Arch Linux:
 
 ```
-yay -S fd ripgrep ranger luarocks python python-pip python-pipx ttf-dejavu chafa ctags netcoredbg
+yay -S fd ripgrep ranger luarocks python python-pip python-pipx ttf-dejavu chafa ctags netcoredbg bash-language-server
 ```
 
 ## LSPs
