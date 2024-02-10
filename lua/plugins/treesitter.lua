@@ -36,6 +36,7 @@ return {
 				"go",
 				"php",
 				"vue",
+				"pug",
 			},
 		})
 
