@@ -50,3 +50,5 @@ autocmd("BufLeave", {
 	pattern = "term://*",
 	command = "stopinsert",
 })
+
+vim.cmd("autocmd BufNewFile,BufRead *.ejs set filetype=html")
