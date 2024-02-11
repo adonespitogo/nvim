@@ -22,5 +22,8 @@ return {
 				block = "<leader>gc",
 			},
 		})
+
+        local ft = require('Comment.ft')
+        ft.set('pug', '//%s')
 	end,
 }
