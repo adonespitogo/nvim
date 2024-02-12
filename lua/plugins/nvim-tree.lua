@@ -103,7 +103,7 @@ return {
 		})
 
 		-- Open file tree (nvim-tree)
-		map("n", "<C-n>", ":NvimTreeToggle<CR>")
+		map("n", "<leader>e", ":NvimTreeToggle<CR>")
 		map("n", "<leader>fn", ":NvimTreeFindFile<CR>", { desc = "Show file location in nvim-tree" })
 	end,
 }

@@ -15,6 +15,7 @@ return {
 		"saadparwaiz1/cmp_luasnip",
 		"rafamadriz/friendly-snippets",
 		"onsails/lspkind.nvim",
+		"hrsh7th/cmp-nvim-lsp-signature-help",
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -60,11 +61,11 @@ return {
 
 			-- Key mapping
 			mapping = {
-				["<C-n>"] = cmp.mapping.select_next_item(),
-				["<C-p>"] = cmp.mapping.select_prev_item(),
-				["<C-d>"] = cmp.mapping.scroll_docs(-4),
-				["<C-f>"] = cmp.mapping.scroll_docs(4),
-				["<C-Space>"] = cmp.mapping.complete(),
+				-- ["<C-n>"] = cmp.mapping.select_next_item(),
+				-- ["<C-p>"] = cmp.mapping.select_prev_item(),
+				-- ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+				-- ["<C-f>"] = cmp.mapping.scroll_docs(4),
+				-- ["<C-o>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.close(),
 				["<CR>"] = cmp.mapping.confirm({
 					behavior = cmp.ConfirmBehavior.Replace,
@@ -104,6 +105,7 @@ return {
 				{ name = "luasnip" },
 				{ name = "path" },
 				{ name = "buffer" },
+				{ name = "nvim_lsp_signature_help" },
 			},
 		})
 	end,
