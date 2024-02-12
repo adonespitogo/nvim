@@ -5,6 +5,28 @@
 -- Plugin: nvim-cmp
 -- url: https://github.com/hrsh7th/nvim-cmp
 
+local icons = {
+	Class = "󰠱",
+	Constructor = "",
+	Function = "󰊕",
+	Keyword = "",
+	Method = "",
+	Module = "󰕳",
+	Snippet = "",
+	Text = "󰊄",
+	Variable = "󰫧",
+	Copilot = "",
+	Field = "",
+    Enum = "",
+
+	nvim_lsp = "󰗔",
+	copilot = "",
+	luasnip = "",
+	buffer = "󱔗",
+	dotenv = "",
+	path = "/",
+}
+
 return {
 	"hrsh7th/nvim-cmp",
 	dependencies = {
@@ -16,6 +38,19 @@ return {
 		"rafamadriz/friendly-snippets",
 		"onsails/lspkind.nvim",
 		"hrsh7th/cmp-nvim-lsp-signature-help",
+		"rasulomaroff/cmp-bufname",
+		"SergioRibera/cmp-dotenv",
+		{
+			"Jezda1337/nvim-html-css",
+			dependencies = {
+				"nvim-treesitter/nvim-treesitter",
+				"nvim-lua/plenary.nvim",
+				"sharkdp/fd",
+			},
+			config = function()
+				require("html-css"):setup()
+			end,
+		},
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -36,6 +71,29 @@ return {
 		}
 
 		cmp.setup({
+			-- Load sources, see: https://github.com/topics/nvim-cmp
+			sources = {
+				{ name = "copilot" },
+				{ name = "nvim_lsp" },
+				{ name = "luasnip" },
+				{ name = "path" },
+				{ name = "buffer" },
+				{ name = "bufname" },
+				{ name = "dotenv" },
+				{
+					name = "html-css",
+					option = {
+						enable_on = { "html", "vue", "ejs", "pug", "erb", "haml" },
+						file_extensions = { "css", "sass", "less" }, -- set the local filetypes from which you want to derive classes
+						style_sheets = {
+							-- example of remote styles, only css no js for now
+							"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css",
+						},
+					},
+				},
+				{ name = "nvim_lsp_signature_help" },
+			},
+
 			-- Window styles
 			window = {
 				completion = borderstyle,
@@ -50,7 +108,15 @@ return {
 			},
 
 			formatting = {
-				format = lspkind.cmp_format(),
+				-- format = lspkind.cmp_format(),
+				format = function(entry, vim_item)
+					local kind = vim_item.kind
+					vim_item.kind = (icons[kind] or "") .. " " .. vim_item.kind
+
+					local source = entry.source.name
+					vim_item.menu = "[" .. (icons[source] or "") .. " " .. source .. "]"
+					return vim_item
+				end,
 			},
 
 			-- Completion settings
@@ -96,16 +162,6 @@ return {
 						fallback()
 					end
 				end),
-			},
-
-			-- Load sources, see: https://github.com/topics/nvim-cmp
-			sources = {
-				{ name = "copilot" },
-				{ name = "nvim_lsp" },
-				{ name = "luasnip" },
-				{ name = "path" },
-				{ name = "buffer" },
-				{ name = "nvim_lsp_signature_help" },
 			},
 		})
 	end,
