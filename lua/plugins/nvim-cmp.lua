@@ -17,14 +17,9 @@ local icons = {
 	Variable = "󰫧",
 	Copilot = "",
 	Field = "",
-    Enum = "",
-
-	nvim_lsp = "󰗔",
-	copilot = "",
-	luasnip = "",
-	buffer = "󱔗",
-	dotenv = "",
-	path = "/",
+	Enum = "",
+	File = "",
+	Folder = "",
 }
 
 return {
@@ -114,7 +109,7 @@ return {
 					vim_item.kind = (icons[kind] or "") .. " " .. vim_item.kind
 
 					local source = entry.source.name
-					vim_item.menu = "[" .. (icons[source] or "") .. " " .. source .. "]"
+					vim_item.menu = "[" .. source .. "]"
 					return vim_item
 				end,
 			},
