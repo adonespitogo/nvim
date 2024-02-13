@@ -20,6 +20,7 @@ local icons = {
 	Enum = "",
 	File = "",
 	Folder = "",
+	Property = "",
 }
 
 return {
@@ -127,10 +128,18 @@ return {
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
 				["<C-l>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.close(),
-				["<CR>"] = cmp.mapping.confirm({
-					behavior = cmp.ConfirmBehavior.Replace,
-					select = true,
-				}),
+				["<CR>"] = cmp.mapping(function(fallback)
+					local do_select = cmp.mapping.confirm({
+						behavior = cmp.ConfirmBehavior.Replace,
+						select = true,
+					})
+					local selected = cmp.get_selected_entry()
+					if selected then
+						do_select()
+					else
+						fallback()
+					end
+				end),
 
 				-- Tab mapping
 				["<Tab>"] = cmp.mapping(function(fallback)
