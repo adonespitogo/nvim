@@ -8,13 +8,13 @@
 local icons = {
 	Class = "󰠱",
 	Constructor = "",
-	Function = "󰊕",
+	Function = "󰡱",
 	Keyword = "",
 	Method = "",
 	Module = "󰕳",
 	Snippet = "",
 	Text = "󰊄",
-	Variable = "󰫧",
+	Variable = "󱄑",
 	Copilot = "",
 	Field = "",
 	Enum = "",
@@ -30,7 +30,6 @@ return {
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-buffer",
 		"saadparwaiz1/cmp_luasnip",
-		"rafamadriz/friendly-snippets",
 		"onsails/lspkind.nvim",
 		"hrsh7th/cmp-nvim-lsp-signature-help",
 		"rasulomaroff/cmp-bufname",
@@ -136,23 +135,19 @@ return {
 				-- Tab mapping
 				["<Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() and has_words_before() then
-						if luasnip.expand_or_jumpable() then
-							luasnip.expand_or_jump()
-						else
-							cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-						end
+						cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+					elseif luasnip.expand_or_jumpable() then
+						luasnip.expand_or_jump()
 					else
 						fallback()
 					end
 				end),
 
 				["<S-Tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
+					if cmp.visible() and has_words_before() then
 						cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
 					elseif luasnip.jumpable(-1) then
 						luasnip.jump(-1)
-					elseif has_words_before() then
-						cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
 					else
 						fallback()
 					end

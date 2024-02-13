@@ -2,6 +2,7 @@ return {
 	"L3MON4D3/LuaSnip",
 	version = "2.*",
 	build = "make install_jsregexp",
+	dependencies = { "rafamadriz/friendly-snippets" },
 	config = function()
 		-- LuaSnip Snippet History Fix (Seems to work really well, I think.)
 		local ls = require("luasnip")
