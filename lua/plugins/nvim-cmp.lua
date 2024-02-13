@@ -52,13 +52,13 @@ return {
 		local luasnip = require("luasnip")
 		-- local lspkind = require("lspkind")
 
-		local has_words_before = function()
-			if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
-				return false
-			end
-			local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-			return col ~= 0 and vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match("^%s*$") == nil
-		end
+		-- local has_words_before = function()
+		-- 	if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
+		-- 		return false
+		-- 	end
+		-- 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+		-- 	return col ~= 0 and vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match("^%s*$") == nil
+		-- end
 
 		local borderstyle = {
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
@@ -122,8 +122,8 @@ return {
 
 			-- Key mapping
 			mapping = {
-				["<C-n>"] = cmp.mapping.select_next_item(),
-				["<C-p>"] = cmp.mapping.select_prev_item(),
+				["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+				["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
 				["<C-d>"] = cmp.mapping.scroll_docs(-4),
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
 				["<C-l>"] = cmp.mapping.complete(),
@@ -133,8 +133,8 @@ return {
 						behavior = cmp.ConfirmBehavior.Replace,
 						select = true,
 					})
-					local selected = cmp.get_selected_entry()
-					if selected then
+
+					if cmp.get_selected_entry() then
 						do_select()
 					else
 						fallback()
@@ -143,7 +143,7 @@ return {
 
 				-- Tab mapping
 				["<Tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() and has_words_before() then
+					if cmp.visible() then
 						cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
 					elseif luasnip.expand_or_jumpable() then
 						luasnip.expand_or_jump()
@@ -153,7 +153,7 @@ return {
 				end),
 
 				["<S-Tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() and has_words_before() then
+					if cmp.visible() then
 						cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
 					elseif luasnip.jumpable(-1) then
 						luasnip.jump(-1)
