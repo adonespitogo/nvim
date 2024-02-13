@@ -79,7 +79,8 @@ npm i -g \
     @tailwindcss/language-server        \
     typescript-language-server          \
     typescript                          \
-    blade-formatter
+    blade-formatter                     \
+    git+https://github.com/ramitos/jsctags.git
 ```
 
 Install pip modules:

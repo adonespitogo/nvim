@@ -50,7 +50,7 @@ return {
 	config = function()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
-		local lspkind = require("lspkind")
+		-- local lspkind = require("lspkind")
 
 		local has_words_before = function()
 			if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
@@ -135,12 +135,12 @@ return {
 
 				-- Tab mapping
 				["<Tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-					elseif luasnip.expand_or_jumpable() then
-						luasnip.expand_or_jump()
-					elseif has_words_before() then
-						cmp.complete()
+					if cmp.visible() and has_words_before() then
+						if luasnip.expand_or_jumpable() then
+							luasnip.expand_or_jump()
+						else
+							cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+						end
 					else
 						fallback()
 					end
