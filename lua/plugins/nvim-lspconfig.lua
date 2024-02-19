@@ -249,8 +249,8 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 			},
 		})
 
-		-- Valid "GOTAGS" format:
-		-- export GOTAGS="tag1 tag2"
+		-- Valid "GO_TAGS" format:
+		-- (shell) export GO_TAGS="tag1 tag2"
 		local gopls = {}
 		local buildFlags = nil
 		local flags = os.getenv("GOTAGS") or os.getenv("GO_TAGS")
