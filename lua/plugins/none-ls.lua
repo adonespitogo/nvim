@@ -3,6 +3,7 @@ return {
 	dependencies = { "nvim-lua/plenary.nvim" },
 	config = function()
 		local null_ls = require("null-ls")
+		local fixjson = require("utils.nonels.fixjson")
 
 		local formatting = null_ls.builtins.formatting
 		local diagnostics = null_ls.builtins.diagnostics
@@ -10,27 +11,16 @@ return {
 		-- local completion = null_ls.builtins.completion
 		local hover = null_ls.builtins.hover
 
-		local eslint_files = { ".eslintrc", ".eslintrc.json", ".eslintrc.js", ".eslintrc.yml" }
-
 		local sources = {
 			-- actions
-			actions.eslint,
 			actions.refactoring,
 
 			-- completions
 			-- completion.spell,
 
 			-- linters
-			-- diagnostics.luacheck.with({
-			-- 	extra_args = { globals = "vim" },
-			-- }),
-			diagnostics.eslint.with({
-				condition = function(utils)
-					return utils.root_has_file(eslint_files)
-				end,
-			}),
 			diagnostics.erb_lint,
-			diagnostics.jsonlint,
+			-- diagnostics.jsonlint,
 			diagnostics.yamllint.with({
 				filetypes = { "yaml" },
 			}),
@@ -41,19 +31,14 @@ return {
 			diagnostics.buf,
 
 			-- formatters
-			formatting.eslint.with({
-				condition = function(utils)
-					return utils.root_has_file(eslint_files)
-				end,
-			}),
 			formatting.prettier.with({
 				filetypes = { "html", "css", "scss", "javascript", "typescript", "yaml", "vue" },
 			}),
 			formatting.erb_lint,
-			formatting.autopep8,
+			-- formatting.autopep8,
 			formatting.stylua,
-			formatting.beautysh,
-			formatting.fixjson,
+			-- formatting.beautysh,
+			fixjson,
 			formatting.mdformat,
 			formatting.nginx_beautifier,
 			formatting.buf,
