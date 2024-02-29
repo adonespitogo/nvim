@@ -3,7 +3,10 @@ return {
 	dependencies = { "nvim-lua/plenary.nvim" },
 	config = function()
 		local null_ls = require("null-ls")
+
+        -- custom sources
 		local fixjson = require("utils.nonels.fixjson")
+        local beautysh = require("utils.nonels.beautysh")
 
 		local formatting = null_ls.builtins.formatting
 		local diagnostics = null_ls.builtins.diagnostics
@@ -20,7 +23,6 @@ return {
 
 			-- linters
 			diagnostics.erb_lint,
-			-- diagnostics.jsonlint,
 			diagnostics.yamllint.with({
 				filetypes = { "yaml" },
 			}),
@@ -31,14 +33,13 @@ return {
 			diagnostics.buf,
 
 			-- formatters
+			fixjson,
+            beautysh,
 			formatting.prettier.with({
 				filetypes = { "html", "css", "scss", "javascript", "typescript", "yaml", "vue" },
 			}),
 			formatting.erb_lint,
-			-- formatting.autopep8,
 			formatting.stylua,
-			-- formatting.beautysh,
-			fixjson,
 			formatting.mdformat,
 			formatting.nginx_beautifier,
 			formatting.buf,
