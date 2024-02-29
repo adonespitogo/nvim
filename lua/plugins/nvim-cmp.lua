@@ -88,20 +88,17 @@ return {
 				},
 				{ name = "nvim_lsp_signature_help" },
 			},
-
 			-- Window styles
 			window = {
 				completion = borderstyle,
 				documentation = borderstyle,
 			},
-
 			-- Load snippet support
 			snippet = {
 				expand = function(args)
 					luasnip.lsp_expand(args.body)
 				end,
 			},
-
 			formatting = {
 				-- format = lspkind.cmp_format(),
 				format = function(entry, vim_item)
@@ -113,13 +110,14 @@ return {
 					return vim_item
 				end,
 			},
-
 			-- Completion settings
 			completion = {
 				--completeopt = 'menu,menuone,noselect'
 				keyword_length = 1,
 			},
-
+			experimental = {
+				ghost_text = true,
+			},
 			-- Key mapping
 			mapping = {
 				["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
