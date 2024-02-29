@@ -212,11 +212,13 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 			"pyright",
 			"rust_analyzer",
 			"tsserver",
-			"solargraph",
 			"jsonls",
 			"cssls",
 			"tailwindcss",
 			"volar",
+			"intelephense",
+			"solargraph",
+			"sqlls",
 			"html",
 		}
 
@@ -266,33 +268,6 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 			settings = {
 				gopls = gopls,
 			},
-		})
-
-		lspconfig["sqlls"].setup({
-			on_attach = on_attach,
-			root_dir = get_root_dir,
-			capabilities = capabilities,
-		})
-
-		lspconfig["intelephense"].setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-			root_dir = get_root_dir,
-			init_options = {
-				-- ["indexer.stub_paths"] = {root_dir() .. "/ide-helper"},
-			},
-		})
-
-		lspconfig["volar"].setup({
-			on_attach = on_attach,
-			root_dir = get_root_dir,
-			capabilities = capabilities,
-		})
-
-		lspconfig["solargraph"].setup({
-			on_attach = on_attach,
-			root_dir = get_root_dir,
-			capabilities = capabilities,
 		})
 
 		lspconfig["omnisharp"].setup({
