@@ -7,6 +7,7 @@
 
 local icons = {
 	Class = "󰠱",
+	Struct = "",
 	Constructor = "",
 	Function = "󰡱",
 	Keyword = "",
@@ -21,6 +22,7 @@ local icons = {
 	File = "",
 	Folder = "",
 	Property = "",
+	Interface = "",
 }
 
 return {
