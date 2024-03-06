@@ -7,22 +7,23 @@
 
 local icons = {
 	Class = "󰠱",
-	Struct = "",
 	Constructor = "",
+	Constant = "",
+	Copilot = "",
+	Enum = "",
+	Field = "",
+	File = "",
+	Folder = "",
 	Function = "󰡱",
+	Interface = "",
 	Keyword = "",
 	Method = "",
 	Module = "󰕳",
+	Property = "",
 	Snippet = "",
+	Struct = "",
 	Text = "󰊄",
 	Variable = "󱄑",
-	Copilot = "",
-	Field = "",
-	Enum = "",
-	File = "",
-	Folder = "",
-	Property = "",
-	Interface = "",
 }
 
 return {
