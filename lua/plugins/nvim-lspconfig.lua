@@ -221,6 +221,7 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 			"sqlls",
 			"html",
 			"eslint",
+			"templ",
 		}
 
 		-- Call setup
