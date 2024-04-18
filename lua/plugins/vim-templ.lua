@@ -1,1 +1,4 @@
-return { "joerdav/templ.vim" }
+return {
+	"joerdav/templ.vim",
+	ft = "templ",
+}
