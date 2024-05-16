@@ -29,10 +29,10 @@ map("n", "<leader>wj", ":wincmd j<CR>", { desc = "Jump to down window" })
 map("n", "<leader>wk", ":wincmd k<CR>", { desc = "Jump to up window" })
 map("n", "<leader>wl", ":wincmd l<CR>", { desc = "Jump to right window" })
 
--- for i = 1, 9, 1 do
--- -- Move between windows by leader + window number
--- map("n", "<leader>d" .. i, ":" .. i .. "wincmd w<CR>")
--- end
+for i = 1, 9, 1 do
+	-- Move between windows by leader + window number
+	map("n", "<leader>w" .. i, ":" .. i .. "wincmd w<CR>")
+end
 
 -- Tabs
 -- map("n", "<leader>tt", ":tabnew<CR>")
