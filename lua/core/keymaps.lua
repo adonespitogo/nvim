@@ -13,6 +13,9 @@ map("n", "<leader>r", ":LspRestart<CR>", { desc = "Restart LSP" })
 -- Map zero to ^
 map("n", "0", "^")
 
+-- Close buffer and window
+map("n", "<leader>qq", ":bd<CR>", { desc = "Close buffer and window" })
+
 -- Clear search highlighting
 map("n", "<space><space>", ":nohl<CR>", { desc = "Clear search highlighting" })
 
