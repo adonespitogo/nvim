@@ -35,9 +35,9 @@ for i = 1, 9, 1 do
 end
 
 -- Tabs
--- map("n", "<leader>tt", ":tabnew<CR>")
--- map("n", "<leader>tn", ":tabn<CR>")
--- map("n", "<leader>tp", ":tabp<CR>")
+map("n", "<leader>tt", ":tabnew<CR>")
+map("n", "<leader>tn", ":tabn<CR>")
+map("n", "<leader>tp", ":tabp<CR>")
 
 -- Copy+paste from/to system clip board
 map("v", "<leader>y", '"+y')
