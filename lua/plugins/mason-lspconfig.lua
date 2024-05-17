@@ -15,7 +15,6 @@ return {
 				"clangd",
 				"lua_ls",
 				"gopls",
-				"sqlls",
 				"intelephense",
 				"volar",
 				"omnisharp",

@@ -218,7 +218,6 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 			"volar",
 			"intelephense",
 			"solargraph",
-			"sqlls",
 			"html",
 			"eslint",
 			"templ",
