@@ -86,7 +86,7 @@ npm i -g \
 Install pip modules:
 
 ```
-for pkg in yamllint proselint codespell mdformat beautysh; do pipx install $pkg; done
+for pkg in yamllint proselint codespell mdformat beautysh sqlfluff; do pipx install $pkg; done
 ```
 
 Add to your `$PATH` env:
