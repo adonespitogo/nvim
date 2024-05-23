@@ -2,7 +2,7 @@
 return {
 	"adonespitogo/barbecue.nvim",
 	name = "barbecue",
-	branch = "feature/show-diagnostics",
+	branch = "main",
 	version = "*",
 	dependencies = {
 		"SmiteshP/nvim-navic",
