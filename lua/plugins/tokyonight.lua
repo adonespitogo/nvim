@@ -22,7 +22,8 @@ return {
 				-- colors.bg_sidebar = colors.bg_dark
 				-- colors.bg_statusline = colors.bg_dark
 				-- colors.bg_visual = "#283457"
-				colors.border = colors.blue7
+				-- colors.border = colors.blue7
+				colors.border = colors.magenta
 			end,
 		})
 
