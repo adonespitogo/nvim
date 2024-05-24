@@ -25,6 +25,8 @@ return {
                 "c_sharp",
                 "css",
                 "html",
+                "markdown",
+                "markdown_inline",
                 "javascript",
                 "json",
                 "lua",
