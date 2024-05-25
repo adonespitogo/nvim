@@ -32,6 +32,8 @@ map("n", "<leader>wl", ":wincmd l<CR>", { desc = "Jump to right window" })
 for i = 1, 9, 1 do
 	-- Move between windows by leader + window number
 	map("n", "<leader>" .. i, ":" .. i .. "wincmd w<CR>")
+    -- Close a window by leader + d + window number
+	map("n", "<leader>d" .. i, ":" .. i .. "wincmd c<CR>")
 end
 
 -- Tabs
