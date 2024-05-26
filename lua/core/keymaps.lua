@@ -8,7 +8,7 @@ local map = require("utils.keymap")
 vim.g.mapleader = ";"
 
 -- LspRestart
-map("n", "<leader>r", ":LspRestart<CR>", { desc = "Restart LSP" })
+-- map("n", "<leader>r", ":LspRestart<CR>", { desc = "Restart LSP" })
 
 -- Map zero to ^
 map("n", "0", "^")
@@ -20,7 +20,7 @@ map("n", "<leader>qq", ":bd<CR>", { desc = "Close buffer and window" })
 map("n", "<space><space>", ":nohl<CR>", { desc = "Clear search highlighting" })
 
 -- Reload configuration without restart nvim
--- map("n", "<leader>r", ":so %<CR>")
+map("n", "<leader>r", ":so %<CR>")
 
 -- -- Window splits
 map("n", "<leader>ww", "<C-w>w")
