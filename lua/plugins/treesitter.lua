@@ -40,6 +40,7 @@ return {
                 "vue",
                 "pug",
                 "templ",
+                "proto",
             },
         })
 

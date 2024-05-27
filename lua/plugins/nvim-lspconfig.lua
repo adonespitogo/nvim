@@ -209,6 +209,7 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
         -- Add your language server below:
         local servers = {
             "bashls",
+            "pbls",
             "pyright",
             "rust_analyzer",
             "tsserver",
