@@ -12,24 +12,29 @@ For Mac OS, copy the font files to `~/Library/Fonts/`.
 
 For Linux, copy the font files to `~/.local/share/fonts`.
 
+Fix missing loading icons in Gnome:
+```sh
+paru -S gnome-characters
+```
+
 ## Packages
 
 Debian:
 
 ```
-sudo apt install -y fd-find ripgrep ranger luarocks python3-pip pipx python3-testresources chafa universal-ctags
+sudo apt install -y fd-find ripgrep ranger luarocks python3-pip pipx python3-testresources chafa universal-ctags rust
 ```
 
 Mac OS:
 
 ```
-brew install fd ripgrep ranger luarocks python3 pipx tidy-html5 bufbuild/buf/buf chafa ctags netcoredbg bash-language-server
+brew install fd ripgrep ranger luarocks python3 pipx tidy-html5 bufbuild/buf/buf chafa ctags netcoredbg bash-language-server rust
 ```
 
 Arch Linux:
 
 ```
-yay -S fd ripgrep ranger luarocks python python-pip python-pipx ttf-dejavu chafa ctags netcoredbg bash-language-server
+paru -S fd ripgrep ranger luarocks python python-pip python-pipx ttf-dejavu chafa ctags netcoredbg bash-language-server rust
 ```
 
 ## LSPs
