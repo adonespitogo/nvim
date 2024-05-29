@@ -13,6 +13,7 @@ For Mac OS, copy the font files to `~/Library/Fonts/`.
 For Linux, copy the font files to `~/.local/share/fonts`.
 
 Fix missing loading icons in Gnome:
+
 ```sh
 paru -S gnome-characters
 ```
@@ -85,6 +86,7 @@ npm i -g \
     typescript-language-server          \
     typescript                          \
     blade-formatter                     \
+    @olrtg/emmet-language-server        \
     git+https://github.com/ramitos/jsctags.git
 ```
 
@@ -114,6 +116,7 @@ echo "0"|sudo tee /proc/sys/kernel/yama/ptrace_scope
 ```
 
 Protobufs:
+
 ```sh
 cargo install --git https://git.sr.ht/~rrc/pbls
 ```
