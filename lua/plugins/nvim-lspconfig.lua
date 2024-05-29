@@ -237,7 +237,7 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 		lspconfig["html"].setup({
 			on_attach = on_attach,
 			root_dir = get_root_dir,
-			filetypes = { "html", "erb", "templ" },
+			filetypes = { "html", "erb" },
 			capabilities = capabilities,
 		})
 
