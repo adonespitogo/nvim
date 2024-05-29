@@ -223,7 +223,6 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 			"solargraph",
 			"eslint",
 			"templ",
-			"emmet_language_server",
 		}
 
 		-- Call setup
@@ -234,6 +233,13 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 				capabilities = capabilities,
 			})
 		end
+
+		lspconfig["emmet_language_server"].setup({
+			on_attach = on_attach,
+			root_dir = get_root_dir,
+			filetypes = { "html", "erb", "templ" },
+			capabilities = capabilities,
+		})
 
 		lspconfig["html"].setup({
 			on_attach = on_attach,
