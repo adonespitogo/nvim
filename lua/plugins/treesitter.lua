@@ -10,6 +10,7 @@ return {
     config = function()
         local nvim_treesitter = require("nvim-treesitter.configs")
         nvim_treesitter.setup({
+
             -- Install parsers synchronously (only applied to `ensure_installed`)
             sync_install = false,
             highlight = {

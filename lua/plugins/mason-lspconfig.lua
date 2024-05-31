@@ -20,6 +20,7 @@ return {
 				"omnisharp",
 				"eslint",
 				"templ",
+				"emmet_language_server",
 			},
 		})
 	end,

@@ -12,24 +12,30 @@ For Mac OS, copy the font files to `~/Library/Fonts/`.
 
 For Linux, copy the font files to `~/.local/share/fonts`.
 
+Fix missing loading icons in Gnome:
+
+```sh
+paru -S gnome-characters
+```
+
 ## Packages
 
 Debian:
 
 ```
-sudo apt install -y fd-find ripgrep ranger luarocks python3-pip pipx python3-testresources chafa universal-ctags
+sudo apt install -y fd-find ripgrep ranger luarocks python3-pip pipx python3-testresources chafa universal-ctags rust
 ```
 
 Mac OS:
 
 ```
-brew install fd ripgrep ranger luarocks python3 pipx tidy-html5 bufbuild/buf/buf chafa ctags netcoredbg bash-language-server
+brew install fd ripgrep ranger luarocks python3 pipx tidy-html5 bufbuild/buf/buf chafa ctags netcoredbg bash-language-server rust
 ```
 
 Arch Linux:
 
 ```
-paru -S fd ripgrep ranger luarocks python python-pip python-pipx ttf-dejavu chafa ctags netcoredbg bash-language-server buf
+paru -S fd ripgrep ranger luarocks python python-pip python-pipx ttf-dejavu chafa ctags netcoredbg bash-language-server buf rust
 ```
 
 ## LSPs
@@ -80,6 +86,7 @@ npm i -g \
     typescript-language-server          \
     typescript                          \
     blade-formatter                     \
+    @olrtg/emmet-language-server        \
     git+https://github.com/ramitos/jsctags.git
 ```
 
@@ -109,6 +116,7 @@ echo "0"|sudo tee /proc/sys/kernel/yama/ptrace_scope
 ```
 
 Protobufs:
+
 ```sh
 cargo install --git https://git.sr.ht/~rrc/pbls
 ```
