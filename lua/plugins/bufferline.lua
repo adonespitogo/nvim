@@ -29,5 +29,12 @@ return {
             map("n", "<leader>b" .. i, ":BufferLineGoToBuffer " .. i .. "<CR>")
         end
         -- map("n", "<leader>qq", ":Bdelete<CR>")
+
+        vim.cmd([[
+            hi BufferLineFill guibg='transparent'
+            " hi BufferLineSeparator guibg='#191724'
+            " hi BufferLineSeparatorVisible guibg='#191724'
+            " set termguicolors
+        ]])
     end,
 }
