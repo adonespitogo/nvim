@@ -35,7 +35,7 @@ brew install fd ripgrep ranger luarocks python3 pipx tidy-html5 bufbuild/buf/buf
 Arch Linux:
 
 ```
-paru -S fd ripgrep ranger luarocks python python-pip python-pipx ttf-dejavu chafa ctags netcoredbg bash-language-server rust
+paru -S fd ripgrep ranger luarocks python python-pip python-pipx ttf-dejavu chafa ctags netcoredbg bash-language-server buf rust
 ```
 
 ## LSPs
