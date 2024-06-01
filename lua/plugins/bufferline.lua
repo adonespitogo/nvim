@@ -35,6 +35,8 @@ return {
         for i = 0, 9, 1 do
             -- Go to buffer by leader+number
             map("n", "<leader>b" .. i, ":BufferLineGoToBuffer " .. i .. "<CR>")
+            map("n", "<leader>bv" .. i, ":vsplit<CR>:BufferLineGoToBuffer" .. i .. "<CR>")
+            map("n", "<leader>bh" .. i, ":split<CR>:BufferLineGoToBuffer" .. i .. "<CR>")
         end
     end,
 }
