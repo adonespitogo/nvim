@@ -9,6 +9,14 @@ return {
     config = function()
         require("bufferline").setup({
             options = {
+                highlights = {
+                    fill = {
+                        bg = {
+                            attribute = "bg",
+                            highlight = "Pmenu",
+                        },
+                    },
+                },
                 diagnostics = "nvim_lsp",
                 numbers = "ordinal",
                 -- offsets = {
@@ -28,13 +36,5 @@ return {
             -- Go to buffer by leader+number
             map("n", "<leader>b" .. i, ":BufferLineGoToBuffer " .. i .. "<CR>")
         end
-        -- map("n", "<leader>qq", ":Bdelete<CR>")
-
-        vim.cmd([[
-            hi BufferLineFill guibg='transparent'
-            " hi BufferLineSeparator guibg='#191724'
-            " hi BufferLineSeparatorVisible guibg='#191724'
-            " set termguicolors
-        ]])
     end,
 }
