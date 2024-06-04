@@ -51,4 +51,21 @@ autocmd("BufLeave", {
 	command = "stopinsert",
 })
 
-vim.cmd("autocmd BufNewFile,BufRead *.ejs set filetype=html")
+-- Close empty buffers on file open
+autocmd({ "BufReadPost" }, {
+	pattern = { "*" },
+	callback = function()
+		local close_empty_buffers = require("utils.close-empty-buf")
+		close_empty_buffers()
+	end,
+})
+
+autocmd({ "BufNewFile", "BufRead" }, {
+	pattern = "*.ejs",
+	command = "set filetype=html",
+})
+
+autocmd({ "BufNewFile", "BufRead" }, {
+	pattern = ".env*",
+	command = "set filetype=sh",
+})
