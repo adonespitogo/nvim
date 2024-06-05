@@ -221,6 +221,7 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 			"volar",
 			"intelephense",
 			"solargraph",
+			"ruby_lsp",
 			"eslint",
 			"templ",
 		}
@@ -237,14 +238,14 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 		lspconfig["emmet_language_server"].setup({
 			on_attach = on_attach,
 			root_dir = get_root_dir,
-			filetypes = { "html", "erb", "templ" },
+			filetypes = { "html", "eruby", "templ" },
 			capabilities = capabilities,
 		})
 
 		lspconfig["html"].setup({
 			on_attach = on_attach,
 			root_dir = get_root_dir,
-			filetypes = { "html", "erb" },
+			filetypes = { "html" },
 			capabilities = capabilities,
 		})
 

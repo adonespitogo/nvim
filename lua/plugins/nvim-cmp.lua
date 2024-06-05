@@ -70,7 +70,7 @@ return {
                 {
                     name = "html-css",
                     option = {
-                        enable_on = { "html", "vue", "ejs", "pug", "erb", "haml" },
+                        enable_on = { "html", "vue", "ejs", "pug", "eruby", "haml" },
                         file_extensions = { "css", "sass", "less" }, -- set the local filetypes from which you want to derive classes
                         style_sheets = {
                             -- example of remote styles, only css no js for now

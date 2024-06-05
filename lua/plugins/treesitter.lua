@@ -42,6 +42,7 @@ return {
                 "pug",
                 "templ",
                 "proto",
+                "embedded_template",
             },
         })
 

@@ -52,6 +52,7 @@ Install ruby gems:
 ```
 gem install     \
     solargraph  \
+    ruby-lsp    \
     erb_lint    \
     haml_lint   \
     rubocop     \
