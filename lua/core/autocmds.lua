@@ -66,6 +66,6 @@ autocmd({ "BufNewFile", "BufRead" }, {
 })
 
 autocmd({ "BufNewFile", "BufRead" }, {
-	pattern = ".env*",
+	pattern = { ".env*", "Procfile", "Procfile*" },
 	command = "set filetype=sh",
 })
