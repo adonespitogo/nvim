@@ -7,7 +7,6 @@ return {
 				"pyright",
 				"rust_analyzer",
 				"tsserver",
-				"solargraph",
 				"jsonls",
 				"cssls",
 				"tailwindcss",

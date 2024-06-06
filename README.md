@@ -51,7 +51,6 @@ Install ruby gems:
 
 ```
 gem install     \
-    solargraph  \
     ruby-lsp    \
     erb_lint    \
     haml_lint   \
@@ -61,14 +60,6 @@ gem install     \
     rubocop-performance \
     rubocop-rails
 ```
-
-Run in ruby project root:
-
-```
-solargraph bundle
-```
-
-NOTE: When installing solargraph, make sure default ruby version and your project's ruby version is the same: `rmv --default use [ruby version]`
 
 Install npm modules:
 
