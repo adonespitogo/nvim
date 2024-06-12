@@ -191,7 +191,7 @@ return {
 				desc = "Format code",
 			})
 
-			vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format { async = true }' ]])
+			vim.cmd([[ command! Format execute 'lua require("conform").format { async = true, lsp_fallback = true }' ]])
 		end
 
 		--[[
@@ -223,6 +223,7 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 			"ruby_lsp",
 			"eslint",
 			"templ",
+			"html",
 		}
 
 		-- Call setup
@@ -238,13 +239,6 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 			on_attach = on_attach,
 			root_dir = get_root_dir,
 			filetypes = { "html", "eruby", "templ" },
-			capabilities = capabilities,
-		})
-
-		lspconfig["html"].setup({
-			on_attach = on_attach,
-			root_dir = get_root_dir,
-			filetypes = { "html" },
 			capabilities = capabilities,
 		})
 

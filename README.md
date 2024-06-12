@@ -50,11 +50,12 @@ luarocks install jsregexp --local
 Install ruby gems:
 
 ```
-gem install     \
-    ruby-lsp    \
-    erb_lint    \
-    haml_lint   \
-    rubocop     \
+gem install         \
+    ruby-lsp        \
+    erb_lint        \
+    haml_lint       \
+    htmlbeautifier  \
+    rubocop         \
     rubocop-minitest    \
     rubocop-packaging   \
     rubocop-performance \
