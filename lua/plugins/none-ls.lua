@@ -6,7 +6,6 @@ return {
 
         -- custom sources
 		local fixjson = require("utils.nonels.fixjson")
-        local beautysh = require("utils.nonels.beautysh")
 
 		local formatting = null_ls.builtins.formatting
 		local diagnostics = null_ls.builtins.diagnostics
@@ -34,10 +33,6 @@ return {
 
 			-- formatters
 			fixjson,
-            beautysh,
-			formatting.prettier.with({
-				filetypes = { "html", "css", "scss", "javascript", "typescript", "yaml", "vue" },
-			}),
 			formatting.erb_lint,
 			formatting.stylua,
 			formatting.mdformat,

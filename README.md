@@ -22,49 +22,62 @@ paru -S gnome-characters
 
 Debian:
 
-```
+```sh
 sudo apt install -y fd-find ripgrep ranger luarocks python3-pip pipx python3-testresources chafa universal-ctags rust
+cargo install typos-cli
+```
+
+```sh
+# cargo
+export PATH="/home/adonesp/.cargo/bin:$PATH"
 ```
 
 Mac OS:
 
-```
-brew install fd ripgrep ranger luarocks python3 pipx tidy-html5 bufbuild/buf/buf chafa ctags netcoredbg bash-language-server rust
+```sh
+brew install fd ripgrep ranger luarocks python3 pipx tidy-html5 bufbuild/buf/buf chafa ctags netcoredbg bash-language-server rust typos beautysh
 ```
 
 Arch Linux:
 
-```
-paru -S fd ripgrep ranger luarocks python python-pip python-pipx ttf-dejavu chafa ctags netcoredbg bash-language-server buf rust
+```sh
+paru -S fd ripgrep ranger luarocks python python-pip python-pipx ttf-dejavu chafa ctags netcoredbg bash-language-server buf rust typos beautysh
 ```
 
 ## LSPs
 
 Install luarocks:
 
-```
+```sh
 luarocks install luacheck --local
 luarocks install jsregexp --local
 ```
 
 Install ruby gems:
 
+Add to `~/.rvm/gemsets/global.gems`:
+
+```sh
+ruby-lsp
+erb_lint
+haml_lint
+htmlbeautifier
+rubocop
+rubocop-minitest
+rubocop-packaging
+rubocop-performance
+rubocop-rails
 ```
-gem install         \
-    ruby-lsp        \
-    erb_lint        \
-    haml_lint       \
-    htmlbeautifier  \
-    rubocop         \
-    rubocop-minitest    \
-    rubocop-packaging   \
-    rubocop-performance \
-    rubocop-rails
+
+Install go modules:
+
+```sh
+go install github.com/google/yamlfmt/cmd/yamlfmt@latest
 ```
 
 Install npm modules:
 
-```
+```sh
 npm i -g \
     eslint                              \
     eslint_d                            \
@@ -85,13 +98,13 @@ npm i -g \
 
 Install pip modules:
 
-```
-for pkg in yamllint proselint codespell mdformat beautysh sqlfluff; do pipx install $pkg; done
+```sh
+for pkg in yamllint yamlfix proselint codespell mdformat beautysh sqlfluff; do pipx install $pkg; done
 ```
 
 Add to your `$PATH` env:
 
-```
+```sh
 # Python paths
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.luarocks/bin:$PATH"
@@ -103,7 +116,7 @@ Follow the instructions at: https://github.com/barryvdh/laravel-ide-helper
 
 GO:
 
-```
+```sh
 go install github.com/go-delve/delve/cmd/dlv@latest
 echo "0"|sudo tee /proc/sys/kernel/yama/ptrace_scope
 ```
