@@ -4,7 +4,7 @@ return {
 	config = function()
 		local null_ls = require("null-ls")
 
-        -- custom sources
+		-- custom sources
 		local fixjson = require("utils.nonels.fixjson")
 
 		local formatting = null_ls.builtins.formatting
@@ -29,18 +29,11 @@ return {
 				filetypes = { "text" },
 			}),
 			diagnostics.haml_lint,
-			diagnostics.buf,
+			-- diagnostics.buf,
 
 			-- formatters
 			fixjson,
-			formatting.erb_lint,
-			formatting.stylua,
-			formatting.mdformat,
 			formatting.nginx_beautifier,
-			formatting.buf,
-			formatting.sqlfluff.with({
-				extra_args = { "--dialect", os.getenv("SQL_DIALECT") or "mysql" }, -- change to your dialect
-			}),
 			formatting.blade_formatter,
 
 			-- hover
@@ -51,18 +44,10 @@ return {
 			vim.api.nvim_buf_set_keymap(
 				bufnr,
 				"n",
-				";ca",
+				"<leader>ca",
 				"<CMD>lua vim.lsp.buf.code_action()<CR>",
 				{ noremap = true, silent = true, desc = "Show code actions" }
 			)
-			vim.api.nvim_buf_set_keymap(
-				bufnr,
-				"n",
-				"<F3>",
-				":Format<CR>",
-				{ noremap = true, silent = true, desc = "Format code" }
-			)
-			vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format { async = true }' ]])
 		end
 
 		null_ls.setup({

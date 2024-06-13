@@ -116,7 +116,7 @@ return {
 				silent = true,
 				desc = "Rename",
 			})
-			buf_set_keymap("n", ";ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", {
+			buf_set_keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", {
 				noremap = true,
 				silent = true,
 				desc = "Show code actions",
@@ -185,13 +185,13 @@ return {
 				{ noremap = true, silent = true, desc = "Go to previous diagnostic line" }
 			)
 
-			buf_set_keymap("n", "<F3>", ":Format<CR>", {
-				noremap = true,
-				silent = true,
-				desc = "Format code",
-			})
+			-- buf_set_keymap("n", "<F3>", ":Format<CR>", {
+			-- 	noremap = true,
+			-- 	silent = true,
+			-- 	desc = "Format code",
+			-- })
 
-			vim.cmd([[ command! Format execute 'lua require("conform").format { async = true, lsp_fallback = true }' ]])
+			-- vim.cmd([[ command! Format execute 'lua require("conform").format { async = true, lsp_fallback = true }' ]])
 		end
 
 		--[[

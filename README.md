@@ -35,13 +35,13 @@ export PATH="/home/adonesp/.cargo/bin:$PATH"
 Mac OS:
 
 ```sh
-brew install fd ripgrep ranger luarocks python3 pipx tidy-html5 bufbuild/buf/buf chafa ctags netcoredbg bash-language-server rust typos beautysh
+brew install fd ripgrep ranger luarocks python3 pipx tidy-html5 bufbuild/buf/buf chafa ctags netcoredbg bash-language-server rust typos beautysh pgformatter
 ```
 
 Arch Linux:
 
 ```sh
-paru -S fd ripgrep ranger luarocks python python-pip python-pipx ttf-dejavu chafa ctags netcoredbg bash-language-server buf rust typos beautysh
+paru -S fd ripgrep ranger luarocks python python-pip python-pipx ttf-dejavu chafa ctags netcoredbg bash-language-server buf rust typos beautysh pgformatter
 ```
 
 ## LSPs
