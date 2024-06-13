@@ -1,11 +1,11 @@
 return {
 	"nvimtools/none-ls.nvim",
-	dependencies = { "nvim-lua/plenary.nvim" },
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"lewis6991/gitsigns.nvim",
+	},
 	config = function()
 		local null_ls = require("null-ls")
-
-		-- custom sources
-		local fixjson = require("utils.nonels.fixjson")
 
 		local formatting = null_ls.builtins.formatting
 		local diagnostics = null_ls.builtins.diagnostics
@@ -16,6 +16,7 @@ return {
 		local sources = {
 			-- actions
 			actions.refactoring,
+			actions.gitsigns,
 
 			-- completions
 			-- completion.spell,
@@ -32,7 +33,6 @@ return {
 			-- diagnostics.buf,
 
 			-- formatters
-			fixjson,
 			formatting.nginx_beautifier,
 			formatting.blade_formatter,
 
