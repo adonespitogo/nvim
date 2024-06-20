@@ -10,9 +10,7 @@ return {
 	},
 	config = function()
 		require("barbecue").setup({
-			theme = {
-				diagnostics = { fg = "#ff0000" },
-			},
+			theme = "tokyonight",
 			show_dirname = false,
 			show_basename = true,
 			show_modified = true,
