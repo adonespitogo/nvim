@@ -59,13 +59,3 @@ autocmd({ "BufReadPost" }, {
 		close_empty_buffers()
 	end,
 })
-
-autocmd({ "BufNewFile", "BufRead" }, {
-	pattern = "*.ejs",
-	command = "set filetype=html",
-})
-
-autocmd({ "BufNewFile", "BufRead" }, {
-	pattern = { ".env*", "Procfile", "Procfile*" },
-	command = "set filetype=sh",
-})
