@@ -59,7 +59,7 @@ map("v", "<leader>P", '"+P')
 map("x", "p", "P")
 
 -- Close all buffers
-map("n", "<leader>bd", ":%bd<CR>", { desc = "Close buffer" })
+map("n", "<leader>bda", ":%bd<CR>", { desc = "Close all buffers" })
 
 -- Go to definition in vsplit
 map("n", "gv", ":vsplit | lua vim.lsp.buf.definition()<CR>", { desc = "Go to definition in vsplit" })
