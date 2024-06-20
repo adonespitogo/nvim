@@ -20,6 +20,7 @@ return {
 
             -- A list of parser names, or "all"
             ensure_installed = {
+                "vimdoc",
                 "bash",
                 "c",
                 "cpp",
