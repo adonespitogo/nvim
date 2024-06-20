@@ -61,6 +61,8 @@ return {
 				file_ignore_patterns = {
 					"%.git/",
 					"node%_modules/.*",
+					".tmp/.*",
+					"tmp/.*",
 				},
 				mappings = {
 					n = {
