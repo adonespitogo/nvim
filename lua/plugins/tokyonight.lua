@@ -5,12 +5,18 @@
 return {
 	"folke/tokyonight.nvim",
 	config = function()
-		require("tokyonight").setup({
-			transparent = true,
+		local transparent = true
+		local styles = {}
+		if transparent then
 			styles = {
 				sidebars = "transparent",
 				floats = "transparent",
-			},
+			}
+		end
+
+		require("tokyonight").setup({
+			transparent = transparent,
+			styles = styles,
 			-- Add border between file tree and document
 			on_colors = function(colors)
 				-- colors.bg = "#040603"

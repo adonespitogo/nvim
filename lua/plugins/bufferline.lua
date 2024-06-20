@@ -14,6 +14,15 @@ return {
 			},
 		})
 
+		-- Requires transparent.nvim
+		-- https://github.com/xiyaowong/transparent.nvim?tab=readme-ov-file#gtransparent_groups
+		vim.g.transparent_groups = vim.list_extend(
+			vim.g.transparent_groups or {},
+			vim.tbl_map(function(v)
+				return v.hl_group
+			end, vim.tbl_values(require("bufferline.config").highlights))
+		)
+
 		-- map("n", "<leader>h", ":BufferLineCyclePrev<CR>")
 		-- map("n", "<leader>l", ":BufferLineCycleNext<CR>")
 
@@ -23,6 +32,5 @@ return {
 			map("n", "<leader>bv" .. i, ":vsplit<CR>:BufferLineGoToBuffer" .. i .. "<CR>")
 			map("n", "<leader>bh" .. i, ":split<CR>:BufferLineGoToBuffer" .. i .. "<CR>")
 		end
-
 	end,
 }
