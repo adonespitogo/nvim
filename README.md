@@ -23,7 +23,7 @@ paru -S gnome-characters
 Debian:
 
 ```sh
-sudo apt install -y fd-find ripgrep ranger luarocks python3-pip pipx python3-testresources chafa universal-ctags rust
+sudo apt install -y fd-find ripgrep ranger luarocks python3-pip pipx python3-testresources chafa universal-ctags rustup
 cargo install typos-cli
 ```
 
