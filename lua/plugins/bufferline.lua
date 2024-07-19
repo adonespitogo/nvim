@@ -23,14 +23,16 @@ return {
 			end, vim.tbl_values(require("bufferline.config").highlights))
 		)
 
-		-- map("n", "<leader>h", ":BufferLineCyclePrev<CR>")
-		-- map("n", "<leader>l", ":BufferLineCycleNext<CR>")
+		map("n", "<leader>bh", ":BufferLineCyclePrev<CR>", { desc = "Cycle previous buffer" })
+		map("n", "<leader>bp", ":BufferLineCyclePrev<CR>", { desc = "Cycle previous buffer" })
+		map("n", "<leader>bl", ":BufferLineCycleNext<CR>", { desc = "Cycle next buffer" })
+		map("n", "<leader>bn", ":BufferLineCycleNext<CR>", { desc = "Cycle next buffer" })
 
 		for i = 0, 9, 1 do
 			-- Go to buffer by leader+number
-			map("n", "<leader>b" .. i, ":BufferLineGoToBuffer " .. i .. "<CR>")
+			map("n", "<leader>b" .. i, ":BufferLineGoToBuffer" .. i .. "<CR>")
 			map("n", "<leader>bv" .. i, ":vsplit<CR>:BufferLineGoToBuffer" .. i .. "<CR>")
-			map("n", "<leader>bh" .. i, ":split<CR>:BufferLineGoToBuffer" .. i .. "<CR>")
+			map("n", "<leader>bx" .. i, ":split<CR>:BufferLineGoToBuffer" .. i .. "<CR>")
 		end
 	end,
 }
