@@ -52,10 +52,43 @@ autocmd("BufLeave", {
 })
 
 -- Close empty buffers on file open
-autocmd({ "BufReadPost" }, {
+autocmd("BufReadPost", {
 	pattern = { "*" },
 	callback = function()
 		local close_empty_buffers = require("utils.close-empty-buf")
 		close_empty_buffers()
 	end,
+})
+
+-- Automatically organize golang imports, then format on save
+vim.cmd([[autocmd BufWritePre *.go lua vim.lsp.buf.format({ async = false })]])
+
+autocmd("BufWritePre", {
+	pattern = "*.go",
+	callback = function()
+		local params = vim.lsp.util.make_range_params()
+		params.context = {
+			only = { "source.organizeImports" },
+		}
+		local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params)
+		for _, res in pairs(result or {}) do
+			for _, r in pairs(res.result or {}) do
+				if r.kind == "source.organizeImports" then
+					vim.lsp.buf.code_action({
+						apply = true,
+						context = {
+							only = { "source.organizeImports" },
+						},
+					})
+					-- vim.cmd("write")
+				end
+			end
+		end
+		vim.lsp.buf.format({ async = false })
+	end,
+})
+
+autocmd("BufWritePost", {
+	pattern = "*.go",
+	command = "edit",
 })
