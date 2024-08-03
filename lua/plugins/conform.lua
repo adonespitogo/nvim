@@ -14,7 +14,7 @@ return {
 			sql = { "pg_format" },
 			templ = { "htmlbeautifier", "templ" },
 			typescript = { "prettier" },
-			vue = { "htmlbeautifier" },
+			vue = { "prettier" },
 			yaml = { "yamlfix", "yamlfmt" },
 		},
 	},

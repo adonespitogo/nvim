@@ -218,7 +218,6 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 			"jsonls",
 			"cssls",
 			"tailwindcss",
-			"volar",
 			"intelephense",
 			"ruby_lsp",
 			"eslint",
@@ -308,6 +307,13 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 			root_dir = get_root_dir,
 			capabilities = capabilities,
 			cmd = { "omnisharp", "--languageserver" },
+		})
+
+		lspconfig["volar"].setup({
+			on_attach = on_attach,
+			root_dir = get_root_dir,
+			capabilities = capabilities,
+			filetypes = { "vue" },
 		})
 	end,
 }
