@@ -20,7 +20,6 @@ return {
 				"eslint",
 				"templ",
 				"emmet_language_server",
-				"ruby_lsp",
 			},
 		})
 	end,

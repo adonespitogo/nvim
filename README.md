@@ -67,6 +67,7 @@ rubocop-minitest
 rubocop-packaging
 rubocop-performance
 rubocop-rails
+solargraph
 ```
 
 Install go modules:
