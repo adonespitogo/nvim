@@ -78,23 +78,24 @@ go install github.com/google/yamlfmt/cmd/yamlfmt@latest
 
 Install npm modules:
 
-```sh
-npm i -g \
-    eslint                              \
-    eslint_d                            \
-    eslint-config-es3                   \
-    fixjson                             \
-    nginxbeautifier                     \
-    prettier                            \
-    @johnnymorganz/stylua-bin           \
-    vscode-langservers-extracted        \
-    @prantlf/jsonlint                   \
-    @tailwindcss/language-server        \
-    typescript-language-server          \
-    typescript                          \
-    blade-formatter                     \
-    @olrtg/emmet-language-server        \
-    git+https://github.com/ramitos/jsctags.git
+You can add these node packages to `$NVM_DIR/default-packages` if you're using [NVM](https://github.com/nvm-sh/nvm), otherwise install with `npm install`:
+
+```
+eslint
+eslint_d
+eslint-config-es3
+fixjson
+nginxbeautifier
+prettier
+@johnnymorganz/stylua-bin
+vscode-langservers-extracted
+@prantlf/jsonlint
+@tailwindcss/language-server
+typescript-language-server
+typescript
+blade-formatter
+@olrtg/emmet-language-server
+git+https://github.com/ramitos/jsctags.git
 ```
 
 Install pip modules:
