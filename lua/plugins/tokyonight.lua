@@ -31,6 +31,11 @@ return {
 				-- colors.border = colors.blue7
 				colors.border = colors.magenta
 			end,
+
+			on_highlights = function(hl, colors)
+				hl.NvimTreeNormal = { fg = "#fcfcfc" }
+				hl.NvimTreeNormalNC = { fg = "#fcfcfc" }
+			end,
 		})
 
 		vim.cmd([[ colorscheme tokyonight ]])
