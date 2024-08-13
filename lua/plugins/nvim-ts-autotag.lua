@@ -2,6 +2,9 @@ return {
 	"windwp/nvim-ts-autotag",
 	config = function()
 		require("nvim-ts-autotag").setup({
+			aliases = {
+				["vue"] = "html",
+			},
 			opts = {
 				-- Defaults
 				enable_close = true, -- Auto close tags
