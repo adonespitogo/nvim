@@ -236,7 +236,7 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
         lspconfig["emmet_language_server"].setup({
             on_attach = on_attach,
             root_dir = get_root_dir,
-            filetypes = { "html", "eruby", "templ" },
+            filetypes = { "html", "eruby", "templ", "vue" },
             capabilities = capabilities,
         })
 
