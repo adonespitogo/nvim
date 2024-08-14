@@ -80,15 +80,9 @@ autocmd("BufWritePre", {
 							only = { "source.organizeImports" },
 						},
 					})
-					-- vim.cmd("write")
 				end
 			end
 		end
 		vim.lsp.buf.format({ async = false })
 	end,
-})
-
-autocmd("BufWritePost", {
-	pattern = "*.go",
-	command = "edit",
 })
