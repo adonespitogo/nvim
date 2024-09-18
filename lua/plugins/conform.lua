@@ -6,7 +6,7 @@ return {
 			eruby = { "htmlbeautifier" },
 			markdown = { "typos", "mdformat" },
 			html = { "htmlbeautifier" },
-			javascript = { "eslint" },
+			javascript = { "standardjs" },
 			json = { "fixjson" },
 			lua = { "stylua" },
 			proto = { "buf" },

@@ -214,12 +214,10 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 			"pbls",
 			"pyright",
 			"rust_analyzer",
-			-- "tsserver",
 			"jsonls",
 			"cssls",
 			"tailwindcss",
 			"intelephense",
-			"eslint",
 			"templ",
 			"html",
 		}

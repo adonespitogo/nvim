@@ -84,6 +84,7 @@ You can add these node packages to `$NVM_DIR/default-packages` if you're using [
 eslint
 eslint_d
 eslint-config-es3
+standard
 fixjson
 nginxbeautifier
 prettier
