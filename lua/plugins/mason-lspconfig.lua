@@ -6,7 +6,7 @@ return {
 				"bashls",
 				"pyright",
 				"rust_analyzer",
-				"tsserver",
+				"ts_ls",
 				"jsonls",
 				"cssls",
 				"tailwindcss",
