@@ -24,14 +24,6 @@ opt.swapfile = false -- Don't use swapfile
 opt.completeopt = "menuone,noinsert,noselect" -- Autocomplete options
 vim.opt.fillchars = { eob = " " } -- Hide tilde symbols
 
------------------------------------------------------------
--- Author Header
------------------------------------------------------------
-g.header_field_author = "Adones Pitogo"
-g.header_field_author_email = "pitogo.adones@flarego.ph"
-g.header_field_modified_by = 0
-g.header_field_timestamp_format = "%b %d, %Y"
-
 local start_year = "2021"
 local current_year = os.date("%Y")
 local end_year = current_year == start_year and "" or ("-" .. current_year)
