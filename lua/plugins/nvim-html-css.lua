@@ -6,6 +6,6 @@ return {
         "sharkdp/fd",
     },
     config = function()
-        require("html-css"):setup({})
+        require("html-css"):setup()
     end,
 }
