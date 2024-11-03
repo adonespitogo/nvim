@@ -4,7 +4,8 @@ return {
 		local lualine = require("lualine")
 		lualine.setup({
 			options = {
-				theme = "dracula",
+				-- theme = "dracula",
+                theme = "codedark"
 			},
 		})
 	end,
