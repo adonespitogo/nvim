@@ -90,7 +90,7 @@ return {
 
 		map("n", "<leader>ff", function()
 			builtin.find_files({
-				no_ignore = true,
+				no_ignore = false,
 				hidden = true,
 			})
 		end, { desc = "Fuzzy find files" })
