@@ -54,8 +54,8 @@ end
 -- Custom function to handle opening files
 local function open_file(split)
 	-- Get the current node in the nvim-tree
-	local node = require("nvim-tree.lib").get_node_at_cursor()
 	local api = require("nvim-tree.api")
+	local node = api.tree.get_node_under_cursor()
 
 	if node and node.type == "file" then
 		local file_path = node.absolute_path
@@ -93,9 +93,9 @@ local function open_file_horz()
 end
 
 return {
-	"kyazdani42/nvim-tree.lua",
+	"nvim-tree/nvim-tree.lua",
 	dependencies = {
-		"kyazdani42/nvim-web-devicons", -- optional, for file icons
+		"nvim-tree/nvim-web-devicons", -- optional, for file icons
 	},
 	config = function()
 		local map = require("utils.keymap")
@@ -181,7 +181,7 @@ return {
 			},
 			git = {
 				ignore = false,
-                timeout = 1000,
+				timeout = 1000,
 			},
 			view = {
 				width = 30,
