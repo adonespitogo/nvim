@@ -195,7 +195,7 @@ return {
 			},
 			filters = {
 				dotfiles = false,
-				custom = { "^.git$", ".DS_Store", "^.tmp" },
+				custom = { "^.git$", ".DS_Store" },
 			},
 		})
 
