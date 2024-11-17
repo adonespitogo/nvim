@@ -98,6 +98,9 @@ return {
 		"nvim-tree/nvim-web-devicons", -- optional, for file icons
 	},
 	config = function()
+		vim.g.loaded_netrw = 1
+		vim.g.loaded_netrwPlugin = 1
+
 		local map = require("utils.keymap")
 		local function on_attach(bufnr)
 			local api = require("nvim-tree.api")
@@ -196,6 +199,17 @@ return {
 			filters = {
 				dotfiles = false,
 				custom = { "^.git$", ".DS_Store" },
+			},
+			filesystem_watchers = {
+				enable = true,
+				debounce_delay = 50,
+				ignore_dirs = {
+					".git",
+					"/.ccls-cache",
+					"/node_modules",
+					"assets/dist/*",
+					"*_templ.go",
+				},
 			},
 		})
 
