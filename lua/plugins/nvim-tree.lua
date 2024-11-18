@@ -179,10 +179,11 @@ return {
 			on_attach = on_attach,
 			reload_on_bufenter = true,
 			diagnostics = {
-				enable = true,
+				enable = false,
 				show_on_dirs = true,
 			},
 			git = {
+				enable = false,
 				ignore = false,
 				timeout = 1000,
 			},

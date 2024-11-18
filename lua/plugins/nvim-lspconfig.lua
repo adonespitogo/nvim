@@ -12,10 +12,11 @@ return {
 	"neovim/nvim-lspconfig",
 	config = function()
 		local lspconfig = require("lspconfig")
-		local util = require("lspconfig/util")
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 		local ui_windows = require("lspconfig.ui.windows")
-		local get_root_dir = require("utils.root-dir")
+		local root_dir = require("utils.root-dir")
+		local golang_root = require("utils.golang_root")
+		local load_goplsrc = require("utils.load_goplsrc")
 
 		ui_windows.default_options.border = "single"
 
@@ -226,14 +227,14 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 		for _, lsp in ipairs(servers) do
 			lspconfig[lsp].setup({
 				on_attach = on_attach,
-				root_dir = get_root_dir,
+				root_dir = root_dir,
 				capabilities = capabilities,
 			})
 		end
 
 		lspconfig["emmet_language_server"].setup({
 			on_attach = on_attach,
-			root_dir = get_root_dir,
+			root_dir = root_dir,
 			filetypes = { "html", "eruby", "templ", "vue" },
 			capabilities = capabilities,
 		})
@@ -241,13 +242,13 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 		lspconfig["clangd"].setup({
 			filetypes = { "clang", "cpp", "c" },
 			on_attach = on_attach,
-			root_dir = get_root_dir,
+			root_dir = root_dir,
 			capabilities = capabilities,
 		})
 
 		lspconfig["lua_ls"].setup({
 			on_attach = on_attach,
-			root_dir = get_root_dir,
+			root_dir = root_dir,
 			capabilities = capabilities,
 			on_init = function(client)
 				local path = client.workspace_folders[1].name
@@ -280,19 +281,13 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 			},
 		})
 
-		-- Valid "GO_TAGS" format:
-		-- (shell) export GO_TAGS="tag1 tag2"
-		local gopls = nil
-		local flags = os.getenv("GO_TAGS")
-		if flags ~= nil and flags ~= "" then
-			gopls = { buildFlags = { "-tags=" .. flags } }
-		end
+		local gopls = load_goplsrc()
 
 		lspconfig["gopls"].setup({
 			cmd = { "gopls", "serve" },
 			filetypes = { "go", "gomod", "gowork" },
 			on_attach = on_attach,
-			root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+			root_dir = golang_root,
 			capabilities = capabilities,
 			settings = {
 				gopls = gopls,
@@ -301,14 +296,14 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 
 		lspconfig["omnisharp"].setup({
 			on_attach = on_attach,
-			root_dir = get_root_dir,
+			root_dir = root_dir,
 			capabilities = capabilities,
 			cmd = { "omnisharp", "--languageserver" },
 		})
 
 		lspconfig["volar"].setup({
 			on_attach = on_attach,
-			root_dir = get_root_dir,
+			root_dir = root_dir,
 			capabilities = capabilities,
 			filetypes = { "vue" },
 		})

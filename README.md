@@ -23,7 +23,7 @@ paru -S gnome-characters
 Debian:
 
 ```sh
-sudo apt install -y fd-find ripgrep ranger luarocks python3-pip pipx python3-testresources chafa universal-ctags rustup gotags
+sudo apt install -y fd-find ripgrep ranger python3-pip pipx python3-testresources chafa universal-ctags rustup gotags
 cargo install typos-cli
 ```
 
@@ -35,23 +35,16 @@ export PATH="/home/adonesp/.cargo/bin:$PATH"
 Mac OS:
 
 ```sh
-brew install fd ripgrep ranger luarocks python3 pipx tidy-html5 bufbuild/buf/buf chafa ctags gotags netcoredbg bash-language-server rust typos beautysh pgformatter
+brew install fd ripgrep ranger python3 pipx tidy-html5 bufbuild/buf/buf chafa ctags gotags netcoredbg bash-language-server rust typos beautysh pgformatter
 ```
 
 Arch Linux:
 
 ```sh
-paru -S fd ripgrep ranger luarocks python python-pip python-pipx ttf-dejavu chafa ctags gotags netcoredbg bash-language-server buf rust typos beautysh pgformatter stylua
+paru -S fd ripgrep ranger python python-pip python-pipx ttf-dejavu chafa ctags gotags netcoredbg bash-language-server buf rust typos beautysh pgformatter stylua
 ```
 
 ## LSPs
-
-Install luarocks:
-
-```sh
-luarocks install luacheck --local
-luarocks install jsregexp --local
-```
 
 Install ruby gems:
 
