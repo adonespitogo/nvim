@@ -8,7 +8,7 @@ local map = require("utils.keymap")
 vim.g.mapleader = ";"
 
 -- LspRestart
--- map("n", "<leader>r", ":LspRestart<CR>", { desc = "Restart LSP" })
+map("n", "<leader>R", ":LspRestart<CR>", { desc = "Restart LSP" })
 
 -- Map zero to ^
 map("n", "0", "^")
