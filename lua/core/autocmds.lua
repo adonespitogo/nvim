@@ -77,6 +77,7 @@ autocmd("BufWritePre", {
 					vim.lsp.buf.code_action({
 						apply = true,
 						context = {
+                            diagnostics = {},
 							only = { "source.organizeImports" },
 						},
 					})
