@@ -8,7 +8,7 @@ local function load_goplsrc()
 
 	-- If the file does not exist, return an empty table
 	if not file then
-		return {}
+		return nil
 	end
 
 	local content = file:read("*a") -- Read the entire content of the file
@@ -20,7 +20,7 @@ local function load_goplsrc()
 	-- If there’s a JSON parsing error, return an empty table
 	if err then
 		vim.notify("Error parsing .goplsrc file: " .. err, vim.log.levels.ERROR)
-		return {}
+		return nil
 	end
 
 	-- Return the parsed settings (table)
@@ -30,7 +30,7 @@ end
 local function load_gopls_env()
 	-- Valid "GO_TAGS" format:
 	-- (shell) export GO_TAGS="tag1 tag2"
-	local gopls = {}
+	local gopls = nil
 	local flags = os.getenv("GO_TAGS")
 	if flags ~= nil and flags ~= "" then
 		gopls = { buildFlags = { "-tags=" .. flags } }
@@ -43,5 +43,9 @@ return function()
 	local goplsrc = load_goplsrc()
 	local envrc = load_gopls_env()
 
-	return vim.tbl_extend("force", goplsrc, envrc)
+	if goplsrc ~= nil and envrc ~= nil then
+		return vim.tbl_extend("force", goplsrc, envrc)
+	end
+
+	return goplsrc or envrc or nil
 end
