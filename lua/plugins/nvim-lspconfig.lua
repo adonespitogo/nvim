@@ -112,7 +112,7 @@ return {
 				silent = true,
 				desc = "Go to type definition",
 			})
-			buf_set_keymap("n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", {
+			buf_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", {
 				noremap = true,
 				silent = true,
 				desc = "Rename",
