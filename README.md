@@ -48,19 +48,18 @@ paru -S fd ripgrep ranger python python-pip python-pipx ttf-dejavu chafa ctags g
 
 Install ruby gems:
 
-Add to `~/.rvm/gemsets/global.gems`:
-
 ```sh
-ruby-lsp
-erb_lint
-haml_lint
-htmlbeautifier
-rubocop
-rubocop-minitest
-rubocop-packaging
-rubocop-performance
-rubocop-rails
-solargraph
+gem install \
+    ruby-lsp \
+    erb_lint \
+    haml_lint \
+    htmlbeautifier \
+    rubocop \
+    rubocop-minitest \
+    rubocop-packaging \
+    rubocop-performance \
+    rubocop-rails \
+    solargraph \
 ```
 
 Install go modules:

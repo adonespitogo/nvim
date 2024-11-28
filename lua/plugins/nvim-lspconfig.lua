@@ -174,7 +174,7 @@ return {
 
 			buf_set_keymap(
 				"n",
-				"<Leader>dn",
+				"<leader>dn",
 				":lua vim.diagnostic.goto_next()<CR>",
 				{ noremap = true, silent = true, desc = "Go to next diagnostic line" }
 			)
@@ -185,14 +185,6 @@ return {
 				":lua vim.diagnostic.goto_prev()<CR>",
 				{ noremap = true, silent = true, desc = "Go to previous diagnostic line" }
 			)
-
-			-- buf_set_keymap("n", "<F3>", ":Format<CR>", {
-			-- 	noremap = true,
-			-- 	silent = true,
-			-- 	desc = "Format code",
-			-- })
-
-			-- vim.cmd([[ command! Format execute 'lua require("conform").format { async = true, lsp_fallback = true }' ]])
 		end
 
 		--[[
@@ -310,6 +302,9 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 		})
 
 		lspconfig["solargraph"].setup({
+			on_attach = on_attach,
+			root_dir = root_dir,
+			capabilities = capabilities,
 			filetypes = {
 				"ruby",
 			},
