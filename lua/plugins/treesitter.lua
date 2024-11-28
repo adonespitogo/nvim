@@ -9,7 +9,10 @@ return {
     end,
     config = function()
         local nvim_treesitter = require("nvim-treesitter.configs")
+        local text_objects = require("utils.treesitter.treesitter-text-objects")
         nvim_treesitter.setup({
+
+            textobjects = text_objects,
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
             sync_install = false,

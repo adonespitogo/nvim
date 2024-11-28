@@ -66,9 +66,9 @@ return {
 				)
 			end
 
-			-- Disable formatting for some server
-			if client.name == "tsserver" then
-				client.server_capabilities.documentFormattingProvider = false -- 0.8 and later
+			-- Disable formatting for js/ts to allow conform.nvim to handle it
+			if client.name == "ts_ls" then
+				client.server_capabilities.documentFormattingProvider = false -- neovim 0.8 and later
 			end
 
 			-- Enable completion triggered by <c-x><c-o>
@@ -220,7 +220,6 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 			"tailwindcss",
 			"intelephense",
 			"templ",
-			"html",
 		}
 
 		-- Call setup
@@ -231,6 +230,13 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 				capabilities = capabilities,
 			})
 		end
+
+		lspconfig["html"].setup({
+			on_attach = on_attach,
+			root_dir = root_dir,
+			capabilities = capabilities,
+			filetypes = { "html", "eruby", "templ", "vue" },
+		})
 
 		lspconfig["emmet_language_server"].setup({
 			on_attach = on_attach,
@@ -250,32 +256,6 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 			on_attach = on_attach,
 			root_dir = root_dir,
 			capabilities = capabilities,
-			on_init = function(client)
-				local path = client.workspace_folders[1].name
-				if vim.loop.fs_stat(path .. "/.luarc.json") or vim.loop.fs_stat(path .. "/.luarc.jsonc") then
-					return
-				end
-
-				client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
-					runtime = {
-						-- Tell the language server which version of Lua you're using
-						-- (most likely LuaJIT in the case of Neovim)
-						version = "LuaJIT",
-					},
-					-- Make the server aware of Neovim runtime files
-					workspace = {
-						checkThirdParty = false,
-						library = {
-							vim.env.VIMRUNTIME,
-							-- Depending on the usage, you might want to add additional paths here.
-							-- "${3rd}/luv/library"
-							-- "${3rd}/busted/library",
-						},
-						-- or pull in all of 'runtimepath'. NOTE: this is a lot slower
-						-- library = vim.api.nvim_get_runtime_file("", true)
-					},
-				})
-			end,
 			settings = {
 				Lua = {
 					runtime = {
@@ -330,13 +310,6 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 		})
 
 		lspconfig["solargraph"].setup({
-			cmd = {
-				"rvm",
-				"@global",
-				"do",
-				"solargraph",
-				"stdio",
-			},
 			filetypes = {
 				"ruby",
 			},
@@ -345,6 +318,7 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 		lspconfig["ts_ls"].setup({
 			init_options = {
 				preferences = {
+					-- TODO: Why disable this?
 					disableSuggestions = true,
 				},
 			},
