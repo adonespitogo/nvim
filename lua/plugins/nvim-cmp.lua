@@ -108,7 +108,15 @@ return {
 			formatting = {
 				-- format = lspkind.cmp_format(),
 				format = function(entry, vim_item)
+					if not vim_item then
+						return ""
+					end
+
 					local kind = vim_item.kind
+					if not kind then
+						return ""
+					end
+
 					vim_item.kind = (icons[kind] or "") .. " " .. vim_item.kind
 
 					local source = entry.source.name
