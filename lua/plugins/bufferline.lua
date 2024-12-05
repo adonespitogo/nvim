@@ -30,6 +30,8 @@ return {
 		map("n", "<leader>bdo", ":BufferLineCloseOthers<CR>", { desc = "Close other buffers except current" })
 		map("n", "<leader>bdl", ":BufferLineCloseLeft<CR>", { desc = "Close buffers to the left" })
 		map("n", "<leader>bdr", ":BufferLineCloseRight<CR>", { desc = "Close buffers to the right" })
+		map("n", "<leader>bmn", ":BufferLineMoveNext<CR>", { desc = "Move buffer to the right" })
+		map("n", "<leader>bmp", ":BufferLineMovePrev<CR>", { desc = "Move buffer to the left" })
 
 		for i = 0, 9, 1 do
 			-- Go to buffer by leader+number
