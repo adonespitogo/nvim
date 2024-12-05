@@ -10,6 +10,9 @@
 
 return {
 	"neovim/nvim-lspconfig",
+	dependencies = {
+		"theHamsta/nvim_rocks",
+	},
 	config = function()
 		local lspconfig = require("lspconfig")
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
