@@ -66,8 +66,8 @@ map("n", "gv", ":vsplit | lua vim.lsp.buf.definition()<CR>", { desc = "Go to def
 map("n", "gx", ":split | lua vim.lsp.buf.definition()<CR>", { desc = "Go to definition in split" })
 
 -- Format document
-map("n", "<F3>", ":Format<CR>", { desc = "Format file" })
-map("v", "<F3>", ":Format<CR>", { desc = "Format file" })
+map("n", "<leader>fo", ":Format<CR>", { desc = "Format file" })
+map("v", "<leader>fo", ":Format<CR>", { desc = "Format file" })
 
 vim.api.nvim_create_user_command("Format", function(args)
 	local range = nil
