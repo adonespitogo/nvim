@@ -27,6 +27,9 @@ return {
 		map("n", "<leader>bp", ":BufferLineCyclePrev<CR>", { desc = "Cycle previous buffer" })
 		map("n", "<leader>bl", ":BufferLineCycleNext<CR>", { desc = "Cycle next buffer" })
 		map("n", "<leader>bn", ":BufferLineCycleNext<CR>", { desc = "Cycle next buffer" })
+		map("n", "<leader>bdo", ":BufferLineCloseOthers<CR>", { desc = "Close other buffers except current" })
+		map("n", "<leader>bdl", ":BufferLineCloseLeft<CR>", { desc = "Close buffers to the left" })
+		map("n", "<leader>bdr", ":BufferLineCloseRight<CR>", { desc = "Close buffers to the right" })
 
 		for i = 0, 9, 1 do
 			-- Go to buffer by leader+number
