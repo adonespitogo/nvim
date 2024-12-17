@@ -2,31 +2,33 @@ local root_dir = require("utils.golang_root")
 local json = require("dkjson") -- Ensure dkjson is available
 
 -- Function to load .goplsrc file
+--- @return table|nil
 local function load_goplsrc()
-	local filepath = root_dir() .. "/.goplsrc.json" -- Get the path to the .goplsrc.json file
-	local file = io.open(filepath, "r") -- Open the file for reading
+    local filepath = root_dir() .. "/.goplsrc.json" -- Get the path to the .goplsrc.json file
+    local file = io.open(filepath, "r") -- Open the file for reading
 
-	-- If the file does not exist, return an empty table
-	if not file then
-		return nil
-	end
+    -- If the file does not exist, return an empty table
+    if not file then
+        return nil
+    end
 
-	local content = file:read("*a") -- Read the entire content of the file
-	file:close()
+    local content = file:read("*a") -- Read the entire content of the file
+    file:close()
 
-	-- Parse JSON content into a Lua table
-	local settings, _, err = json.decode(content, 1, nil)
+    -- Parse JSON content into a Lua table
+    local settings, _, err = json.decode(content, 1, nil)
 
-	-- If there’s a JSON parsing error, return an empty table
-	if err then
-		vim.notify("Error parsing .goplsrc file: " .. err, vim.log.levels.ERROR)
-		return nil
-	end
+    -- If there’s a JSON parsing error, return an empty table
+    if err then
+        vim.notify("Error parsing .goplsrc file: " .. err, vim.log.levels.ERROR)
+        return nil
+    end
 
-	-- Return the parsed settings (table)
-	return settings
+    -- Return the parsed settings (table)
+    return settings
 end
 
+--- @return table|nil
 local function load_gopls_env()
 	-- Valid "GO_TAGS" format:
 	-- (shell) export GO_TAGS="tag1 tag2"

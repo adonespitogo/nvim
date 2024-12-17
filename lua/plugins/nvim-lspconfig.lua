@@ -18,8 +18,6 @@ return {
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 		local ui_windows = require("lspconfig.ui.windows")
 		local root_dir = require("utils.root-dir")
-		local golang_root = require("utils.golang_root")
-		local load_goplsrc = require("utils.load_goplsrc")
 
 		ui_windows.default_options.border = "single"
 
@@ -277,6 +275,8 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 			},
 		})
 
+		local golang_root = require("utils.golang_root")
+		local load_goplsrc = require("utils.load_goplsrc")
 		local gopls = load_goplsrc()
 
 		lspconfig["gopls"].setup({
