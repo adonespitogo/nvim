@@ -115,6 +115,10 @@ return {
 			telescope.extensions.media_files.media_files()
 		end, { desc = "Find media files" })
 
+		map("n", "<leader>fr", function()
+			builtin.lsp_references()
+		end, { desc = "Find LSP references" })
+
 		telescope.load_extension("ui-select")
 		telescope.load_extension("media_files")
 	end,

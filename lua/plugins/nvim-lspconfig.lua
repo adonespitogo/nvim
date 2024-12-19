@@ -123,11 +123,11 @@ return {
 				silent = true,
 				desc = "Show code actions",
 			})
-			buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", {
-				noremap = true,
-				silent = true,
-				desc = "Show references",
-			})
+			-- buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", {
+			-- 	noremap = true,
+			-- 	silent = true,
+			-- 	desc = "Show references",
+			-- })
 			buf_set_keymap("n", "<space>e", "<cmd>lua vim.lsp.diagnostic.open_float()<CR>", {
 				noremap = true,
 				silent = true,
@@ -146,26 +146,6 @@ return {
 				desc = "Show diagnostics in location list",
 			})
 
-			-- Trigger refactoring plugin then auto format
-			-- buf_set_keymap("v", "<leader><space>a", ":'<,'>lua vim.lsp.buf.code_action()<CR>", opts)
-			buf_set_keymap(
-				"v",
-				"<leader>ev",
-				[[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]],
-				{ noremap = true, silent = true, expr = false, desc = "Extract to variable" }
-			)
-			buf_set_keymap(
-				"v",
-				"<leader>iv",
-				[[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]],
-				{ noremap = true, silent = true, expr = false, desc = "Inlide variable" }
-			)
-			buf_set_keymap(
-				"v",
-				"<leader>ef",
-				[[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]],
-				{ noremap = true, silent = true, expr = false, desc = "Extract to function" }
-			)
 			-- Show all diagnostics on current line in floating window
 			buf_set_keymap("n", "<Leader>da", ":lua vim.diagnostic.open_float()<CR>", {
 				noremap = true,
