@@ -84,6 +84,34 @@ local function open_file(split)
 	end
 end
 
+-- Toggle executable permission
+local function toggle_executable_perm()
+	-- Get the current node in the nvim-tree
+	local api = require("nvim-tree.api")
+	local node = api.tree.get_node_under_cursor()
+
+	local function is_executable(file_path)
+		local command = "test -x " .. file_path .. " && echo 'true' || echo 'false'"
+		local handle = io.popen(command)
+        if not handle then
+            return false
+        end
+
+		local result = handle:read("*a"):gsub("%s+", "") -- Remove whitespace
+		handle:close()
+		return result == "true"
+	end
+
+	if node and node.type == "file" then
+		local file_path = node.absolute_path
+		local cmd = "chmod +x " .. file_path
+		if is_executable(file_path) then
+			cmd = "chmod -x " .. file_path
+		end
+		vim.fn.system(cmd)
+	end
+end
+
 local function open_file_vert()
 	open_file("vsplit")
 end
@@ -136,6 +164,7 @@ return {
 			vim.keymap.set("n", "[c", api.node.navigate.git.prev, opts("Prev Git"))
 			vim.keymap.set("n", "]c", api.node.navigate.git.next, opts("Next Git"))
 			vim.keymap.set("n", "d", api.fs.remove, opts("Delete"))
+
 			vim.keymap.set("n", "D", api.fs.trash, opts("Trash"))
 			vim.keymap.set("n", "E", api.tree.expand_all, opts("Expand All"))
 			vim.keymap.set("n", "e", api.fs.rename_basename, opts("Rename: Basename"))
@@ -162,6 +191,7 @@ return {
 			vim.keymap.set("n", "U", api.tree.toggle_custom_filter, opts("Toggle Hidden"))
 			vim.keymap.set("n", "W", api.tree.collapse_all, opts("Collapse"))
 			vim.keymap.set("n", "x", api.fs.cut, opts("Cut"))
+			vim.keymap.set("n", "X", toggle_executable_perm, opts("Make file executable"))
 			vim.keymap.set("n", "y", api.fs.copy.filename, opts("Copy Name"))
 			vim.keymap.set("n", "Y", api.fs.copy.relative_path, opts("Copy Relative Path"))
 			vim.keymap.set("n", "<2-LeftMouse>", api.node.open.edit, opts("Open"))
