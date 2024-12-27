@@ -4,7 +4,12 @@ local json = require("dkjson") -- Ensure dkjson is available
 -- Function to load .goplsrc file
 --- @return table|nil
 local function load_goplsrc()
-    local filepath = root_dir() .. "/.goplsrc.json" -- Get the path to the .goplsrc.json file
+    local root = root_dir() -- Get the root directory of the Go project
+    if root == nil then
+        root = vim.fn.getcwd() -- If the root directory is not found, use the current working directory
+    end
+
+    local filepath = root .. "/.goplsrc.json" -- Get the path to the .goplsrc.json file
     local file = io.open(filepath, "r") -- Open the file for reading
 
     -- If the file does not exist, return an empty table
