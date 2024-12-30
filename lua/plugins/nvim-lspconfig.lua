@@ -193,6 +193,7 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 			"tailwindcss",
 			"intelephense",
 			"templ",
+			"terraform_lsp",
 		}
 
 		-- Call setup
