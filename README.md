@@ -65,7 +65,9 @@ gem install \
 Install go modules:
 
 ```sh
-go install github.com/google/yamlfmt/cmd/yamlfmt@latest
+go install github.com/google/yamlfmt/cmd/yamlfmt@latest && \
+    mkdir -p ~/.local/bin && \
+    mv $(which yamlfmt) ~/.local/bin
 ```
 
 Install npm modules:
@@ -94,7 +96,7 @@ git+https://github.com/ramitos/jsctags.git
 Install pip modules:
 
 ```sh
-for pkg in yamllint yamlfix proselint codespell mdformat beautysh sqlfluff; do pipx install $pkg; done
+for pkg in yamllint yamlfix proselint codespell mdformat beautysh sqlfluff; do pip install $pkg; done
 ```
 
 Add to your `$PATH` env:
