@@ -16,6 +16,7 @@ return {
 			typescript = { "prettier" },
 			vue = { "prettier" },
 			yaml = { "yamlfix", "yamlfmt" },
+			terraform = { "terraform_fmt" },
 		},
 	},
 }
