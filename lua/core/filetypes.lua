@@ -10,6 +10,10 @@ local filetypes = {
 		pattern = { ".env*", "Procfile", "Procfile*" },
 		filetype = "sh",
 	},
+	{
+		pattern = { "*.templ" },
+		filetype = "templ",
+	},
 }
 
 -- Open quickfix list item on new window

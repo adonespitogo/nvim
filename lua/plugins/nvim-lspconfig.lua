@@ -192,7 +192,6 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 			"cssls",
 			"tailwindcss",
 			"intelephense",
-			"templ",
 			"terraform_lsp",
 		}
 
@@ -263,6 +262,16 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 		lspconfig["gopls"].setup({
 			cmd = { "gopls", "serve" },
 			filetypes = { "go", "gomod", "gowork" },
+			on_attach = on_attach,
+			root_dir = golang_root,
+			capabilities = capabilities,
+			settings = {
+				gopls = gopls,
+			},
+		})
+
+		lspconfig["templ"].setup({
+			filetypes = { "templ" },
 			on_attach = on_attach,
 			root_dir = golang_root,
 			capabilities = capabilities,
