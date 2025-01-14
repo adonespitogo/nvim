@@ -41,7 +41,7 @@ brew install fd ripgrep ranger python3 pipx tidy-html5 bufbuild/buf/buf chafa ct
 Arch Linux:
 
 ```sh
-paru -S fd ripgrep ranger python python-pip python-pipx ttf-dejavu chafa ctags gotags netcoredbg bash-language-server buf rust typos beautysh pgformatter stylua
+paru -S fd ripgrep ranger python python-pip python-pipx ttf-dejavu chafa ctags gotags netcoredbg bash-language-server buf rust typos beautysh pgformatter stylua unzip rsync
 ```
 
 ## LSPs
