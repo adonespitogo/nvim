@@ -17,7 +17,6 @@ return {
 				"intelephense",
 				"volar",
 				"omnisharp",
-				"templ",
 				"emmet_language_server",
 			},
 		})
