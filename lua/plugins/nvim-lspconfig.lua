@@ -13,6 +13,9 @@ return {
 	dependencies = {
 		"theHamsta/nvim_rocks",
 	},
+    opts = {
+        inlay_hints = { enabled = false },
+    },
 	config = function()
 		local lspconfig = require("lspconfig")
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
