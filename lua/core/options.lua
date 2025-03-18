@@ -67,6 +67,8 @@ vim.lsp.set_log_level("off") -- Disable LSP logs
 g.NERDSpaceDelims = 1
 -- Enable trimming of trailing whitespace when uncommenting
 g.NERDTrimTrailingWhitespace = 1
+g.nvim_tree_hijack_netrw = 1
+g.nvim_tree_disable_netrw = 0
 
 -----------------------------------------------------------
 -- Startup
