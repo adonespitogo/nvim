@@ -13,7 +13,7 @@ return {
                 proto = { "buf" },
                 sh = { "beautysh" },
                 sql = { "sqlfmt" },
-                templ = { "htmlbeautifier", "templ" },
+                templ = { "templ" },
                 typescript = { "prettier" },
                 vue = { "prettier" },
                 yaml = { "yamlfix", "yamlfmt" },
