@@ -82,7 +82,7 @@ return {
                 { name = "nvim_lsp" },
                 { name = 'nvim_lua' },
                 { name = "luasnip" },
-                { name = "path" },
+                { name = "async_path" },
                 { name = "buffer" },
                 { name = "bufname" },
                 { name = "dotenv" },
