@@ -15,7 +15,6 @@ return {
 				"lua_ls",
 				"gopls",
 				"intelephense",
-				"volar",
 				"omnisharp",
 				"emmet_language_server",
 			},

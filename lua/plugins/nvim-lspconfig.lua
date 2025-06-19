@@ -292,7 +292,7 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
         })
 
         lspconfig["templ"].setup({
-            cmd = { "templ", "lsp" },
+            cmd = { "/home/adonesp/.local/bin/templ", "lsp" },
             filetypes = { "templ" },
             on_attach = on_attach,
             root_dir = golang_root,
@@ -307,13 +307,6 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
             root_dir = root_dir,
             capabilities = capabilities,
             cmd = { "omnisharp", "--languageserver" },
-        })
-
-        lspconfig["volar"].setup({
-            on_attach = on_attach,
-            root_dir = root_dir,
-            capabilities = capabilities,
-            filetypes = { "vue" },
         })
 
         lspconfig["solargraph"].setup({
