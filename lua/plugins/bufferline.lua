@@ -9,19 +9,28 @@ return {
 	config = function()
 		require("bufferline").setup({
 			options = {
+				themable = true,
 				diagnostics = "nvim_lsp",
 				numbers = "ordinal",
+				offsets = {
+					{
+						filetype = "NvimTree",
+						text = "File Explorer",
+						text_align = "left",
+						separator = true,
+					},
+				},
 			},
 		})
 
 		-- Requires transparent.nvim
 		-- https://github.com/xiyaowong/transparent.nvim?tab=readme-ov-file#gtransparent_groups
-		vim.g.transparent_groups = vim.list_extend(
-			vim.g.transparent_groups or {},
-			vim.tbl_map(function(v)
-				return v.hl_group
-			end, vim.tbl_values(require("bufferline.config").highlights))
-		)
+		-- vim.g.transparent_groups = vim.list_extend(
+		-- 	vim.g.transparent_groups or {},
+		-- 	vim.tbl_map(function(v)
+		-- 		return v.hl_group
+		-- 	end, vim.tbl_values(require("bufferline.config").highlights))
+		-- )
 
 		map("n", "<leader>bh", ":BufferLineCyclePrev<CR>", { desc = "Cycle previous buffer" })
 		map("n", "<leader>bp", ":BufferLineCyclePrev<CR>", { desc = "Cycle previous buffer" })
