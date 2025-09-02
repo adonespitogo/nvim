@@ -1,123 +1,38 @@
--- Function to check if there's only one open buffer and the buffer is empty
-local function is_single_empty_buffer()
-	-- Get the list of all buffers
-	local buffers = vim.api.nvim_list_bufs()
+local h = require("utils.helpers")
 
-	-- Filter out unlisted buffers
-	buffers = vim.tbl_filter(function(buf)
-		return vim.api.nvim_buf_get_option(buf, "buflisted")
-	end, buffers)
-
-	-- Check if there's only one buffer
-	if #buffers ~= 1 then
-		return false
-	end
-
-	-- Get the buffer ID
-	local buf = buffers[1]
-
-	-- Check if the buffer is loaded
-	if not vim.api.nvim_buf_is_loaded(buf) then
-		return false
-	end
-
-	-- Get the lines in the buffer
-	local lines = vim.api.nvim_buf_get_lines(buf, 0, -1, false)
-
-	-- Check if the buffer is empty (i.e., contains only one empty line)
-	if #lines == 1 and lines[1] == "" then
-		return true
-	end
-
-	return false
-end
-
--- Function to check if a file is already loaded in a buffer
-local function find_window_with_file(file_path)
-	-- Get the list of all windows
-	local windows = vim.api.nvim_list_wins()
-
-	for _, win in ipairs(windows) do
-		-- Get the buffer associated with the window
-		local buf = vim.api.nvim_win_get_buf(win)
-		-- Get the buffer's file name
-		local buf_name = vim.api.nvim_buf_get_name(buf)
-		-- Check if the buffer's file name matches the file path
-		if buf_name == file_path then
-			return win
-		end
-	end
-
-	return nil
-end
-
--- Custom function to handle opening files
-local function open_file(split)
+local function open_file_vert()
 	-- Get the current node in the nvim-tree
 	local api = require("nvim-tree.api")
 	local node = api.tree.get_node_under_cursor()
-
 	if node and node.type == "file" then
 		local file_path = node.absolute_path
-
-		-- Check if the file is already loaded in a window
-		local win = find_window_with_file(file_path)
-		if win then
-			-- Set focus to the window containing the file
-			vim.api.nvim_set_current_win(win)
-
-			-- Check if there's only one empty buffer
-		elseif is_single_empty_buffer() then
-			-- Edit the file in the current buffer
-			vim.cmd("edit " .. node.absolute_path)
-		else
-			-- Open the file in a vertical/horizontal split
-			if split == "vsplit" then
-				vim.cmd(split .. " " .. node.absolute_path)
-			else
-				vim.cmd("wincmd p")
-				vim.cmd(split .. " " .. node.absolute_path)
-			end
-		end
+		h.open_file("vsplit", file_path)
 	else
 		api.node.open.edit()
 	end
 end
 
--- Toggle executable permission
-local function toggle_executable_perm()
+local function open_file_horz()
+	local api = require("nvim-tree.api")
+	local node = api.tree.get_node_under_cursor()
+	if node and node.type == "file" then
+		local file_path = node.absolute_path
+		h.open_file("split", file_path)
+	else
+		api.node.open.edit()
+	end
+end
+
+local function toggle_exec_perm()
 	-- Get the current node in the nvim-tree
 	local api = require("nvim-tree.api")
 	local node = api.tree.get_node_under_cursor()
-
-	local function is_executable(file_path)
-		local command = "test -x " .. file_path .. " && echo 'true' || echo 'false'"
-		local handle = io.popen(command)
-        if not handle then
-            return false
-        end
-
-		local result = handle:read("*a"):gsub("%s+", "") -- Remove whitespace
-		handle:close()
-		return result == "true"
-	end
-
 	if node and node.type == "file" then
 		local file_path = node.absolute_path
-		local cmd = "chmod +x " .. file_path
-		if is_executable(file_path) then
-			cmd = "chmod -x " .. file_path
-		end
-		vim.fn.system(cmd)
+		h.toggle_exec_perm(file_path)
+		-- Refresh the nvim-tree to show updated permissions
+		api.tree.reload()
 	end
-end
-
-local function open_file_vert()
-	open_file("vsplit")
-end
-
-local function open_file_horz()
-	open_file("split")
 end
 
 return {
@@ -191,7 +106,7 @@ return {
 			vim.keymap.set("n", "U", api.tree.toggle_custom_filter, opts("Toggle Hidden"))
 			vim.keymap.set("n", "W", api.tree.collapse_all, opts("Collapse"))
 			vim.keymap.set("n", "x", api.fs.cut, opts("Cut"))
-			vim.keymap.set("n", "X", toggle_executable_perm, opts("Make file executable"))
+			vim.keymap.set("n", "X", toggle_exec_perm, opts("Make file executable"))
 			vim.keymap.set("n", "y", api.fs.copy.filename, opts("Copy Name"))
 			vim.keymap.set("n", "Y", api.fs.copy.relative_path, opts("Copy Relative Path"))
 			vim.keymap.set("n", "<2-LeftMouse>", api.node.open.edit, opts("Open"))
