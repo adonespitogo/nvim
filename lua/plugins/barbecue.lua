@@ -15,7 +15,7 @@ return {
 			show_dirname = false,
 			show_basename = true,
 			show_modified = true,
-			show_diagnostics = true,
+			show_diagnostics = false,
 			lead_custom_section = function(_, winr)
 				return " " .. vim.api.nvim_win_get_number(winr) .. " "
 			end,
