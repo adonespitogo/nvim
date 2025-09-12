@@ -23,25 +23,23 @@ paru -S gnome-characters
 Debian:
 
 ```sh
-sudo apt install -y fd-find ripgrep ranger python3-pip pipx python3-testresources chafa universal-ctags rustup gotags
+sudo apt install -y fd-find ripgrep ranger python3-pip pipx python3-testresources chafa \
+    universal-ctags rustup gotags luajit
 cargo install typos-cli
-```
-
-```sh
-# cargo
-export PATH="/home/adonesp/.cargo/bin:$PATH"
 ```
 
 Mac OS:
 
 ```sh
-brew install fd ripgrep ranger python3 pipx tidy-html5 bufbuild/buf/buf chafa ctags gotags netcoredbg bash-language-server rust typos beautysh pgformatter
+brew install fd ripgrep ranger python3 pipx tidy-html5 bufbuild/buf/buf chafa ctags \
+    gotags netcoredbg bash-language-server rust typos beautysh pgformatter luajit
 ```
 
 Arch Linux:
 
 ```sh
-paru -S fd ripgrep ranger python python-pip python-pipx ttf-dejavu chafa ctags gotags netcoredbg bash-language-server buf rust typos beautysh pgformatter stylua unzip rsync
+paru -S fd ripgrep ranger python python-pip python-pipx ttf-dejavu chafa ctags gotags \
+    bash-language-server buf rust typos beautysh pgformatter stylua unzip rsync luajit
 ```
 
 ## LSPs
@@ -102,9 +100,9 @@ for pkg in yamllint yamlfix proselint codespell mdformat beautysh sqlfluff; do p
 Add to your `$PATH` env:
 
 ```sh
-# Python paths
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.luarocks/bin:$PATH"
+export PATH="/home/adonesp/.cargo/bin:$PATH"
 ```
 
 Laravel:
