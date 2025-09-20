@@ -32,7 +32,7 @@ Mac OS:
 
 ```sh
 brew install fd ripgrep ranger python3 pipx tidy-html5 bufbuild/buf/buf chafa ctags \
-    gotags netcoredbg bash-language-server rust typos beautysh pgformatter luajit
+    gotags bash-language-server rust typos-lsp typos-cli beautysh pgformatter luajit
 ```
 
 Arch Linux:
