@@ -51,6 +51,7 @@ return {
                 "proto",
                 "embedded_template",
                 "sql",
+                "dockerfile",
             },
         })
 
