@@ -42,36 +42,36 @@ paru -S fd ripgrep ranger python python-pip python-pipx ttf-dejavu chafa ctags g
     bash-language-server buf rust typos beautysh pgformatter stylua unzip rsync luajit
 ```
 
-## LSPs
+## Install default packages via `asdf`:
 
-Install ruby gems:
+Ruby gems:
 
-```sh
-gem install \
-    ruby-lsp \
-    erb_lint \
-    haml_lint \
-    htmlbeautifier \
-    rubocop \
-    rubocop-minitest \
-    rubocop-packaging \
-    rubocop-performance \
-    rubocop-rails \
-    solargraph \
+File: `~/.default-gems`
+```
+ruby-lsp
+erb_lint
+haml_lint
+htmlbeautifier
+rubocop
+rubocop-minitest
+rubocop-packaging
+rubocop-performance
+rubocop-rails
+solargraph
+cocoapods
 ```
 
-Install go modules:
+Go packages:
 
+File: `~/.default-golang-pkgs`
 ```sh
-go install github.com/google/yamlfmt/cmd/yamlfmt@latest && \
-    mkdir -p ~/.local/bin && \
-    mv $(which yamlfmt) ~/.local/bin
+github.com/google/yamlfmt/cmd/yamlfmt@latest
+github.com/go-delve/delve/cmd/dlv@latest
 ```
 
-Install npm modules:
+Nodejs modules:
 
-You can add these node packages to `$NVM_DIR/default-packages` if you're using [NVM](https://github.com/nvm-sh/nvm), otherwise install with `npm install`:
-
+File: `~/.default-npm-packages`
 ```
 eslint
 eslint_d
@@ -91,10 +91,17 @@ blade-formatter
 git+https://github.com/ramitos/jsctags.git
 ```
 
-Install pip modules:
+Pip modules:
 
-```sh
-for pkg in yamllint yamlfix proselint codespell mdformat beautysh sqlfluff; do pip install $pkg; done
+File: `~/.default-python-packages`
+```
+yamllint
+yamlfix
+proselint
+codespell
+mdformat
+beautysh
+sqlfluff
 ```
 
 Add to your `$PATH` env:
@@ -109,10 +116,9 @@ Laravel:
 
 Follow the instructions at: https://github.com/barryvdh/laravel-ide-helper
 
-GO:
+For `dlv` to work:
 
 ```sh
-go install github.com/go-delve/delve/cmd/dlv@latest
 echo "0"|sudo tee /proc/sys/kernel/yama/ptrace_scope
 ```
 
