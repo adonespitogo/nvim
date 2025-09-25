@@ -17,30 +17,9 @@ return {
 		inlay_hints = { enabled = false },
 	},
 	config = function()
-		local ui_windows = require("lspconfig.ui.windows")
 		local capabilities = require("utils.lsp.capabilities")
 		local on_attach = require("utils.lsp.on_attach")
 		local root_dir = require("utils.root-dir")
-
-		ui_windows.default_options.border = "single"
-
-		local border = {
-			{ "╭", "FloatBorder" },
-			{ "─", "FloatBorder" },
-			{ "╮", "FloatBorder" },
-			{ "│", "FloatBorder" },
-			{ "╯", "FloatBorder" },
-			{ "─", "FloatBorder" },
-			{ "╰", "FloatBorder" },
-			{ "│", "FloatBorder" },
-		}
-
-		local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
-		function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-			opts = opts or {}
-			opts.border = opts.border or border
-			return orig_util_open_floating_preview(contents, syntax, opts, ...)
-		end
 
 		local servers = {
 			"bashls",
@@ -65,6 +44,7 @@ return {
 			"omnisharp",
 			"solargraph",
 			"ts_ls",
+			"sourcekit",
 		}
 
 		for _, lsp in ipairs(servers) do
@@ -79,5 +59,26 @@ return {
 		for _, lsp in ipairs(custom_servers) do
 			vim.lsp.enable(lsp)
 		end
+
+        -- Fix floating window borders
+		local ui_windows = require("lspconfig.ui.windows")
+		ui_windows.default_options.border = "single"
+		local border = {
+			{ "╭", "FloatBorder" },
+			{ "─", "FloatBorder" },
+			{ "╮", "FloatBorder" },
+			{ "│", "FloatBorder" },
+			{ "╯", "FloatBorder" },
+			{ "─", "FloatBorder" },
+			{ "╰", "FloatBorder" },
+			{ "│", "FloatBorder" },
+		}
+		local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+		function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+			opts = opts or {}
+			opts.border = opts.border or border
+			return orig_util_open_floating_preview(contents, syntax, opts, ...)
+		end
+
 	end,
 }
