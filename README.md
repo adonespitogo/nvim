@@ -102,7 +102,7 @@ Add to your `$PATH` env:
 ```sh
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.luarocks/bin:$PATH"
-export PATH="/home/adonesp/.cargo/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 ```
 
 Laravel:
