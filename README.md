@@ -20,7 +20,9 @@ paru -S gnome-characters
 
 ## Packages
 
-Debian:
+Ubuntu/Debian:
+
+Install [neovim](https://github.com/neovim/neovim/blob/master/INSTALL.md) first.
 
 ```sh
 sudo apt install -y fd-find ripgrep ranger python3-pip pipx python3-testresources chafa \
@@ -31,20 +33,18 @@ cargo install typos-cli
 Mac OS:
 
 ```sh
-brew install fd ripgrep ranger python3 pipx tidy-html5 bufbuild/buf/buf chafa ctags \
+brew install neovim fd ripgrep ranger python3 pipx tidy-html5 bufbuild/buf/buf chafa ctags \
     gotags bash-language-server rust typos-lsp typos-cli beautysh pgformatter luajit
 ```
 
 Arch Linux:
 
 ```sh
-paru -S fd ripgrep ranger python python-pip python-pipx ttf-dejavu chafa ctags gotags \
+paru -S neovim fd ripgrep ranger python python-pip python-pipx ttf-dejavu chafa ctags gotags \
     bash-language-server buf rust typos beautysh pgformatter stylua unzip rsync luajit
 ```
 
-## Install default packages via `asdf`:
-
-Ruby gems:
+## Default packages
 
 File: `~/.default-gems`
 ```
@@ -61,15 +61,11 @@ solargraph
 cocoapods
 ```
 
-Go packages:
-
 File: `~/.default-golang-pkgs`
 ```sh
 github.com/google/yamlfmt/cmd/yamlfmt@latest
 github.com/go-delve/delve/cmd/dlv@latest
 ```
-
-Nodejs modules:
 
 File: `~/.default-npm-packages`
 ```
@@ -91,8 +87,6 @@ blade-formatter
 git+https://github.com/ramitos/jsctags.git
 ```
 
-Pip modules:
-
 File: `~/.default-python-packages`
 ```
 yamllint
@@ -103,6 +97,8 @@ mdformat
 beautysh
 sqlfluff
 ```
+
+Then install [asdf](https://asdf-vm.com) multi-language version manager.
 
 Add to your `$PATH` env:
 
