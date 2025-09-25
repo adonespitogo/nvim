@@ -18,7 +18,7 @@ Fix missing loading icons in Gnome:
 paru -S gnome-characters
 ```
 
-## Packages
+## System dependencies
 
 Ubuntu/Debian:
 
