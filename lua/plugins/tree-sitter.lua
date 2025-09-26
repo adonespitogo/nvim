@@ -54,6 +54,7 @@ return {
 				"dockerfile",
 				"dart",
 				"swift",
+				"toml",
 			},
 		})
 
