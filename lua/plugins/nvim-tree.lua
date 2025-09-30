@@ -135,12 +135,6 @@ return {
 			view = {
 				width = 30,
 				adaptive_size = true,
-				-- mappings = {
-				-- list = {
-				-- { key = "H", action = "dir_up" },
-				-- { key = "L", action = "cd" },
-				-- },
-				-- },
 			},
 			filters = {
 				dotfiles = false,
