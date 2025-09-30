@@ -60,7 +60,7 @@ return {
 			vim.lsp.enable(lsp)
 		end
 
-        -- Fix floating window borders
+		-- Fix floating window borders
 		local ui_windows = require("lspconfig.ui.windows")
 		ui_windows.default_options.border = "single"
 		local border = {
@@ -79,6 +79,5 @@ return {
 			opts.border = opts.border or border
 			return orig_util_open_floating_preview(contents, syntax, opts, ...)
 		end
-
 	end,
 }

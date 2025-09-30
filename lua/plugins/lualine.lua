@@ -1,11 +1,11 @@
 return {
 	"nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
+	event = "VeryLazy",
 	config = function()
 		local lualine = require("lualine")
 		lualine.setup({
 			options = {
-                theme = "ayu_mirage",
+				theme = "ayu_mirage",
 			},
 		})
 	end,

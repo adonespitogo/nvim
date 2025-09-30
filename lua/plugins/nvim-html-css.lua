@@ -6,7 +6,7 @@ return {
 		"sharkdp/fd",
 		"hrsh7th/nvim-cmp",
 	},
-    lazy = true,
+	lazy = true,
 	config = function()
 		require("html-css").setup()
 	end,

@@ -16,7 +16,6 @@ local current_year = os.date("%Y")
 local end_year = current_year == start_year and "" or ("-" .. current_year)
 g.header_field_copyright = "Copyright " .. start_year .. end_year .. " Flarego Technologies Corp. <business@flarego.ph>"
 
-
 return {
 	"alpertuna/vim-header",
 	config = function()

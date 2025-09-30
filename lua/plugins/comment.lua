@@ -23,8 +23,8 @@ return {
 			},
 		})
 
-        local ft = require('Comment.ft')
-        ft.set('pug', '//%s')
-        ft.set('templ', '<!-- %s -->')
+		local ft = require("Comment.ft")
+		ft.set("pug", "//%s")
+		ft.set("templ", "<!-- %s -->")
 	end,
 }

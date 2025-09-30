@@ -1,4 +1,3 @@
-
 ---@return string
 return function()
 	local util = require("lspconfig/util")

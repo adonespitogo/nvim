@@ -17,5 +17,5 @@ return function(directory)
 		table.insert(files, file)
 	end
 
-    return files
+	return files
 end

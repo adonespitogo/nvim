@@ -1,36 +1,35 @@
-local root_dir = require("utils.golang_root")
-local json = require("dkjson") -- Ensure dkjson is available
-
 -- Function to load .goplsrc file
 --- @return table|nil
 local function load_goplsrc()
-    local root = root_dir() -- Get the root directory of the Go project
-    if root == nil then
-        root = vim.fn.getcwd() -- If the root directory is not found, use the current working directory
-    end
+	local root_dir = require("utils.golang_root")
+	local json = require("dkjson") -- Ensure dkjson is available
+	local root = root_dir() -- Get the root directory of the Go project
+	if root == nil then
+		root = vim.fn.getcwd() -- If the root directory is not found, use the current working directory
+	end
 
-    local filepath = root .. "/.goplsrc.json" -- Get the path to the .goplsrc.json file
-    local file = io.open(filepath, "r") -- Open the file for reading
+	local filepath = root .. "/.goplsrc.json" -- Get the path to the .goplsrc.json file
+	local file = io.open(filepath, "r") -- Open the file for reading
 
-    -- If the file does not exist, return an empty table
-    if not file then
-        return nil
-    end
+	-- If the file does not exist, return an empty table
+	if not file then
+		return nil
+	end
 
-    local content = file:read("*a") -- Read the entire content of the file
-    file:close()
+	local content = file:read("*a") -- Read the entire content of the file
+	file:close()
 
-    -- Parse JSON content into a Lua table
-    local settings, _, err = json.decode(content, 1, nil)
+	-- Parse JSON content into a Lua table
+	local settings, _, err = json.decode(content, 1, nil)
 
-    -- If there’s a JSON parsing error, return an empty table
-    if err then
-        vim.notify("Error parsing .goplsrc file: " .. err, vim.log.levels.ERROR)
-        return nil
-    end
+	-- If there’s a JSON parsing error, return an empty table
+	if err then
+		vim.notify("Error parsing .goplsrc file: " .. err, vim.log.levels.ERROR)
+		return nil
+	end
 
-    -- Return the parsed settings (table)
-    return settings
+	-- Return the parsed settings (table)
+	return settings
 end
 
 --- @return table|nil
@@ -47,10 +46,10 @@ local function load_gopls_env()
 end
 
 return function()
-	local goplsrc = load_goplsrc()
-	local envrc = load_gopls_env()
+	local ok_goplsrc, goplsrc = pcall(load_goplsrc)
+	local ok_env, envrc = pcall(load_gopls_env)
 
-	if goplsrc ~= nil and envrc ~= nil then
+	if ok_goplsrc and ok_env and goplsrc ~= nil and envrc ~= nil then
 		return vim.tbl_extend("force", goplsrc, envrc)
 	end
 
