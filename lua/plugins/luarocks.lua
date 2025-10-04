@@ -7,13 +7,25 @@ local function get_lua_version()
 	return nil
 end
 
+local function is_linux()
+  local uname_output = vim.fn.system('uname -s'):gsub('%s+', '') -- Remove whitespace
+  return uname_output == 'Linux'
+end
+
 local lua_version = get_lua_version()
+print("Lua version: " .. lua_version)
+
+local build_args = is_linux() and { "--lua-version=" .. lua_version } or {}
+local install_args = is_linux() and { "--lua-version=" .. lua_version, "LUA_INCDIR=/usr/include/luajit-2.1" } or {}
 
 return {
-	"vhyrro/luarocks.nvim",
+	"adonespitogo/luarocks.nvim",
+	-- name = "luarocks.nvim",
+	-- dir = "/home/adonesp/Projects/luarocks.nvim",
 	priority = 1000, -- luarocks.nvim should run first
 	opts = {
 		rocks = { "luacheck", "dkjson", "jsregexp" },
-		luarocks_build_args = lua_version and { "--lua-version=" .. lua_version } or {},
+		luarocks_build_args = build_args,
+		luarocks_install_args = install_args,
 	},
 }
