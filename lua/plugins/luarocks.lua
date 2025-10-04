@@ -17,11 +17,12 @@ print("Lua version: " .. lua_version)
 
 local build_args = is_linux() and { "--lua-version=" .. lua_version } or {}
 local install_args = is_linux() and { "--lua-version=" .. lua_version, "LUA_INCDIR=/usr/include/luajit-2.1" } or {}
+local branch = is_linux() and "main" or "macos"
 
 return {
 	"adonespitogo/luarocks.nvim",
-	-- name = "luarocks.nvim",
-	-- dir = "/home/adonesp/Projects/luarocks.nvim",
+  -- branch = "fix/luarocks",
+  branch = branch,
 	priority = 1000, -- luarocks.nvim should run first
 	opts = {
 		rocks = { "luacheck", "dkjson", "jsregexp" },
