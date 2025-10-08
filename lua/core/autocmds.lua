@@ -61,29 +61,61 @@ autocmd("BufReadPost", {
 })
 
 -- Automatically organize golang imports, then format on save
-vim.cmd([[autocmd BufWritePre *.go lua vim.lsp.buf.format({ async = false })]])
+-- vim.cmd([[autocmd BufWritePre *.go lua vim.lsp.buf.format({ async = false })]])
 
-autocmd("BufWritePre", {
+-- autocmd("BufWritePre", {
+-- 	pattern = "*.go",
+-- 	callback = function()
+-- 		local params = vim.lsp.util.make_range_params()
+-- 		params.context = {
+-- 			only = { "source.organizeImports" },
+-- 		}
+-- 		local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params)
+-- 		for _, res in pairs(result or {}) do
+-- 			for _, r in pairs(res.result or {}) do
+-- 				if r.kind == "source.organizeImports" then
+-- 					vim.lsp.buf.code_action({
+-- 						apply = true,
+-- 						context = {
+-- 							diagnostics = {},
+-- 							only = { "source.organizeImports" },
+-- 						},
+-- 					})
+-- 				end
+-- 			end
+-- 		end
+-- 		vim.lsp.buf.format({ async = false })
+-- 	end,
+-- })
+
+-- Auto organize imports and format Go files before save
+vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = "*.go",
 	callback = function()
+		-- Prepare params for organize imports
 		local params = vim.lsp.util.make_range_params()
-		params.context = {
-			only = { "source.organizeImports" },
-		}
-		local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params)
-		for _, res in pairs(result or {}) do
-			for _, r in pairs(res.result or {}) do
-				if r.kind == "source.organizeImports" then
-					vim.lsp.buf.code_action({
-						apply = true,
-						context = {
-							diagnostics = {},
-							only = { "source.organizeImports" },
-						},
-					})
+		params.context = { only = { "source.organizeImports" } }
+
+		-- Synchronously request code actions
+		local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 3000)
+		if result then
+			for _, res in pairs(result) do
+				for _, r in pairs(res.result or {}) do
+					if r.edit or type(r.command) == "table" then
+						-- Apply workspace edit directly if available
+						if r.edit then
+							vim.lsp.util.apply_workspace_edit(r.edit, "utf-8")
+						end
+						-- Execute command if needed
+						if r.command then
+							vim.lsp.buf.execute_command(r.command)
+						end
+					end
 				end
 			end
 		end
+
+		-- Format the file synchronously
 		vim.lsp.buf.format({ async = false })
 	end,
 })
