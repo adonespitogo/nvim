@@ -5,6 +5,7 @@
     "packer_bootstrap"
   ],
   "diagnostics.disable": [
-    "deprecated"
+    "deprecated",
+        "missing-parameter"
   ]
 }
