@@ -65,6 +65,7 @@ File: `~/.default-golang-pkgs`
 ```sh
 github.com/google/yamlfmt/cmd/yamlfmt@latest
 github.com/go-delve/delve/cmd/dlv@latest
+github.com/a-h/templ/cmd/templ@v0.2.793
 ```
 
 File: `~/.default-npm-packages`
