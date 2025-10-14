@@ -23,6 +23,8 @@ opt.clipboard = "unnamedplus" -- Copy/paste to system clipboard
 opt.swapfile = false -- Don't use swapfile
 opt.completeopt = "menuone,noinsert,noselect" -- Autocomplete options
 vim.opt.fillchars = { eob = " " } -- Hide tilde symbols
+vim.lsp.set_log_level("debug")
+vim.lsp.log.set_format_func(vim.inspect)
 
 -----------------------------------------------------------
 -- Neovim UI
@@ -58,7 +60,6 @@ opt.history = 100 -- Remember N lines in history
 opt.lazyredraw = true -- Faster scrolling
 opt.synmaxcol = 240 -- Max column for syntax highlight
 opt.updatetime = 700 -- ms to wait for trigger an event
-vim.lsp.set_log_level("off") -- Disable LSP logs
 
 -----------------------------------------------------------
 -- Nerd Commenter
