@@ -25,7 +25,7 @@ Ubuntu/Debian:
 Install [neovim](https://github.com/neovim/neovim/blob/master/INSTALL.md) first.
 
 ```sh
-sudo apt install -y fd-find ripgrep ranger python3-pip pipx python3-testresources chafa \
+sudo apt install -y tree-sitter-cli fd-find ripgrep ranger python3-pip pipx python3-testresources chafa \
     universal-ctags rustup gotags luajit luacheck
 cargo install typos-cli
 ```
@@ -40,7 +40,7 @@ brew install neovim tree-sitter-cli fd ripgrep ranger python3 pipx tidy-html5 bu
 Arch Linux:
 
 ```sh
-paru -S neovim tree-sitter fd ripgrep ranger python python-pip python-pipx ttf-dejavu chafa ctags gotags \
+paru -S neovim tree-sitter tree-sitter-cli fd ripgrep ranger python python-pip python-pipx ttf-dejavu chafa ctags gotags \
     bash-language-server buf rust typos beautysh pgformatter stylua unzip rsync luajit luacheck
 ```
 
@@ -87,6 +87,7 @@ typescript
 blade-formatter
 @olrtg/emmet-language-server
 git+https://github.com/ramitos/jsctags.git
+@adonesp/snapbackjs
 ```
 
 File: `~/.default-python-packages`
