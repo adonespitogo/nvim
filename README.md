@@ -87,6 +87,7 @@ typescript
 blade-formatter
 @olrtg/emmet-language-server
 git+https://github.com/ramitos/jsctags.git
+@adonesp/snapbackjs
 ```
 
 File: `~/.default-python-packages`
