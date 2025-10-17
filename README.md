@@ -99,6 +99,7 @@ codespell
 mdformat
 beautysh
 sqlfluff
+shandy-sqlfmt\[jinjafmt\]
 ```
 
 Then install [asdf](https://asdf-vm.com) multi-language version manager.
