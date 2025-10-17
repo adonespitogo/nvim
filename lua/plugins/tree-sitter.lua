@@ -55,6 +55,7 @@ return {
 				"dart",
 				"swift",
 				"toml",
+				"liquid",
 			},
 		})
 

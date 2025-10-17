@@ -16,6 +16,7 @@ return {
 				templ = { "templ" },
 				typescript = { "prettier" },
 				vue = { "prettier" },
+				liquid = { "htmlbeautifier" },
 				yaml = { "yamlfix", "yamlfmt" },
 				terraform = { "terraform_fmt" },
 			},
