@@ -144,11 +144,11 @@ return {
 
 			map("n", "<leader>bv" .. i, function()
 				goto_buffer_index(i, "vsplit")
-			end, { desc = "Go to buffer " .. i .. "in vsplit window" })
+			end, { desc = "Go to buffer #" .. i .. " in vsplit window" })
 
 			map("n", "<leader>bx" .. i, function()
 				goto_buffer_index(i, "split")
-			end, { desc = "Go to buffer " .. i .. "in split window" })
+			end, { desc = "Go to buffer #" .. i .. " in split window" })
 		end
 	end,
 }
