@@ -17,6 +17,7 @@ return {
 				"intelephense",
 				"omnisharp",
 				"emmet_language_server",
+				"terraformls",
 			},
 		})
 	end,
