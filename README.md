@@ -87,6 +87,7 @@ typescript
 blade-formatter
 @olrtg/emmet-language-server
 git+https://github.com/ramitos/jsctags.git
+@taplo/cli
 @adonesp/snapbackjs
 ```
 
@@ -99,6 +100,7 @@ codespell
 mdformat
 beautysh
 sqlfluff
+shandy-sqlfmt[jinjafmt]
 ```
 
 Then install [asdf](https://asdf-vm.com) multi-language version manager.
