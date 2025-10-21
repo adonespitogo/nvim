@@ -38,6 +38,7 @@ local function load_gopls_env()
 	-- (shell) export GO_TAGS="tag1 tag2"
 	local gopls = nil
 	local flags = os.getenv("GO_TAGS")
+	flags = flags and flags or os.getenv("GOTAGS")
 	if flags ~= nil and flags ~= "" then
 		gopls = { buildFlags = { "-tags=" .. flags } }
 	end
