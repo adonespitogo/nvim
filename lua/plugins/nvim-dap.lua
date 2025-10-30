@@ -25,6 +25,12 @@ return {
 			args = { "--interpreter=vscode" },
 		}
 
+		dap.adapters.ruby = {
+			type = "executable",
+			command = "rdbg",
+			args = { "-n" }, -- Specify the no-wait option
+		}
+
 		dap.configurations.cs = {
 			{
 				type = "coreclr",
@@ -55,6 +61,18 @@ return {
 						default = get_root_dir() .. "/bin/Debug/",
 					})
 				end,
+			},
+		}
+
+		dap.configurations.ruby = {
+			{
+				type = "ruby",
+				name = "Attach with rdbg (Docker)",
+				request = "attach",
+				remote_path = "/rails", -- The project path *inside* the container
+				host = "127.0.0.1", -- Or your Docker machine IP
+				port = 12345, -- The port exposed from Docker
+				local_path = "${workspaceFolder}", -- Your local project root
 			},
 		}
 	end,
