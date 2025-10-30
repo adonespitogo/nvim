@@ -21,8 +21,6 @@ return {
     vim.keymap.set("n", "<leader>ot",   function() require("opencode").toggle() end, { desc = "Toggle opencode" })
     vim.keymap.set("n", "<leader>ou", function() require("opencode").command("messages_half_page_up") end, { desc = "opencode half page up" })
     vim.keymap.set("n", "<leader>od", function() require("opencode").command("messages_half_page_down") end, { desc = "opencode half page down" })
-    -- You may want these if you stick with the opinionated "<C-a>" and "<C-x>" above — otherwise consider "<leader>o".
-    -- vim.keymap.set('n', '+', '<C-a>', { desc = 'Increment', noremap = true })
-    -- vim.keymap.set('n', '-', '<C-x>', { desc = 'Decrement', noremap = true })
+    
   end,
 }
