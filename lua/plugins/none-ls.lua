@@ -39,6 +39,7 @@ return {
 			-- formatters
 			formatting.nginx_beautifier,
 			formatting.blade_formatter,
+			formatting.rufo,
 			formatting.prettier.with({
 				extra_filetypes = { "toml" },
 			}),
