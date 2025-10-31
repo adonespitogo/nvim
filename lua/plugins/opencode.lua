@@ -26,5 +26,9 @@ return {
 			require("opencode").toggle()
 		end, { desc = "Toggle opencode" })
 
+		vim.keymap.set("n", "<leader>cd", function()
+			require("opencode").prompt("@diagnostics: ", { submit = true })
+		end, { desc = "Prompt diagnostics opencode" })
+
 	end,
 }
