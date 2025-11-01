@@ -8,7 +8,13 @@ return {
 	config = function()
 		---@type opencode.Opts
 		vim.g.opencode_opts = {
-			-- Your configuration, if any — see `lua/opencode/config.lua`, or "goto definition".
+			provider = {
+				enabled = "snacks",
+				snacks = {
+					-- You can add snacks.terminal options here if needed
+					-- For example: direction = "horizontal", size = 20
+				},
+			},
 		}
 
 		-- Required for `opts.auto_reload`.
@@ -29,6 +35,5 @@ return {
 		vim.keymap.set("n", "<leader>cd", function()
 			require("opencode").prompt("@diagnostics: ", { submit = true })
 		end, { desc = "Prompt diagnostics opencode" })
-
 	end,
 }
