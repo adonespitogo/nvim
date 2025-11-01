@@ -25,6 +25,7 @@ opt.completeopt = "menuone,noinsert,noselect" -- Autocomplete options
 vim.opt.fillchars = { eob = " " } -- Hide tilde symbols
 vim.lsp.set_log_level("debug")
 vim.lsp.log.set_format_func(vim.inspect)
+vim.o.autoread = true
 
 -----------------------------------------------------------
 -- Neovim UI
