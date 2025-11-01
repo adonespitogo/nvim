@@ -21,8 +21,8 @@ return {
 			-- completions
 			-- completion.spell,
 
-			-- linters
-			diagnostics.erb_lint,
+		-- linters
+		-- diagnostics.erb_lint, -- Disabled due to parser/ruby version warning with Ruby 3.4.6
 			diagnostics.yamllint.with({
 				filetypes = { "yaml", "yml" },
 				extra_args = {
