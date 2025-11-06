@@ -7,6 +7,9 @@ local map = require("utils.keymap")
 -- Change leader to a comma
 vim.g.mapleader = ";"
 
+-- See: https://github.com/sst/opencode/issues/445
+vim.keymap.set("t", "<S-CR>", "<M-CR>")
+
 -- LspRestart
 map("n", "<leader>rl", ":LspRestart<CR>", { desc = "Restart LSP" })
 
