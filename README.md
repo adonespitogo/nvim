@@ -68,6 +68,7 @@ github.com/google/yamlfmt/cmd/yamlfmt@latest
 github.com/go-delve/delve/cmd/dlv@latest
 github.com/a-h/templ/cmd/templ@v0.2.793
 github.com/hashicorp/terraform@v1.5.7
+github.com/adonespitogo/osximg@latest
 ```
 
 File: `~/.default-npm-packages`
