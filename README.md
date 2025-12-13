@@ -59,6 +59,7 @@ rubocop-performance
 rubocop-rails
 solargraph
 cocoapods
+rufo
 ```
 
 File: `~/.default-golang-pkgs`
