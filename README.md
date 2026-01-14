@@ -73,6 +73,7 @@ github.com/adonespitogo/osximg@latest
 
 File: `~/.default-npm-packages`
 ```
+yarn
 eslint
 eslint_d
 eslint-config-es3
