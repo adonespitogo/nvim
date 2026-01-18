@@ -14,6 +14,10 @@ local filetypes = {
 		pattern = { "*.templ" },
 		filetype = "templ",
 	},
+	{
+		pattern = { "*.ino" },
+		filetype = "arduino",
+	},
 }
 
 -- Open quickfix list item on new window

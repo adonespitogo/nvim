@@ -18,6 +18,7 @@ return {
 				"omnisharp",
 				"emmet_language_server",
 				"terraformls",
+        "arduino_language_server",
 			},
 		})
 	end,
