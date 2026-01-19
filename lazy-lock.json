@@ -1,5 +1,5 @@
 {
-  "Arduino-Nvim": { "branch": "main", "commit": "9f1592c95310924fd92f370be9a4515b9ed925fa" },
+  "Arduino-Nvim": { "branch": "main", "commit": "66f64c8456d0f3677e0802847b1c4f8c8ad35664" },
   "Comment.nvim": { "branch": "master", "commit": "e30b7f2008e52442154b66f7c519bfd2f1e32acb" },
   "LuaSnip": { "branch": "master", "commit": "5a1e39223db9a0498024a77b8441169d260c8c25" },
   "barbecue": { "branch": "main", "commit": "6e4a86355253348531887c7a76d2c7612e15e5d1" },
@@ -60,7 +60,7 @@
   "tagbar": { "branch": "master", "commit": "7bfffca1f121afb7a9e38747500bf5270e006bb1" },
   "telescope-media-files.nvim": { "branch": "master", "commit": "0826c7a730bc4d36068f7c85cf4c5b3fd9fb570a" },
   "telescope-ui-select.nvim": { "branch": "master", "commit": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2" },
-  "telescope.nvim": { "branch": "master", "commit": "a8c2223ea6b185701090ccb1ebc7f4e41c4c9784" },
+  "telescope.nvim": { "branch": "master", "commit": "0d8b6eaa0b5ae6bb3d9785f7a3ba4a4c6c1b1af2" },
   "templ.vim": { "branch": "main", "commit": "d482ee0bcf0606530725af27edaa320e5aaa4808" },
   "tokyonight.nvim": { "branch": "main", "commit": "5da1b76e64daf4c5d410f06bcb6b9cb640da7dfd" },
   "transparent.nvim": { "branch": "main", "commit": "8ac59883de84e9cd1850ea25cf087031c5ba7d54" },

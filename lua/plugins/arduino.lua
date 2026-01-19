@@ -1,5 +1,5 @@
 return {
-	"adonespitogo/Arduino-Nvim",
+  "adonespitogo/Arduino-Nvim",
 	dependencies = {
 		"nvim-telescope/telescope.nvim",
 		"neovim/nvim-lspconfig",
@@ -10,7 +10,7 @@ return {
 			-- Load Arduino config
 			local config_file = vim.fn.getcwd() .. "/.arduino_config.lua"
 			local settings = { board = "arduino:avr:uno", port = "/dev/ttyACM0" }
-			
+
 			if vim.fn.filereadable(config_file) == 1 then
 				local config = loadfile(config_file)
 				if config then
