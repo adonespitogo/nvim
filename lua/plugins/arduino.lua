@@ -1,5 +1,6 @@
 return {
-  "adonespitogo/Arduino-Nvim",
+	"adonespitogo/Arduino-Nvim",
+	branch = "feature/upload-watch",
 	dependencies = {
 		"nvim-telescope/telescope.nvim",
 		"neovim/nvim-lspconfig",
