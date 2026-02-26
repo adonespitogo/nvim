@@ -8,7 +8,7 @@ return {
 	config = function()
 		---@type opencode.Opts
 		vim.g.opencode_opts = {
-			provider = {
+			server = {
 				enabled = "snacks",
 				snacks = {
 					-- You can add snacks.terminal options here if needed
