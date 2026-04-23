@@ -1,5 +1,3 @@
-vim.lsp.set_log_level("off")
-
 -- Check if the operating system is macOS
 local is_macos = vim.fn.has("mac") == 1
 if is_macos then
