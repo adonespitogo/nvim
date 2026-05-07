@@ -2,8 +2,11 @@ return {
 	"lewis6991/gitsigns.nvim",
 	dependencies = { "nvim-lua/plenary.nvim" },
 	config = function()
+		require("gitsigns.util")
+		require("gitsigns.actions")
+
 		local gitsigns = require("gitsigns")
-    local map = require("utils.keymap")
+		local map = require("utils.keymap")
 
 		gitsigns.setup({
 			on_attach = function(bufnr)
