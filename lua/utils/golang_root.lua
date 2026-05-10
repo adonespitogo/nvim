@@ -1,7 +1,7 @@
-local util = require("lspconfig.util")
-
----@return string
-return function()
-	local root_dir = util.root_pattern("go.work", "go.mod", ".git")
-	return root_dir(vim.fn.getcwd())
+return function(_, bufnr)
+	local bufname = vim.api.nvim_buf_get_name(bufnr or 0)
+	if bufname == "" then
+		return vim.fn.getcwd()
+	end
+	return vim.fs.root(bufnr or 0, { "go.work", "go.mod", ".git" })
 end
